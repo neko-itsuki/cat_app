@@ -22,4 +22,16 @@ class StaticPagesController < ApplicationController
     
   end
   
+  def privacy
+    
+  end
+  
+  def rule
+    
+  end
+  
+  def sitemap
+    
+  end
+  
 end
