@@ -14,8 +14,9 @@ gem 'devise'
 group :development, :test do
   gem 'sqlite3', '1.4.1'
   gem 'byebug',  '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 4.0.1'
+  gem 'rspec-rails'
   gem 'capybara'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -26,7 +27,6 @@ group :development do
 end
 
 group :test do
-  # gem 'capybara',                 '3.28.0'
   gem 'selenium-webdriver',       '3.142.4'
   gem 'webdrivers',               '4.1.2'
   gem 'rails-controller-testing', '1.0.4'
@@ -34,6 +34,7 @@ group :test do
   gem 'minitest-reporters',       '1.3.8'
   gem 'guard',                    '2.16.2'
   gem 'guard-minitest',           '2.4.6'
+  gem "shoulda-matchers"
 end
 
 group :production do

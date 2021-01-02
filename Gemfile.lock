@@ -92,6 +92,11 @@ GEM
     diff-lcs (1.4.4)
     erubi (1.10.0)
     execjs (2.7.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     ffi (1.14.2)
     formatador (0.2.5)
     globalid (0.4.2)
@@ -109,7 +114,7 @@ GEM
     guard-minitest (2.4.6)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
-    i18n (1.8.5)
+    i18n (1.8.6)
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
@@ -231,6 +236,8 @@ GEM
       childprocess (>= 0.5, < 3.0)
       rubyzip (~> 1.2, >= 1.2.2)
     shellany (0.0.1)
+    shoulda-matchers (4.4.1)
+      activesupport (>= 4.2.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -282,6 +289,7 @@ DEPENDENCIES
   byebug (= 11.0.1)
   capybara
   devise
+  factory_bot_rails
   guard (= 2.16.2)
   guard-minitest (= 2.4.6)
   jbuilder (= 2.9.1)
@@ -292,9 +300,10 @@ DEPENDENCIES
   puma (= 4.3.6)
   rails (= 6.0.3)
   rails-controller-testing (= 1.0.4)
-  rspec-rails (~> 4.0.1)
+  rspec-rails
   sass-rails (= 5.1.0)
   selenium-webdriver (= 3.142.4)
+  shoulda-matchers
   spring (= 2.1.0)
   spring-watcher-listen (= 2.0.1)
   sqlite3 (= 1.4.1)

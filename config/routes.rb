@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-    
-  devise_for :users
-  get '/signup', to: 'users#new'
+  
+  # get '/signup', to: 'users#new'
   get '/home', to: 'static_pages#home'
   get '/about', to: 'static_pages#about'
   get '/description', to: 'static_pages#description'
@@ -12,4 +11,6 @@ Rails.application.routes.draw do
   get '/privacy', to: 'static_pages#privacy'
   get '/rule', to: 'static_pages#rule'
   get '/sitemap', to: 'static_pages#sitemap'
+  devise_for :users
+  
 end
