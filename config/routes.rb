@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   
   # get '/signup', to: 'users#new'
   devise_for :users, controllers: {
-      # confirmations: 'devise/users/confirmations',
-      sessions: 'devise/users/sessions',
-      passwords: 'devise/users/passwords',
-      registrations: 'devise/users/registrations'
+      confirmations:  'users/confirmations',
+      sessions:       'users/sessions',
+      passwords:      'users/passwords',
+      registrations:  'users/registrations'
   }
   get '/home', to: 'static_pages#home'
   get '/about', to: 'static_pages#about'
