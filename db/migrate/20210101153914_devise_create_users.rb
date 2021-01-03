@@ -4,8 +4,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :users do |t|
       
-      t.string :name
-      
       ## Database authenticatable 
       # サインイン時にユーザーの正当性を検証するためにパスワードをハッシュ化してDBに登録します。
       # 認証方法としてはPOSTリクエストかHTTP Basic認証が使えます。
