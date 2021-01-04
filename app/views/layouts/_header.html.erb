@@ -9,14 +9,6 @@
 				<li><%= link_to "Flow", flow_path %></li>
 				<li><%= link_to "Action", action_path %></li>
 				<li><%= link_to "Hospital", hospital_path %></li>
-				<% if user_signed_in? %>
-          <li><strong><%= link_to current_user.username, pages_show_path %></strong></li>
-          <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
-          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <!--<li><%= link_to 'サインアップ', new_user_registration_path %></li>-->
-          <li><%= link_to 'ログイン', new_user_session_path %></li>
-        <% end %>
 			</ul>
 		</nav>
 	</div>
