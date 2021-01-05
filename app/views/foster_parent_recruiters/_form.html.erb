@@ -1,0 +1,17 @@
+<%= form_with(model: foster_parent_recruiter, local: true) do |form| %>
+  <% if foster_parent_recruiter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(foster_parent_recruiter.errors.count, "error") %> prohibited this foster_parent_recruiter from being saved:</h2>
+
+      <ul>
+        <% foster_parent_recruiter.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

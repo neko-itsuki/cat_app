@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
   
-  # get '/signup', to: 'users#new'
+  devise_for :foster_parent_recruiters
+  # devise_for :foster_parent_recruiters
+  # # , controllers: {
+  # #     sessions:       'devise/Fosterparentrecruiters/sessions',
+  # #     passwords:      'devise/Fosterparentrecruiters/passwords',
+  # #     registrations:  'devise/fosterParentRecruiters/registrations'
+  # # }
+  
   devise_for :users, controllers: {
-      confirmations:  'users/confirmations',
-      sessions:       'users/sessions',
-      passwords:      'users/passwords',
-      registrations:  'users/registrations'
+      sessions:       'devise/users/sessions',
+      passwords:      'devise/users/passwords',
+      registrations:  'devise/users/registrations'
   }
   resources :users, only: [:index,:show]
   # get '/users', to: 'users#index'
