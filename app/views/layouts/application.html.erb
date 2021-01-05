@@ -12,13 +12,21 @@
     <p class="alert"><%= alert %></p>
     <div class="container">
       <h1><%= yield(:title) %></h1>
-      <% if user_signed_in? %>
+        <% if user_signed_in? %>
           <li><strong><%= link_to current_user.email, home_path %></strong></li>
           <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
-          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to '里親希望者ログアウト', destroy_user_session_path, method: :delete %></li>
         <% else %>
           <!--<li><%= link_to 'サインアップ', new_user_registration_path %></li>-->
-          <li><%= link_to 'ログイン', new_user_session_path %></li>
+          <li><%= link_to '里親希望者ログイン', new_user_session_path %></li>
+        <% end %>
+        <% if foster_parent_recruiter_signed_in? %>
+          <li><strong><%= link_to "edit", edit_foster_parent_recruiter_registration_path %></strong></li>
+          <li><%= link_to 'プロフィール変更', edit_foster_parent_recruiter_registration_path %></li>
+          <li><%= link_to '里親募集者ログアウト', destroy_foster_parent_recruiter_session_path, method: :delete %></li>
+        <% else %>
+          <!--<li><%= link_to 'サインアップ', new_foster_parent_recruiter_registration_path %></li>-->
+          <li><%= link_to '里親募集者ログイン', new_foster_parent_recruiter_session_path %></li>
         <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>

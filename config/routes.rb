@@ -1,20 +1,24 @@
 Rails.application.routes.draw do
   
-  devise_for :foster_parent_recruiters
-  # devise_for :foster_parent_recruiters
-  # # , controllers: {
-  # #     sessions:       'devise/Fosterparentrecruiters/sessions',
-  # #     passwords:      'devise/Fosterparentrecruiters/passwords',
-  # #     registrations:  'devise/fosterParentRecruiters/registrations'
-  # # }
+  devise_for :foster_parent_recruiters, controllers: {
+      sessions:       'devise/sessions',
+      passwords:      'devise/passwords',
+      registrations:  'devise/registrations'
+  }
   
   devise_for :users, controllers: {
-      sessions:       'devise/users/sessions',
-      passwords:      'devise/users/passwords',
-      registrations:  'devise/users/registrations'
+    sessions:       'devise/sessions',
+    passwords:      'devise/passwords',
+    registrations:  'devise/registrations'
   }
+  # , controllers: {
+  #     sessions:       'devise/users/sessions',
+  #     passwords:      'devise/users/passwords',
+  #     registrations:  'devise/users/registrations'
+  # }
+  
+  resources :foster_parent_recruiters, only: [:show]
   resources :users, only: [:index,:show]
-  # get '/users', to: 'users#index'
   get '/home', to: 'static_pages#home'
   get '/about', to: 'static_pages#about'
   get '/description', to: 'static_pages#description'
