@@ -12,50 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_01_05_100945) do
 
-  # create_table "cats", force: :cascade do |t|
-  #   t.integer "user_id", null: false
-  #   t.string "name", default: "", null: false
-  #   t.string "kind"
-  #   t.string "gender"
-  #   t.string "age"
-  #   t.string "whight"
-  #   t.string "coat_color"
-  #   t.string "contraceptive"
-  #   t.string "microchip"
-  #   t.string "accinated"
-  #   t.string "health_status"
-  #   t.string "personality"
-  #   t.string "background_of_protection"
-  #   t.text "remarks"
-  #   t.text "one_thing"
-  #   t.datetime "created_at", precision: 6, null: false
-  #   t.datetime "updated_at", precision: 6, null: false
-  #   t.index ["user_id", "created_at"], name: "index_cats_on_user_id_and_created_at"
-  #   t.index ["user_id"], name: "index_cats_on_user_id"
-  # end
-
-  # create_table "dogs", force: :cascade do |t|
-  #   t.integer "user_id", null: false
-  #   t.string "name", default: "", null: false
-  #   t.string "kind"
-  #   t.string "gender"
-  #   t.string "age"
-  #   t.string "whight"
-  #   t.string "coat_color"
-  #   t.string "contraceptive"
-  #   t.string "microchip"
-  #   t.string "accinated"
-  #   t.string "health_status"
-  #   t.string "personality"
-  #   t.string "background_of_protection"
-  #   t.text "remarks"
-  #   t.text "one_thing"
-  #   t.datetime "created_at", precision: 6, null: false
-  #   t.datetime "updated_at", precision: 6, null: false
-  #   t.index ["user_id", "created_at"], name: "index_dogs_on_user_id_and_created_at"
-  #   t.index ["user_id"], name: "index_dogs_on_user_id"
-  # end
-
   create_table "foster_parent_recruiters", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -78,6 +34,4 @@ ActiveRecord::Schema.define(version: 2021_01_05_100945) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  # add_foreign_key "cats", "users"
-  # add_foreign_key "dogs", "users"
 end
