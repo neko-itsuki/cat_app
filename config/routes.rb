@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :centers
   devise_for :foster_parent_recruiters, controllers: {
       sessions:       'devise/sessions',
       passwords:      'devise/passwords',
@@ -11,11 +12,6 @@ Rails.application.routes.draw do
     passwords:      'devise/passwords',
     registrations:  'devise/registrations'
   }
-  # , controllers: {
-  #     sessions:       'devise/users/sessions',
-  #     passwords:      'devise/users/passwords',
-  #     registrations:  'devise/users/registrations'
-  # }
   
   resources :foster_parent_recruiters, only: [:show]
   resources :users, only: [:index,:show]
