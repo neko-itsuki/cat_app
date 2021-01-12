@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # before_action :logged_in_user, only: [:index]
   
   def index
-    @users = User.page(params[:page]).per(1)
+    @users = User.page(params[:page]).per(5)
   end
   
   def show

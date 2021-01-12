@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<% provide(:title, "All Centers") %>
+
+<ul class="centers">
+  <%= render @centers %>
+</ul>
+<%= paginate @centers %>
+<br>
+
+<%= link_to 'New Center', new_center_registration_path %>

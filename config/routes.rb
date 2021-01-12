@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   
-  devise_for :centers
+  devise_for :centers, controllers: {
+      sessions:       'devise/sessions',
+      passwords:      'devise/passwords',
+      registrations:  'devise/registrations'
+  }
+  
   devise_for :foster_parent_recruiters, controllers: {
       sessions:       'devise/sessions',
       passwords:      'devise/passwords',
@@ -13,6 +18,7 @@ Rails.application.routes.draw do
     registrations:  'devise/registrations'
   }
   
+  resources :centers, only: [:index,:show]
   resources :foster_parent_recruiters, only: [:show]
   resources :users, only: [:index,:show]
   get '/home', to: 'static_pages#home'
