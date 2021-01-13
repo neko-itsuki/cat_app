@@ -1,15 +1,15 @@
-<h2>Sign up</h2>
+<h2>Sign up for user</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+  <%= render "devise/users/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, "メールアドレス" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "パスワード" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -17,8 +17,65 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "パスワード確認" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :name, "名前" %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :furigana_name, "ふりがな" %><br />
+    <%= f.text_field :furigana_name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :age, "年齢" %><br />
+    <%= f.number_field :age %>
+  </div>
+  
+  <div class="field">
+    <p>性別</p>
+    <%= f.label :gender, "男", value: 1 %><br />
+    <%= f.radio_button :gender, "1" %>
+    <%= f.label :gender, "女", value: 0 %><br />
+    <%= f.radio_button :gender, "0" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :street_address, "住所" %><br />
+    <%= f.text_field :street_address %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :tel, "電話番号" %><br />
+    <%= f.text_field :tel %>
+  </div>
+  
+  <div class="field">
+    <p>犬・猫可住宅にお住まいですか？</p>
+    <%= f.label :pets_allowed, "はい", value: 1 %><br />
+    <%= f.radio_button :pets_allowed, "1" %>
+    <%= f.label :pets_allowed, "いいえ", value: 0 %><br />
+    <%= f.radio_button :pets_allowed, "0" %>
+  </div>
+  
+  <div class="field">
+    <p>生計を立てる収入はございますか？</p>
+    <%= f.label :living, "はい", value: 1 %><br />
+    <%= f.radio_button :living, "1" %>
+    <%= f.label :living, "いいえ", value: 0 %><br />
+    <%= f.radio_button :living, "0" %>
+  </div>
+  
+  <div class="field">
+    <p>譲渡後、狂犬病予防注射・ワクチン接種をお約束いただけますか？</p>
+    <%= f.label :vaccination, "はい", value: 1 %><br />
+    <%= f.radio_button :vaccination, "1" %>
+    <%= f.label :vaccination, "いいえ", value: 0 %><br />
+    <%= f.radio_button :vaccination, "0" %>
   </div>
 
   <div class="actions">
@@ -26,4 +83,4 @@
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%= render "devise/users/shared/links" %>

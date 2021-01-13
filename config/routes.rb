@@ -1,21 +1,21 @@
 Rails.application.routes.draw do
   
   devise_for :centers, controllers: {
-      sessions:       'devise/sessions',
-      passwords:      'devise/passwords',
-      registrations:  'devise/registrations'
+      sessions:       'devise/centers/sessions',
+      passwords:      'devise/centers/passwords',
+      registrations:  'devise/centers/registrations'
   }
   
   devise_for :foster_parent_recruiters, controllers: {
-      sessions:       'devise/sessions',
-      passwords:      'devise/passwords',
-      registrations:  'devise/registrations'
+      sessions:       'devise/foster_parent_recruiters/sessions',
+      passwords:      'devise/foster_parent_recruiters/passwords',
+      registrations:  'devise/foster_parent_recruiters/registrations'
   }
   
   devise_for :users, controllers: {
-    sessions:       'devise/sessions',
-    passwords:      'devise/passwords',
-    registrations:  'devise/registrations'
+    sessions:       'devise/users/sessions',
+    passwords:      'devise/users/passwords',
+    registrations:  'devise/users/registrations'
   }
   
   resources :centers, only: [:index,:show]

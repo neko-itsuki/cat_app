@@ -1,6 +1,19 @@
 <% provide(:title, "Show") %>
 <p id="notice"><%= notice %></p>
 
-<h1><%= @user.email %></h1>
+<h2><%= @user.furigana_name %></h2>
+<h1><%= @user.name %></h1>
+<h2><%= @user.email %></h2>
+<ul>
+  <li><%= @user.age %></li>
+  <% if @user.gender == 1 %>
+    <li>男</li>
+  <% else %>
+    <li>女</li>
+  <% end %>
+  <li><%= @user.street_address %></li>
+  <li><%= @user.tel %></li>
+</ul>
+
 <%= link_to 'Edit', edit_user_registration_path(@user) %> |
 <%= link_to 'Back', users_path %>
