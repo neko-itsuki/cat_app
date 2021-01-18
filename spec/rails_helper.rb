@@ -64,6 +64,9 @@ RSpec.configure do |config|
   
   config.include FactoryBot::Syntax::Methods
   
+  config.include RequestSpecHelper, type: :system
+  config.include Devise::Test::IntegrationHelpers, type: :system
+  
   require 'capybara/rspec'
   
   require 'shoulda/matchers'

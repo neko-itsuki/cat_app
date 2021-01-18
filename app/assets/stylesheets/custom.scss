@@ -117,3 +117,8 @@ footer {
   margin-top: 45px;
   @include box_sizing;
 }
+
+///
+.disabled {
+    display: none;
+  }

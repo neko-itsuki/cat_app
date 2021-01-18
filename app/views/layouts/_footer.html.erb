@@ -10,4 +10,7 @@
       <li><%= link_to "Sitemap", sitemap_path %></li>
     </ul>
   </nav>
+  <% if current_destroy %>
+    <p><%= button_to "退会する", current_destroy, data: { confirm: "本当に退会してよろしいですか？" }, method: :delete %></p>
+  <% end %>
 </footer>

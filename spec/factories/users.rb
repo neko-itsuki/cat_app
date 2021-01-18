@@ -1,11 +1,16 @@
 FactoryBot.define do
   factory :user do
-    # name {"Example"}
-    sequence(:email) { |n| "tester#{n}@example.com" }
-    password {"password"}
-    password_confirmation {"password"}
-    
-    # 有効化
-    # activated true
+    name { Gimei.kanji }
+    furigana_name { Gimei.hiragana }
+    email { Faker::Internet.email }
+    password { 'password' }
+    password_confirmation { 'password' }
+    age { Faker::Number.within(range: 18..64) }
+    gender { Faker::Boolean.boolean(true_ratio: 0.5) }
+    street_address { Gimei.address }
+    tel { "0#{rand(7..9)}0#{rand(1_000_000..99_999_999)}" }
+    pets_allowed { true }
+    living { true }
+    vaccination { true }
   end
 end

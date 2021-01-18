@@ -1,36 +1,39 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-	
-	let(:user) {FactoryBot.create(:user)}
-	
-	describe User do
-		it "have a valid factory" do
-			expect(user).to be_valid
-		end
-	end
-	
-	describe "name and email length is valid" do
-		# it {is_expected.to validate_presence_of :name}
-		it {is_expected.to validate_presence_of :email}
-		it {is_expected.to validate_presence_of :password}
-		# it {is_expected.to validate_length_of(:name).is_at_most(50)}
-		# it {is_expected.to validate_length_of(:email).is_at_most(255)}
-		it {is_expected.to validate_length_of(:password).is_at_least(6).is_at_most(128)}
-	end
-	
-	# 重複したメールアドレスなら無効な状態であること ・・・(*)
-  it "is invalid with a duplicate email adress" do 
-    FactoryBot.create(:user, email: "aaron@example.com")
-    user = FactoryBot.build(:user, email: "Aaron@example.com")
-    user.valid?
-    expect(user.errors[:email]).to include("has already been taken")
+  
+  let(:user) {FactoryBot.create(:user)}
+  
+  describe "Userの保存のテスト" do
+    it "Userの有効性" do
+      expect(user).to be_valid
+    end
+  end
+  
+  describe "userのバリデーションテスト" do
+    
+    it { is_expected.to validate_presence_of :name }
+    it { is_expected.to validate_length_of(:name).is_at_most(25) }
+    
+    it { is_expected.to validate_presence_of :furigana_name }
+    it { is_expected.to validate_length_of(:furigana_name).is_at_most(50) }
+    
+    it { is_expected.to validate_presence_of :email}
+    it { is_expected.to validate_length_of(:email).is_at_most(255) }
+    
+    it { is_expected.to validate_presence_of :password }
+    it { is_expected.to validate_length_of(:password).is_at_least(6).is_at_most(128) }
+    
+    it { is_expected.to validate_numericality_of(:age).is_greater_than_or_equal_to(18).is_less_than(65) }
+    
+    VALID_TEL_REGEX = /\A0(\d{1}\d{4}|\d{2}\d{3}|\d{3}\d{2}|\d{4}\d{1})\d{4}\z|\A0[789]0\d{4}\d{4}\z/
+    it { expect(user.tel).to match(VALID_TEL_REGEX) }
+  
   end
 
-  # メールアドレスの有効性
-  describe "email validation should reject invalid addresses" do
-    # 無効なメールアドレスの場合
-    it "should be invalid" do
+  describe "メールアドレスの有効性" do
+  
+    it "無効なメールアドレスの場合" do
       invalid_addresses = %w[user@example,com user_at_foo.org user.name@example. 
                             foo@bar_baz.com foo@bar+baz.com]
       invalid_addresses.each do |invalid_address|
@@ -38,31 +41,72 @@ RSpec.describe User, type: :model do
         expect(user).to_not be_valid
       end
     end
-
-    # 有効なメールアドレスの場合
-    it "should be valid" do
+  
+    it "有効なメールアドレスの場合" do
       valid_addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
       valid_addresses.each do |valid_address|
         user.email = valid_address
         expect(user).to be_valid
       end
     end
+    
+    it "重複したメールアドレスなら無効" do 
+      FactoryBot.create(:user, email: "aaron@example.com")
+      user = FactoryBot.build(:user, email: "Aaron@example.com")
+      user.invalid?
+    end
+    
   end
 
-  # パスワード確認が一致すること
-  describe "when password doesn't match confirmation" do
-    # 一致する場合
-    it "is valid when password confirmation matches password" do
+  describe "パスワード確認の一致" do
+    
+    it "一致する場合" do
       user = FactoryBot.build(:user, password: "password", password_confirmation: "password")
       expect(user).to be_valid
     end
 
-    # 一致しない場合
-    it "is invalid when password confirmation doesn't match password" do
+    it "一致しない場合" do
       user = FactoryBot.build(:user, password: "password", password_confirmation: "different")
-      user.valid?
-      expect(user.errors[:password_confirmation]).to include("doesn't match Password")
+      user.invalid?
     end
   end
-	
+  
+  # describe "電話番号の有効性" do
+    
+  #   context "有効な電話番号の場合" do
+      
+  #     it "0から始まり、10桁" do
+  #       FactoryBot.create(:user, tel: "0#{rand(10_000_000..999_999_999)}")
+  #       expect(user.tel).to be_valid
+  #     end
+      
+  #     it "070、080、090で始まり、11桁" do
+  #       FactoryBot.create(:user, tel: "0#{rand(7..9)}0#{rand(1_000_000..99_999_999)}")
+  #       expect(user.tel).to be_valid
+  #     end
+      
+  #   end
+    
+    # context "無効な電話番号の場合" do
+      
+    #   it "0から始まらない" do
+        
+    #   end
+      
+    #   it "070、080、090以外で始まる" do
+        
+    #   end
+      
+    #   it "9桁以下の時" do
+        
+    #   end
+      
+    #   it "12桁以上の時" do
+        
+    #   end
+      
+    # end
+    
+  # end
+  
 end

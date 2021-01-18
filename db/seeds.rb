@@ -3,43 +3,31 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   movies = Movie.create([= name: 'Star Wars' , = name: 'Lord of the Rings' ])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-100.times do |n|
-  name = "name#{n+1}"
-  furigana_name = "furigana#{n+1}"
-  email = "example-#{n+1}@example.com"
-  password = "password"
-  age = "#{n+1}"
-  street_address = "street_address#{n+1}"
-  tel = "080000#{n+1}"
-  User.create!(name: name,
-               furigana_name: furigana_name,
-               email: email,
-               password:              password,
-               password_confirmation: password,
-               age: age,
-               gender: 1,
-               street_address: street_address,
-               tel: tel,
-               pets_allowed: 1,
-               living: 1,
-               vaccination: 1)
-end
-
-100.times do |n|
-  email = "example-#{n+1}@example.com"
-  password = "password"
-  FosterParentRecruiter.create!(email: email,
-               password:              password,
-               password_confirmation: password)
-end
-
-100.times do |n|
-  email = "example-#{n+1}@example.com"
-  password = "password"
-  Center.create!(email: email,
-               password:              password,
-               password_confirmation: password)
+10.times do |n|
+  name = Gimei.kanji 
+  furigana_name = Gimei.hiragana
+  email = Faker::Internet.email 
+  password = 'password' 
+  password_confirmation = 'password' 
+  age = Faker::Number.within(range: 15..68)
+  gender = Faker::Boolean.boolean(true_ratio: 0.5) 
+  street_address = Gimei.address
+  tel = Faker::PhoneNumber.cell_phone
+  User.create!(
+    name: name,
+    furigana_name: furigana_name,
+    email: email,
+    password: password,
+    password_confirmation: password_confirmation,
+    age: age,
+    gender: gender,
+    street_address: street_address,
+    tel: tel,
+    pets_allowed: true,
+    living: true,
+    vaccination: true
+    )
 end

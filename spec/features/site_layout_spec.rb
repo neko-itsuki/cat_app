@@ -10,7 +10,7 @@ RSpec.feature "SiteLayouts", type: :feature do
       expect(page).to have_link 'Description', href: description_path
       expect(page).to have_link 'Flow', href: flow_path
       expect(page).to have_link 'Action', href: action_path
-      expect(page).to have_link 'Hospital', href: hospital_path
+      expect(page).to have_link 'Centers', href: centers_path
       expect(page).to have_link 'Privacy', href: privacy_path
       expect(page).to have_link 'Rule', href: rule_path
       expect(page).to have_link 'Sitemap', href: sitemap_path

@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(version: 2021_01_13_102116) do
     t.boolean "gender", null: false
     t.string "street_address", null: false
     t.string "tel", null: false
-    t.boolean "pets_allowed", null: false
-    t.boolean "living", null: false
-    t.boolean "vaccination", null: false
+    t.boolean "pets_allowed"
+    t.boolean "living"
+    t.boolean "vaccination"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

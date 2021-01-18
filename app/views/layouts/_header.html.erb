@@ -1,16 +1,24 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-	<div class="container">
-		<%= link_to "cat app", root_path, id: "logo" %>
-		<nav>
-			<ul class="nav navbar-nav navbar-right">
-				<li><%= link_to "Home", root_path %></li>
-				<li><%= link_to "About", about_path %></li>
-				<li><%= link_to "Description", description_path %></li>
-				<li><%= link_to "Flow", flow_path %></li>
-				<li><%= link_to "Action", action_path %></li>
-				<li><%= link_to "Centers", centers_path %></li>
-				<li><%= link_to "Users", users_path %></li>
-			</ul>
-		</nav>
-	</div>
+  <div class="container">
+    <%= link_to "cat app", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <!--<li><%= link_to "Home", root_path %></li>-->
+        <!--<li><%= link_to "About", about_path %></li>-->
+        <!--<li><%= link_to "Description", description_path %></li>-->
+        <!--<li><%= link_to "Flow", flow_path %></li>-->
+        <!--<li><%= link_to "Action", action_path %></li>-->
+        <li><%= link_to "Centers", centers_path %></li>
+        <li><%= link_to "Users", users_path %></li>
+        <% if current_delete_session %>
+          <li><%= link_to 'ログアウト', current_delete_session, method: :delete %></li>
+        <% else %>
+          <li><%= link_to '里親希望者ログイン', new_user_session_path %></li>
+          <li><%= link_to '里親募集者ログイン', new_foster_parent_recruiter_session_path %></li>
+          <li><%= link_to '保護施設ログイン', new_center_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
  </header>
+ 

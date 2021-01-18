@@ -6,8 +6,8 @@ class AddColumnToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :gender, :boolean, null: false
     add_column :users, :street_address, :string, null: false
     add_column :users, :tel, :string, null: false
-    add_column :users, :pets_allowed, :boolean, null: false
-    add_column :users, :living, :boolean, null: false
-    add_column :users, :vaccination, :boolean, null: false
+    add_column :users, :pets_allowed, :boolean
+    add_column :users, :living, :boolean
+    add_column :users, :vaccination, :boolean
   end
 end
