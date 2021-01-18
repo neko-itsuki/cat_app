@@ -71,42 +71,4 @@ RSpec.describe User, type: :model do
     end
   end
   
-  # describe "電話番号の有効性" do
-    
-  #   context "有効な電話番号の場合" do
-      
-  #     it "0から始まり、10桁" do
-  #       FactoryBot.create(:user, tel: "0#{rand(10_000_000..999_999_999)}")
-  #       expect(user.tel).to be_valid
-  #     end
-      
-  #     it "070、080、090で始まり、11桁" do
-  #       FactoryBot.create(:user, tel: "0#{rand(7..9)}0#{rand(1_000_000..99_999_999)}")
-  #       expect(user.tel).to be_valid
-  #     end
-      
-  #   end
-    
-    # context "無効な電話番号の場合" do
-      
-    #   it "0から始まらない" do
-        
-    #   end
-      
-    #   it "070、080、090以外で始まる" do
-        
-    #   end
-      
-    #   it "9桁以下の時" do
-        
-    #   end
-      
-    #   it "12桁以上の時" do
-        
-    #   end
-      
-    # end
-    
-  # end
-  
 end

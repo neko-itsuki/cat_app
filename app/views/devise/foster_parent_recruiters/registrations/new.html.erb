@@ -1,15 +1,15 @@
-<h2>Sign up for recruiters</h2>
+<h2>里親募集者 新規登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/foster_parent_recruiters/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
+   <div class="field">
+    <%= f.label :email, "メールアドレス" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "パスワード" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -17,12 +17,86 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "パスワード確認" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  
+  <div class="field">
+    <%= f.label :name, "名前" %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :furigana_name, "ふりがな" %><br />
+    <%= f.text_field :furigana_name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :age, "年齢" %><br />
+    <%= f.number_field :age %>
+  </div>
+  
+  <div class="field">
+    性別
+    <%= f.label :gender, "男", value: 1 %><br />
+    <%= f.radio_button :gender, "1" %>
+    <%= f.label :gender, "女", value: 0 %><br />
+    <%= f.radio_button :gender, "0" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :street_address, "住所" %><br />
+    <%= f.text_field :street_address %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :tel, "電話番号" %><br />
+    <%= f.text_field :tel %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :tel_time, "ご連絡のつきやすい時間帯" %><br />
+    <%= f.select :tel_time, { '10:00〜12:00': 1, '12:00〜14:00': 2, '14:00〜16:00': 3, '16:00〜18:00': 4, '18:00〜20:00': 5 } %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :animal_type, "犬種・猫種" %><br />
+    <%= f.text_field :animal_type %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :animal_gender, "性別" %><br />
+    <!--<%= f.select :animal_gender, {'不明': 1, '男の子': 2, '女の子': 3, '男の子(去勢済)': 4, '女の子(避妊済)': 5} %>-->
+    <%= f.label :animal_gender, "不明", value: 1 %><br />
+    <%= f.radio_button :animal_gender, "1" %>
+    <%= f.label :animal_gender, "男の子", value: 2 %><br />
+    <%= f.radio_button :animal_gender, "2" %>
+    <%= f.label :animal_gender, "女の子", value: 3 %><br />
+    <%= f.radio_button :animal_gender, "3" %>
+    <%= f.label :animal_gender, "男の子(去勢済)", value: 4 %><br />
+    <%= f.radio_button :animal_gender, "4" %>
+    <%= f.label :animal_gender, "女の子(避妊済)", value: 5 %><br />
+    <%= f.radio_button :animal_gender, "5" %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :animal_age, "年齢" %><br />
+    <%= f.number_field :animal_age %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :animal_image, "お写真" %><br />
+    <%= f.file_field :animal_image %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :reason, "飼えなくなった理由" %><br />
+    <%= f.text_field :reason %>
+  </div>
+  
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "新規登録" %>
   </div>
 <% end %>
 

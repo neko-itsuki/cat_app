@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_13_102116) do
+ActiveRecord::Schema.define(version: 2021_01_18_181356) do
 
   create_table "centers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 2021_01_13_102116) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name", null: false
+    t.string "furigana_name", null: false
+    t.integer "age", null: false
+    t.boolean "gender", null: false
+    t.string "street_address", null: false
+    t.string "tel", null: false
+    t.string "tel_time"
+    t.string "animal_type", null: false
+    t.string "animal_gender", null: false
+    t.string "animal_age", null: false
+    t.string "animal_image", null: false
+    t.string "reason", null: false
     t.index ["email"], name: "index_foster_parent_recruiters_on_email", unique: true
     t.index ["reset_password_token"], name: "index_foster_parent_recruiters_on_reset_password_token", unique: true
   end
