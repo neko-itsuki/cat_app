@@ -5,7 +5,7 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password { 'password' }
     password_confirmation { 'password' }
-    age { Faker::Number.within(range: 18..100) }
+    age { Faker::Number.within(range: 18..99) }
     gender { '男' or '女' }
     street_address { Gimei.address }
     tel { "0#{rand(7..9)}0#{rand(1_000_000..99_999_999)}" }

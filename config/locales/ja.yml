@@ -3,6 +3,7 @@ ja:
     models:
       user: 里親希望者
       foster_parent_recruiter: 里親募集者
+      center: 動物保護施設
     attributes:
       user:
         name: 名前
@@ -32,3 +33,21 @@ ja:
         animal_age: 年齢
         animal_image: お写真
         reason: 飼えなくなった理由
+      center:
+        name: 名前
+        furigana_name: ふりがな
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+        director_name: 院長名
+        staff_name: 担当者名
+        street_address: 住所
+        tel: 電話番号
+        approval: "[この企画に賛同していただけますか？]確認事項"
+        release: "[病院の情報をホームページに公開してよろしいですか？]確認事項"
+        listok: "[賛同動物病院一覧に記載してよろしいですか？]確認事項"
+        care_time: 診療時間
+        close_date: 休診日
+        acces: アクセス方法
+        url: WebサイトURL
+      
