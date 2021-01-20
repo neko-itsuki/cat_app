@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_19_152325) do
+ActiveRecord::Schema.define(version: 2021_01_20_055907) do
+
+  create_table "cats", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "type", null: false
+    t.boolean "gender", null: false
+    t.string "age", null: false
+    t.string "weight", null: false
+    t.string "coat_color", null: false
+    t.boolean "contraceptive_castrated", null: false
+    t.boolean "microchip", null: false
+    t.boolean "vaccination", null: false
+    t.text "one_thing", null: false
+    t.text "health", null: false
+    t.text "personality", null: false
+    t.text "history_of_protection", null: false
+    t.text "remarks"
+    t.text "center_information", null: false
+    t.integer "center_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["center_id", "created_at"], name: "index_cats_on_center_id_and_created_at"
+    t.index ["center_id"], name: "index_cats_on_center_id"
+  end
 
   create_table "centers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -49,7 +72,7 @@ ActiveRecord::Schema.define(version: 2021_01_19_152325) do
     t.boolean "gender", null: false
     t.string "street_address", null: false
     t.string "tel", null: false
-    t.string "tel_time", null: false
+    t.string "tel_time"
     t.string "animal_type", null: false
     t.string "animal_gender", null: false
     t.string "animal_age", null: false
@@ -78,4 +101,5 @@ ActiveRecord::Schema.define(version: 2021_01_19_152325) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cats", "centers"
 end

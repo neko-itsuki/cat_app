@@ -4,6 +4,8 @@ class Center < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  has_many :cats, dependent: :destroy
+  
   validates :name, presence: true,
                    length: { maximum: 25 }
   validates :furigana_name, presence: true,

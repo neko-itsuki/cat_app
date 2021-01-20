@@ -1,0 +1,101 @@
+<%= form_with(model: cat, local: true) do |f| %>
+  <% if cat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cat.errors.count, "error") %> prohibited this cat from being saved:</h2>
+
+      <ul>
+        <% cat.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :name, "名前" %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :type, "種類" %><br />
+    <%= f.text_field :type %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :gender, "性別" %><br />
+    <%= f.text_field :gender %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :age, "年齢（登録時）" %><br />
+    <%= f.text_field :age %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :weight, "体重" %><br />
+    <%= f.text_field :weight %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :coat_color, "毛色" %><br />
+    <%= f.text_field :coat_color %>
+  </div>
+  
+  <div class="field">
+    避妊・去勢
+    <%= f.label :contraceptive_castrated, "済", value: 1 %><br />
+    <%= f.radio_button :contraceptive_castrated, "1" %>
+    <%= f.label :contraceptive_castrated, "無", value: 0 %><br />
+    <%= f.radio_button :contraceptive_castrated, "0" %>
+  </div>
+  
+  <div class="field">
+    マイクロチップ
+    <%= f.label :microchip, "済", value: 1 %><br />
+    <%= f.radio_button :microchip, "1" %>
+    <%= f.label :microchip, "無", value: 0 %><br />
+    <%= f.radio_button :microchip, "0" %>
+  </div>
+  
+  <div class="field">
+    ワクチン接種
+    <%= f.label :vaccination, "済", value: 1 %><br />
+    <%= f.radio_button :vaccination, "1" %>
+    <%= f.label :vaccination, "無", value: 0 %><br />
+    <%= f.radio_button :vaccination, "0" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :one_thing, "ひとこと" %><br />
+    <%= f.text_field :one_thing %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :health, "健康状態" %><br />
+    <%= f.text_field :health %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :personality, "性格" %><br />
+    <%= f.text_field :personality %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :history_of_protection, "保護された経緯" %><br />
+    <%= f.text_field :history_of_protection %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :remarks, "備考" %><br />
+    <%= f.text_field :remarks %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :center_information, "動物病院情報" %><br />
+    <%= f.text_field :center_information %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

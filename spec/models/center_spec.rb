@@ -30,9 +30,10 @@ RSpec.describe Center, type: :model do
     it { is_expected.to validate_presence_of :staff_name }
     it { is_expected.to validate_length_of(:staff_name).is_at_most(25) }
     
-    VALID_TEL_REGEX = /\A0(\d{1}\d{4}|\d{2}\d{3}|\d{3}\d{2}|\d{4}\d{1})\d{4}\z|\A0[789]0\d{4}\d{4}\z/
-    it { expect(center.tel).to match(VALID_TEL_REGEX) }
-  
+    VALID_CENTER_TEL_REGEX = /\A0(\d{1}\d{4}|\d{2}\d{3}|\d{3}\d{2}|\d{4}\d{1})\d{4}\z|\A0[789]0\d{4}\d{4}\z/
+    it { expect(center.tel).to match(VALID_CENTER_TEL_REGEX) }
+    
+    it { is_expected.to have_many(:cats).dependent(:destroy) }
   end
 
   describe "メールアドレスの有効性" do
