@@ -22,7 +22,7 @@ class CatsController < ApplicationController
     @cat = current_center.cats.build(cat_params)
     # @cat.image.attach(params[:cat][:image])
     if @cat.save
-      flash[:success] = "#{@cat.name}の投稿を作成しました"
+      flash[:success] = "#{@cat.cat_name}の投稿を作成しました"
       redirect_to root_url
     else
       render 'new'
@@ -30,12 +30,12 @@ class CatsController < ApplicationController
   end
   
   def edit
-    
+    @cat = Cat.find(params[:id])
   end
   
   def update
     if @cat.update(cat_params)
-      flash[:success] = "#{@cat.name}のプロフィールを更新しました"
+      flash[:success] = "#{@cat.cat_name}のプロフィールを更新しました"
       redirect_to @cat
     else
       render 'edit'
@@ -44,7 +44,7 @@ class CatsController < ApplicationController
   
   def destroy
     @cat.destroy
-    flash[:success] = "#{@cat.name}の投稿を削除しました"
+    flash[:success] = "#{@cat.cat_name}の投稿を削除しました"
     # redirect_to request.referrer || root_url
     redirect_back(fallback_location: root_url)
   end
@@ -52,10 +52,10 @@ class CatsController < ApplicationController
   private
     
     def cat_params
-      params.require(:cat).permit(:name, :type, :gender, :age, :weight,
-                        :coat_color, :contraceptive_castrated, :microchip,
-                        :vaccination, :one_thing, :health, :personality,
-                        :history_of_protection, :remarks, :center_information)
+      params.require(:cat).permit(:cat_name, :cat_type, :cat_gender, :cat_age, :cat_weight,
+                        :cat_coat_color, :cat_contraceptive_castrated, :cat_microchip,
+                        :cat_vaccination, :cat_one_thing, :cat_health, :cat_personality,
+                        :cat_history_of_protection, :cat_remarks, :cat_center_information)
     end
     
     def correct_center

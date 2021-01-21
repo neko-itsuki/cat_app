@@ -13,21 +13,21 @@
 ActiveRecord::Schema.define(version: 2021_01_20_055907) do
 
   create_table "cats", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "type", null: false
-    t.boolean "gender", null: false
-    t.string "age", null: false
-    t.string "weight", null: false
-    t.string "coat_color", null: false
-    t.boolean "contraceptive_castrated", null: false
-    t.boolean "microchip", null: false
-    t.boolean "vaccination", null: false
-    t.text "one_thing", null: false
-    t.text "health", null: false
-    t.text "personality", null: false
-    t.text "history_of_protection", null: false
-    t.text "remarks"
-    t.text "center_information", null: false
+    t.string "cat_name", null: false
+    t.string "cat_type", null: false
+    t.boolean "cat_gender", null: false
+    t.string "cat_age", null: false
+    t.string "cat_weight", null: false
+    t.string "cat_coat_color", null: false
+    t.boolean "cat_contraceptive_castrated", null: false
+    t.boolean "cat_microchip", null: false
+    t.boolean "cat_vaccination", null: false
+    t.text "cat_one_thing", null: false
+    t.text "cat_health", null: false
+    t.text "cat_personality", null: false
+    t.text "cat_history_of_protection", null: false
+    t.text "cat_remarks"
+    t.text "cat_center_information", null: false
     t.integer "center_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

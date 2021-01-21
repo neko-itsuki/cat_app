@@ -29,7 +29,7 @@ ja:
         street_address: 住所
         tel: 電話番号
         animal_type: 犬種・猫種
-        animal_gender: 性別
+        animal_gender: 性別（犬・猫）
         animal_age: 年齢
         animal_image: お写真
         reason: 飼えなくなった理由

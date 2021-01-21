@@ -2,5 +2,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @center.email %></h1>
+
+<div class="col-md-8">
+  <% if @center.cats.any? %>
+    <h3>Cats (<%= @center.cats.count %>)</h3>
+    <ol class="cats">
+      <%= render @cats %>
+    </ol>
+    <%= paginate @cats %>
+  <% end %>
+</div>
+  
 <%= link_to 'Edit', edit_center_registration_path(@center) %> |
 <%= link_to 'Back', centers_path %>

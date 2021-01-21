@@ -1,19 +1,19 @@
 class Cat < ApplicationRecord
   belongs_to :center
   
-  validates :name, presence: true,
+  validates :cat_name, presence: true,
                    length: { maximum: 10 }
-  validates :type, presence: true
-  validates :gender, presence: true
-  validates :age, presence: true
-  validates :weight, presence: true
-  validates :coat_color, presence: true
-  validates :contraceptive_castrated, presence: true
-  validates :microchip, presence: true
-  validates :vaccination, presence: true
-  validates :one_thing, presence: true
-  validates :health, presence: true
-  validates :personality, presence: true
-  validates :history_of_protection, presence: true
-  validates :center_information, presence: true
+  validates :cat_type, presence: true
+  validates :cat_gender, presence: true
+  validates :cat_age, presence: true
+  validates :cat_weight, presence: true
+  validates :cat_coat_color, presence: true
+  validates :cat_contraceptive_castrated, presence: true
+  validates :cat_microchip, presence: true
+  validates :cat_vaccination, presence: true
+  validates :cat_one_thing, presence: true
+  validates :cat_health, presence: true
+  validates :cat_personality, presence: true
+  validates :cat_history_of_protection, presence: true
+  validates :cat_center_information, presence: true
 end
