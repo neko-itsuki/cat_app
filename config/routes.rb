@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   
   resources :centers, only: [:index,:show]
   resources :foster_parent_recruiters, only: [:show]
-  resources :users, only: [:index,:show]
+  resources :users, only: [:show]
   resources :cats
   get '/home', to: 'static_pages#home'
   get '/about', to: 'static_pages#about'

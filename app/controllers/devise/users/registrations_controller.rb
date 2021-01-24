@@ -42,11 +42,23 @@ class Devise::Users::RegistrationsController < Devise::RegistrationsController
   protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, 
+      devise_parameter_sanitizer.permit(:sign_up,
           keys: [:name, :furigana_name, :age, :gender, :street_address,
                  :tel, :pets_allowed, :living, :vaccination])
+      
+      devise_parameter_sanitizer.permit(:account_update,
+          keys: [:name, :furigana_name, :age, :street_address,
+                :tel])
     end
-
+    
+    def update_resource(resource, params)
+      resource.update_without_password(params)
+    end
+    
+    def after_update_path_for(resource)
+      user_path(current_user)
+    end
+    
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])

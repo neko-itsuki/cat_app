@@ -33,4 +33,16 @@ module ApplicationHelper
     end
   end
   
+  def current_profile_path
+    if user_signed_in?
+      user_path(current_user)
+    elsif foster_parent_recruiter_signed_in?
+      foster_parent_recruiter_path(current_foster_parent_recruiter)
+    elsif center_signed_in?
+      center_path(current_center)
+    else
+      false
+    end
+  end
+  
 end

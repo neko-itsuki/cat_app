@@ -4,6 +4,7 @@ ja:
       user: 里親希望者
       foster_parent_recruiter: 里親募集者
       center: 動物保護施設
+      cat: 保護猫
     attributes:
       user:
         name: 名前
@@ -50,4 +51,19 @@ ja:
         close_date: 休診日
         acces: アクセス方法
         url: WebサイトURL
-      
+      cat:
+        cat_name: 名前
+        cat_type: 種類
+        cat_gender: 性別
+        cat_age: 年齢 
+        cat_weight: 体重 
+        cat_coat_color: 毛色 
+        cat_contraceptive_castrated: 避妊・去勢
+        cat_microchip: マイクロチップ 
+        cat_vaccination: ワクチン接種
+        cat_one_thing: ひとこと 
+        cat_health: 健康状態 
+        cat_personality: 性格 
+        cat_history_of_protection: 保護された経緯 
+        cat_remarks: 備考 
+        cat_center_information: 動物病院情報 

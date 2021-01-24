@@ -67,7 +67,7 @@ end
   email = Faker::Internet.email 
   password = 'password' 
   password_confirmation = 'password' 
-  age = Faker::Number.within(range: 15..68)
+  age = Faker::Number.within(range: 18..68)
   gender = "男" 
   street_address = Gimei.address
   tel = "09012345678"
