@@ -46,8 +46,21 @@ class Devise::FosterParentRecruiters::RegistrationsController < Devise::Registra
           keys: [:name, :furigana_name, :age, :gender, :street_address,
                  :tel, :tel_time, :animal_type, :animal_gender,
                  :animal_age, :animal_image, :reason])
+      
+      devise_parameter_sanitizer.permit(:account_update,
+          keys: [:name, :furigana_name, :age, :street_address,
+                :tel, :tel_time, :animal_type, :animal_gender,
+                :animal_age, :animal_image, :reason])
     end
-
+    
+    def update_resource(resource, params)
+      resource.update_without_password(params)
+    end
+    
+    def after_update_path_for(resource)
+      foster_parent_recruiter_path(current_foster_parent_recruiter)
+    end
+    
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
