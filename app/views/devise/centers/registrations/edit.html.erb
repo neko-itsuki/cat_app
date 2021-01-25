@@ -7,6 +7,61 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+  
+  <div class="field">
+    <%= f.label :name, "病院名" %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :furigana_name, "病院名（ふりがな）" %><br />
+    <%= f.text_field :furigana_name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :director_name, "院長名" %><br />
+    <%= f.text_field :director_name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :staff_name, "担当者名" %><br />
+    <%= f.text_field :staff_name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :street_address, "住所" %><br />
+    <%= f.text_field :street_address %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :tel, "電話番号" %><br />
+    <%= f.text_field :tel %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :care_time, "診療時間" %><br />
+    <%= f.text_field :care_time %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :close_date, "休診日" %><br />
+    <%= f.text_field :close_date %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :acces, "アクセス方法" %><br />
+    <%= f.text_field :acces %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :url, "WebサイトURL" %><br />
+    <%= f.text_field :url %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :director_word, "ひとこと" %><br />
+    <%= f.text_field :director_word %>
+  </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -26,13 +81,8 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "プロフィール更新" %>
   </div>
 <% end %>
 

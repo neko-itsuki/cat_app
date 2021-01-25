@@ -21,4 +21,17 @@ class Center < ApplicationRecord
   validates_acceptance_of :release, allow_nil: false, on: :create
   validates_acceptance_of :listok, allow_nil: false, on: :create
   
+  def update_without_current_password(params, *options)
+    params.delete(:current_password)
+
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+
+    result = update_attributes(params, *options)
+    clean_up_passwords
+    result
+  end
+  
 end

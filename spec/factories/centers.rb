@@ -1,11 +1,11 @@
 FactoryBot.define do
   factory :center do
-    name { Gimei.kanji }
-    furigana_name { Gimei.hiragana }
+    name { '動物保護センター' }
+    furigana_name { 'どうぶつほごせんたー' }
     email { Faker::Internet.email }
     password { 'password' }
     password_confirmation { 'password' }
-    director_name { '動物保護センター' }
+    director_name { Gimei.kanji }
     staff_name { Gimei.kanji }
     street_address { Gimei.address }
     tel { "0#{rand(7..9)}0#{rand(1_000_000..99_999_999)}" }

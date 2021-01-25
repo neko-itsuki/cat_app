@@ -45,6 +45,18 @@ class Devise::Centers::RegistrationsController < Devise::RegistrationsController
       devise_parameter_sanitizer.permit(:sign_up, 
           keys: [:name, :furigana_name, :director_name, :staff_name, :street_address,
                  :tel, :approval, :release, :listok])
+    
+      devise_parameter_sanitizer.permit(:account_update,
+          keys: [:name, :furigana_name, :director_name, :staff_name, :street_address,
+                :tel, :care_time, :close_date, :acces, :url, :director_word])
+    end
+    
+    def update_resource(resource, params)
+      resource.update_without_password(params)
+    end
+    
+    def after_update_path_for(resource)
+      center_path(current_center)
     end
 
   # If you have extra params to permit, append them to the sanitizer.

@@ -35,8 +35,8 @@ ja:
         animal_image: お写真
         reason: 飼えなくなった理由
       center:
-        name: 名前
-        furigana_name: ふりがな
+        name: 病院名
+        furigana_name: 病院名（ふりがな）
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認
