@@ -5,6 +5,7 @@ class Center < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :cats, dependent: :destroy
+  has_many :dogs, dependent: :destroy
   
   validates :name, presence: true,
                    length: { maximum: 25 }

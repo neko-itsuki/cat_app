@@ -5,6 +5,7 @@ ja:
       foster_parent_recruiter: 里親募集者
       center: 動物保護施設
       cat: 保護猫
+      dog: 保護犬
     attributes:
       user:
         name: 名前
@@ -66,4 +67,21 @@ ja:
         cat_personality: 性格 
         cat_history_of_protection: 保護された経緯 
         cat_remarks: 備考 
-        cat_center_information: 動物病院情報 
+        cat_center_information: 動物病院情報
+      dog:
+        dog_name: 名前
+        dog_type: 種類
+        dog_gender: 性別
+        dog_age: 年齢 
+        dog_weight: 体重 
+        dog_coat_color: 毛色 
+        dog_contraceptive_castrated: 避妊・去勢
+        dog_microchip: マイクロチップ 
+        dog_vaccination: ワクチン接種
+        dog_one_thing: ひとこと 
+        dog_health: 健康状態 
+        dog_personality: 性格 
+        dog_history_of_protection: 保護された経緯 
+        dog_remarks: 備考 
+        dog_center_information: 動物病院情報
+        

@@ -1,6 +1,8 @@
 class CreateCats < ActiveRecord::Migration[6.0]
   def change
     create_table :cats do |t|
+      t.references :center, null: false, foreign_key: true
+      
       t.string :cat_name, null: false
       t.string :cat_type, null: false
       t.boolean :cat_gender, null: false
@@ -17,8 +19,6 @@ class CreateCats < ActiveRecord::Migration[6.0]
       t.text :cat_remarks
       t.text :cat_center_information, null: false
       
-      t.references :center, null: false, foreign_key: true
-
       t.timestamps
     end
     add_index :cats, [:center_id, :created_at]

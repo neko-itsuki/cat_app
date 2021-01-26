@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_20_055907) do
+ActiveRecord::Schema.define(version: 2021_01_25_111507) do
 
   create_table "cats", force: :cascade do |t|
+    t.integer "center_id", null: false
     t.string "cat_name", null: false
     t.string "cat_type", null: false
     t.boolean "cat_gender", null: false
@@ -28,7 +29,6 @@ ActiveRecord::Schema.define(version: 2021_01_20_055907) do
     t.text "cat_history_of_protection", null: false
     t.text "cat_remarks"
     t.text "cat_center_information", null: false
-    t.integer "center_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["center_id", "created_at"], name: "index_cats_on_center_id_and_created_at"
@@ -56,6 +56,29 @@ ActiveRecord::Schema.define(version: 2021_01_20_055907) do
     t.text "director_word"
     t.index ["email"], name: "index_centers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_centers_on_reset_password_token", unique: true
+  end
+
+  create_table "dogs", force: :cascade do |t|
+    t.integer "center_id", null: false
+    t.string "dog_name", null: false
+    t.string "dog_type", null: false
+    t.boolean "dog_gender", null: false
+    t.string "dog_age", null: false
+    t.string "dog_weight", null: false
+    t.string "dog_coat_color", null: false
+    t.boolean "dog_contraceptive_castrated", null: false
+    t.boolean "dog_microchip", null: false
+    t.boolean "dog_vaccination", null: false
+    t.text "dog_one_thing", null: false
+    t.text "dog_health", null: false
+    t.text "dog_personality", null: false
+    t.text "dog_history_of_protection", null: false
+    t.text "dog_remarks"
+    t.text "dog_center_information", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["center_id", "created_at"], name: "index_dogs_on_center_id_and_created_at"
+    t.index ["center_id"], name: "index_dogs_on_center_id"
   end
 
   create_table "foster_parent_recruiters", force: :cascade do |t|
@@ -102,4 +125,5 @@ ActiveRecord::Schema.define(version: 2021_01_20_055907) do
   end
 
   add_foreign_key "cats", "centers"
+  add_foreign_key "dogs", "centers"
 end

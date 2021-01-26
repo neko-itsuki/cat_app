@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<% provide(:title, "Dogs") %>
+
+<ul class="dogs">
+  <%= render @dogs %>
+</ul>
+<%= paginate @dogs %>
+<br>
+
+<%= link_to 'New Dog', new_dog_path %>

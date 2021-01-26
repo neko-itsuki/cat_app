@@ -34,6 +34,7 @@ RSpec.describe Center, type: :model do
     it { expect(center.tel).to match(VALID_CENTER_TEL_REGEX) }
     
     it { is_expected.to have_many(:cats).dependent(:destroy) }
+    it { is_expected.to have_many(:dogs).dependent(:destroy) }
   end
 
   describe "メールアドレスの有効性" do
