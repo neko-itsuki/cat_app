@@ -1,7 +1,8 @@
 class DogsController < ApplicationController
   
-  before_action :center_signed_in?, only: [:create, :destroy, :edit, :update]
-  before_action :correct_center, only: :destroy
+  before_action :authenticate_center!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :logged_in_center, only: [:new, :create, :destroy, :edit, :update]
+  before_action :correct_center, only: [:edit, :update, :destroy]
   
   def index
     @dogs = Dog.page(params[:page]).per(5)
@@ -12,9 +13,6 @@ class DogsController < ApplicationController
   end
   
   def new
-    if !center_signed_in?
-      redirect_to root_path
-    end
     @dog = Dog.new
   end
   
@@ -23,7 +21,7 @@ class DogsController < ApplicationController
     # @dog.image.attach(params[:dog][:image])
     if @dog.save
       flash[:success] = "#{@dog.dog_name}の投稿を作成しました"
-      redirect_to root_url
+      redirect_to @dog
     else
       render 'new'
     end
@@ -58,9 +56,13 @@ class DogsController < ApplicationController
                         :dog_history_of_protection, :dog_remarks, :dog_center_information)
     end
     
+    def logged_in_center
+      render template: "devise/centers/sessions/new" if !center_signed_in?
+    end
+    
     def correct_center
-      @dog = current_center.cats.find_by(id: params[:id])
-      redirect_to root_url if @dog.nil?
+      @dog = current_center.dogs.find_by(id: params[:id])
+      redirect_to center_path(current_center) if @dog.nil?
     end
   
 end

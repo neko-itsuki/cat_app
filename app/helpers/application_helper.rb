@@ -45,8 +45,8 @@ module ApplicationHelper
     end
   end
   
-  def cat_request
-    if current_page?(new_cat_path)
+  def animal_request
+    if current_page?(new_cat_path) || current_page?(new_dog_path)
       "新規投稿"
     else
       "プロフィール更新"

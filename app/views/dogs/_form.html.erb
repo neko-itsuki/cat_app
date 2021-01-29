@@ -1,7 +1,7 @@
-<%= form_with(model: dog, local: true) do |form| %>
+<%= form_with(model: dog, local: true) do |f| %>
   <% if dog.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(dog.errors.count, "error") %> prohibited this dog from being saved:</h2>
+      <h2><%= pluralize(dog.errors.count, "件のエラーが発生したため 保護猫 は保存されませんでした:") %></h2>
 
       <ul>
         <% dog.errors.full_messages.each do |message| %>
@@ -41,7 +41,7 @@
     <%= f.text_field :dog_coat_color %>
   </div>
   
-  <div class="field">
+  <div class="field dog_contraceptive_castrated">
     避妊・去勢
     <%= f.label :dog_contraceptive_castrated, "済", value: 1 %><br />
     <%= f.radio_button :dog_contraceptive_castrated, "1" %>
@@ -49,7 +49,7 @@
     <%= f.radio_button :dog_contraceptive_castrated, "0" %>
   </div>
   
-  <div class="field">
+  <div class="field dog_microchip">
     マイクロチップ
     <%= f.label :dog_microchip, "済", value: 1 %><br />
     <%= f.radio_button :dog_microchip, "1" %>
@@ -57,7 +57,7 @@
     <%= f.radio_button :dog_microchip, "0" %>
   </div>
   
-  <div class="field">
+  <div class="field dog_vaccination">
     ワクチン接種
     <%= f.label :dog_vaccination, "済", value: 1 %><br />
     <%= f.radio_button :dog_vaccination, "1" %>
@@ -96,6 +96,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit animal_request %>
   </div>
 <% end %>

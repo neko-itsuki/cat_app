@@ -1,7 +1,7 @@
 class CatsController < ApplicationController
   
   before_action :authenticate_center!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :logged_in_center, only: [:new, :create, :edit, :update, :destroy]
   before_action :correct_center, only: [:edit, :update, :destroy]
   
   def index
@@ -56,7 +56,8 @@ class CatsController < ApplicationController
                         :cat_vaccination, :cat_one_thing, :cat_health, :cat_personality,
                         :cat_history_of_protection, :cat_remarks, :cat_center_information)
     end
-    def logged_in_user
+    
+    def logged_in_center
       render template: "devise/centers/sessions/new" if !center_signed_in?
     end
     
