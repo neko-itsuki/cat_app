@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :dog do
-    association :center
     dog_name { Faker::Creature::Dog.name }
     dog_type { 'シー・ズー' }
     dog_gender { 'オス' or 'メス' }

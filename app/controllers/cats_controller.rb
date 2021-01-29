@@ -1,7 +1,8 @@
 class CatsController < ApplicationController
   
-  before_action :center_signed_in?, only: [:create, :destroy, :edit, :update]
-  before_action :correct_center, only: :destroy
+  before_action :authenticate_center!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :correct_center, only: [:edit, :update, :destroy]
   
   def index
     @cats = Cat.page(params[:page]).per(5)
@@ -12,9 +13,6 @@ class CatsController < ApplicationController
   end
   
   def new
-    if !center_signed_in?
-      redirect_to root_path
-    end
     @cat = Cat.new
   end
   
@@ -23,7 +21,7 @@ class CatsController < ApplicationController
     # @cat.image.attach(params[:cat][:image])
     if @cat.save
       flash[:success] = "#{@cat.cat_name}の投稿を作成しました"
-      redirect_to root_url
+      redirect_to @cat
     else
       render 'new'
     end
@@ -34,6 +32,7 @@ class CatsController < ApplicationController
   end
   
   def update
+    @cat = Cat.find(params[:id])
     if @cat.update(cat_params)
       flash[:success] = "#{@cat.cat_name}のプロフィールを更新しました"
       redirect_to @cat
@@ -57,10 +56,13 @@ class CatsController < ApplicationController
                         :cat_vaccination, :cat_one_thing, :cat_health, :cat_personality,
                         :cat_history_of_protection, :cat_remarks, :cat_center_information)
     end
+    def logged_in_user
+      render template: "devise/centers/sessions/new" if !center_signed_in?
+    end
     
     def correct_center
       @cat = current_center.cats.find_by(id: params[:id])
-      redirect_to root_url if @cat.nil?
+      redirect_to center_path(current_center) if @cat.nil?
     end
-  
+    
 end

@@ -44,7 +44,8 @@ class Devise::Centers::RegistrationsController < Devise::RegistrationsController
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, 
           keys: [:name, :furigana_name, :director_name, :staff_name, :street_address,
-                 :tel, :approval, :release, :listok])
+                 :tel, :approval, :release, :listok, :care_time, :close_date, :acces, 
+                 :url, :director_word])
     
       devise_parameter_sanitizer.permit(:account_update,
           keys: [:name, :furigana_name, :director_name, :staff_name, :street_address,

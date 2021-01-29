@@ -1,7 +1,7 @@
 <%= form_with(model: cat, local: true) do |f| %>
   <% if cat.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(cat.errors.count, "error") %> prohibited this cat from being saved:</h2>
+      <h2><%= pluralize(cat.errors.count, "件のエラーが発生したため 保護猫 は保存されませんでした:") %></h2>
 
       <ul>
         <% cat.errors.full_messages.each do |message| %>
@@ -41,7 +41,7 @@
     <%= f.text_field :cat_coat_color %>
   </div>
   
-  <div class="field">
+  <div class="field cat_contraceptive_castrated">
     避妊・去勢
     <%= f.label :cat_contraceptive_castrated, "済", value: 1 %><br />
     <%= f.radio_button :cat_contraceptive_castrated, "1" %>
@@ -49,7 +49,7 @@
     <%= f.radio_button :cat_contraceptive_castrated, "0" %>
   </div>
   
-  <div class="field">
+  <div class="field cat_microchip">
     マイクロチップ
     <%= f.label :cat_microchip, "済", value: 1 %><br />
     <%= f.radio_button :cat_microchip, "1" %>
@@ -57,7 +57,7 @@
     <%= f.radio_button :cat_microchip, "0" %>
   </div>
   
-  <div class="field">
+  <div class="field cat_vaccination">
     ワクチン接種
     <%= f.label :cat_vaccination, "済", value: 1 %><br />
     <%= f.radio_button :cat_vaccination, "1" %>
@@ -96,6 +96,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit cat_request %>
   </div>
 <% end %>

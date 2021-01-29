@@ -11,6 +11,9 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
       <h1><%= yield(:title) %></h1>
       <%= yield %>
       <%= render 'layouts/footer' %>

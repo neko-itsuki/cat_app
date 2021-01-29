@@ -45,4 +45,12 @@ module ApplicationHelper
     end
   end
   
+  def cat_request
+    if current_page?(new_cat_path)
+      "新規投稿"
+    else
+      "プロフィール更新"
+    end
+  end
+  
 end
