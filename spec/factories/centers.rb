@@ -7,7 +7,11 @@ FactoryBot.define do
     password_confirmation { 'password' }
     director_name { Gimei.kanji }
     staff_name { Gimei.kanji }
-    street_address { Gimei.address }
+    postcode { '1001000' }
+    prefecture_code { '東京都' }
+    address_city { '市区町村' }
+    address_street { '番地' }
+    address_building { '建物' }
     tel { "0#{rand(7..9)}0#{rand(1_000_000..99_999_999)}" }
     care_time { '午前9：00〜12：00、午後14：00〜17：00' }
     close_date { '水、日、祝日' }

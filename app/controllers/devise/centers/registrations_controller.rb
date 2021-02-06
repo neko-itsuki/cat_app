@@ -43,13 +43,15 @@ class Devise::Centers::RegistrationsController < Devise::RegistrationsController
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, 
-          keys: [:name, :furigana_name, :director_name, :staff_name, :street_address,
+          keys: [:name, :furigana_name, :director_name, :staff_name, :postcode,
+                 :prefecture_code, :address_city, :address_street, :address_building,
                  :tel, :approval, :release, :listok, :care_time, :close_date, :acces, 
                  :url, :director_word])
     
       devise_parameter_sanitizer.permit(:account_update,
-          keys: [:name, :furigana_name, :director_name, :staff_name, :street_address,
-                :tel, :care_time, :close_date, :acces, :url, :director_word])
+          keys: [:name, :furigana_name, :director_name, :staff_name, :postcode,
+                 :prefecture_code, :address_city, :address_street, :address_building,
+                 :tel, :care_time, :close_date, :acces, :url, :director_word])
     end
     
     def update_resource(resource, params)

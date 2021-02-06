@@ -11,11 +11,6 @@ gem 'webpacker',  '4.0.7'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.5', require: false
-gem 'devise'
-gem 'devise-i18n'
-gem 'devise-i18n-views'
-gem 'kaminari'
-gem 'rails-i18n'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
@@ -51,3 +46,11 @@ end
 
 # Windows ではタイムゾーン情報用の tzinfo-data gem を含める必要があります
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'kaminari'
+gem 'rails-i18n'
+gem 'jquery-rails'
+gem 'jp_prefecture'

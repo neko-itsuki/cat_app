@@ -37,7 +37,11 @@ RSpec.describe "Users", type: :system do
         fill_in 'user[name]', with: Gimei.kanji
         fill_in 'user[furigana_name]', with: Gimei.hiragana
         fill_in 'user[age]', with: Faker::Number.within(range: 18..64)
-        # fill_in 'user[street_address]', 
+        fill_in 'user[postcode]', with: '1001000'
+        select '東京都', from: 'user[prefecture_code]'
+        fill_in 'user[address_city]', with: '市区町村'
+        fill_in 'user[address_street]', with: '番地'
+        fill_in 'user[address_building]', with: '建物'
         fill_in 'user[tel]', with: "08012345678"
         click_on 'プロフィール更新'
         expect(page).to have_content 'アカウント情報を変更しました。'
@@ -50,7 +54,11 @@ RSpec.describe "Users", type: :system do
         fill_in 'user[name]', with: Gimei.kanji
         fill_in 'user[furigana_name]', with: Gimei.hiragana
         fill_in 'user[age]', with: Faker::Number.within(range: 18..64)
-        # fill_in 'user[street_address]', 
+        fill_in 'user[postcode]', with: '1001000'
+        select '東京都', from: 'user[prefecture_code]'
+        fill_in 'user[address_city]', with: '市区町村'
+        fill_in 'user[address_street]', with: '番地'
+        fill_in 'user[address_building]', with: '建物'
         fill_in 'user[tel]', with: "08012345678"
         click_on 'プロフィール更新'
         expect(page).to have_content 'メールアドレスを入力してください'

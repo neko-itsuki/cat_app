@@ -11,7 +11,9 @@
   <% else %>
     <li>女</li>
   <% end %>
-  <li><%= @user.street_address %></li>
+  <li><%= @user.postcode %><%= @user.prefecture_code %>
+      <%= @user.address_city %><%= @user.address_street %>
+      <%= @user.address_building %></li>
   <li><%= @user.tel %></li>
 </ul>
 

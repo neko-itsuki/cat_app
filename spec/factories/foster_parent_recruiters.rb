@@ -7,7 +7,11 @@ FactoryBot.define do
     password_confirmation { 'password' }
     age { Faker::Number.within(range: 18..99) }
     gender { '男' or '女' }
-    street_address { Gimei.address }
+    postcode { '1001000' }
+    prefecture_code { '東京都' }
+    address_city { '市区町村' }
+    address_street { '番地' }
+    address_building { '建物' }
     tel { "0#{rand(7..9)}0#{rand(1_000_000..99_999_999)}" }
     tel_time { rand(1..5) }
     animal_type { '雑種' }

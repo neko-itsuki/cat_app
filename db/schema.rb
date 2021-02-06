@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_111507) do
+ActiveRecord::Schema.define(version: 2021_02_06_091400) do
 
   create_table "cats", force: :cascade do |t|
     t.integer "center_id", null: false
@@ -47,13 +47,17 @@ ActiveRecord::Schema.define(version: 2021_01_25_111507) do
     t.string "furigana_name", null: false
     t.string "director_name", null: false
     t.string "staff_name", null: false
-    t.string "street_address", null: false
     t.string "tel", null: false
     t.string "care_time"
     t.string "close_date"
     t.string "acces"
     t.string "url"
     t.text "director_word"
+    t.integer "postcode", null: false
+    t.integer "prefecture_code", null: false
+    t.string "address_city", null: false
+    t.string "address_street", null: false
+    t.string "address_building"
     t.index ["email"], name: "index_centers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_centers_on_reset_password_token", unique: true
   end
@@ -93,7 +97,6 @@ ActiveRecord::Schema.define(version: 2021_01_25_111507) do
     t.string "furigana_name", null: false
     t.integer "age", null: false
     t.boolean "gender", null: false
-    t.string "street_address", null: false
     t.string "tel", null: false
     t.string "tel_time"
     t.string "animal_type", null: false
@@ -101,6 +104,11 @@ ActiveRecord::Schema.define(version: 2021_01_25_111507) do
     t.string "animal_age", null: false
     t.string "animal_image", null: false
     t.string "reason", null: false
+    t.integer "postcode", null: false
+    t.integer "prefecture_code", null: false
+    t.string "address_city", null: false
+    t.string "address_street", null: false
+    t.string "address_building"
     t.index ["email"], name: "index_foster_parent_recruiters_on_email", unique: true
     t.index ["reset_password_token"], name: "index_foster_parent_recruiters_on_reset_password_token", unique: true
   end
@@ -115,11 +123,15 @@ ActiveRecord::Schema.define(version: 2021_01_25_111507) do
     t.string "furigana_name", null: false
     t.integer "age", null: false
     t.boolean "gender", null: false
-    t.string "street_address", null: false
     t.string "tel", null: false
     t.boolean "pets_allowed"
     t.boolean "living"
     t.boolean "vaccination"
+    t.integer "postcode", null: false
+    t.integer "prefecture_code", null: false
+    t.string "address_city", null: false
+    t.string "address_street", null: false
+    t.string "address_building"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

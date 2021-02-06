@@ -19,7 +19,11 @@ RSpec.describe 'Devise', type: :system do
         fill_in 'user[furigana_name]', with: Gimei.hiragana
         fill_in 'user[age]', with: Faker::Number.within(range: 18..64)
         choose '男' or '女'
-        # fill_in 'user[street_address]', 
+        fill_in 'user[postcode]', with: '1001000'
+        select '東京都', from: 'user[prefecture_code]'
+        fill_in 'user[address_city]', with: '市区町村'
+        fill_in 'user[address_street]', with: '番地'
+        fill_in 'user[address_building]', with: '建物'
         fill_in 'user[tel]', with: "08012345678"
         check '犬・猫可住宅にお住まいですか？'
         check '生計を立てる収入はございますか？'
@@ -35,7 +39,11 @@ RSpec.describe 'Devise', type: :system do
         fill_in 'user[name]', with: ''
         fill_in 'user[furigana_name]', with:''
         fill_in 'user[age]', with: ''
-        # fill_in 'user[street_address]', 
+        fill_in 'user[postcode]', with: '1001000'
+        select '東京都', from: 'user[prefecture_code]'
+        fill_in 'user[address_city]', with: '市区町村'
+        fill_in 'user[address_street]', with: '番地'
+        fill_in 'user[address_building]', with: '建物'
         fill_in 'user[tel]', with: ''
         uncheck '犬・猫可住宅にお住まいですか？'
         uncheck '生計を立てる収入はございますか？'
@@ -120,7 +128,11 @@ RSpec.describe 'Devise', type: :system do
         fill_in 'foster_parent_recruiter[furigana_name]', with: Gimei.hiragana
         fill_in 'foster_parent_recruiter[age]', with: Faker::Number.within(range: 18..64)
         choose '男' or '女'
-        # fill_in 'foster_parent_recruiter[street_address]', 
+        fill_in 'foster_parent_recruiter[postcode]', with: '1001000'
+        select '東京都', from: 'foster_parent_recruiter[prefecture_code]'
+        fill_in 'foster_parent_recruiter[address_city]', with: '市区町村'
+        fill_in 'foster_parent_recruiter[address_street]', with: '番地'
+        fill_in 'foster_parent_recruiter[address_building]', with: '建物'
         fill_in 'foster_parent_recruiter[tel]', with: "08012345678"
         select '10:00〜12:00' or '12:00〜14:00' or '14:00〜16:00' or '16:00〜18:00' or '18:00〜20:00'
         # 犬・猫について
@@ -140,7 +152,11 @@ RSpec.describe 'Devise', type: :system do
         fill_in 'foster_parent_recruiter[name]', with: ''
         fill_in 'foster_parent_recruiter[furigana_name]', with: ''
         fill_in 'foster_parent_recruiter[age]', with: ''
-        # fill_in 'foster_parent_recruiter[street_address]', 
+        fill_in 'foster_parent_recruiter[postcode]', with: '1001000'
+        select '東京都', from: 'foster_parent_recruiter[prefecture_code]'
+        fill_in 'foster_parent_recruiter[address_city]', with: '市区町村'
+        fill_in 'foster_parent_recruiter[address_street]', with: '番地'
+        fill_in 'foster_parent_recruiter[address_building]', with: '建物' 
         fill_in 'foster_parent_recruiter[tel]', with: ""
         # 犬・猫について
         fill_in 'foster_parent_recruiter[animal_type]', with: ""
@@ -223,7 +239,11 @@ RSpec.describe 'Devise', type: :system do
         fill_in 'center[furigana_name]', with: Gimei.hiragana
         fill_in 'center[director_name]', with: Gimei.kanji
         fill_in 'center[staff_name]', with: Gimei.kanji
-        # fill_in 'center[street_address]',
+        fill_in 'center[postcode]', with: '1001000'
+        select '東京都', from: 'center[prefecture_code]'
+        fill_in 'center[address_city]', with: '市区町村'
+        fill_in 'center[address_street]', with: '番地'
+        fill_in 'center[address_building]', with: '建物'
         fill_in 'center[tel]', with: "08012345678"
         check 'この企画に賛同していただけますか？'
         check '病院の情報をホームページに公開してよろしいですか？'
@@ -240,7 +260,11 @@ RSpec.describe 'Devise', type: :system do
         fill_in 'center[furigana_name]', with: ''
         fill_in 'center[director_name]', with: ''
         fill_in 'center[staff_name]', with: ''
-        # fill_in 'center[street_address]',
+        fill_in 'center[postcode]', with: '1001000'
+        select '東京都', from: 'center[prefecture_code]'
+        fill_in 'center[address_city]', with: '市区町村'
+        fill_in 'center[address_street]', with: '番地'
+        fill_in 'center[address_building]', with: '建物'
         fill_in 'center[tel]', with: ''
         uncheck 'この企画に賛同していただけますか？'
         uncheck '病院の情報をホームページに公開してよろしいですか？'

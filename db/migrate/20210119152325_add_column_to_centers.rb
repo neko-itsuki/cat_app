@@ -4,7 +4,6 @@ class AddColumnToCenters < ActiveRecord::Migration[6.0]
     add_column :centers, :furigana_name, :string, null: false
     add_column :centers, :director_name, :string, null: false
     add_column :centers, :staff_name, :string, null: false
-    add_column :centers, :street_address, :string, null: false
     add_column :centers, :tel, :string, null: false
     add_column :centers, :care_time, :string
     add_column :centers, :close_date, :string

@@ -43,14 +43,16 @@ class Devise::FosterParentRecruiters::RegistrationsController < Devise::Registra
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, 
-          keys: [:name, :furigana_name, :age, :gender, :street_address,
-                 :tel, :tel_time, :animal_type, :animal_gender,
-                 :animal_age, :animal_image, :reason])
+          keys: [:name, :furigana_name, :age, :gender, :postcode,
+                 :prefecture_code, :address_city, :address_street,
+                 :address_building, :tel, :tel_time, :animal_type,
+                 :animal_gender, :animal_age, :animal_image, :reason])
       
       devise_parameter_sanitizer.permit(:account_update,
-          keys: [:name, :furigana_name, :age, :street_address,
-                :tel, :tel_time, :animal_type, :animal_gender,
-                :animal_age, :animal_image, :reason])
+          keys: [:name, :furigana_name, :age, :postcode,
+                 :prefecture_code, :address_city, :address_street,
+                 :address_building, :tel, :tel_time, :animal_type,
+                 :animal_gender, :animal_age, :animal_image, :reason])
     end
     
     def update_resource(resource, params)

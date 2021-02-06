@@ -26,6 +26,11 @@ RSpec.describe User, type: :model do
     
     it { is_expected.to validate_numericality_of(:age).is_greater_than_or_equal_to(18).is_less_than(65) }
     
+    it { is_expected.to validate_presence_of :postcode }
+    it { is_expected.to validate_presence_of :prefecture_code }
+    it { is_expected.to validate_presence_of :address_city }
+    it { is_expected.to validate_presence_of :address_street }
+    
     VALID_TEL_REGEX = /\A0(\d{1}\d{4}|\d{2}\d{3}|\d{3}\d{2}|\d{4}\d{1})\d{4}\z|\A0[789]0\d{4}\d{4}\z/
     it { expect(user.tel).to match(VALID_TEL_REGEX) }
   

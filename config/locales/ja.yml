@@ -15,7 +15,11 @@ ja:
         password_confirmation: パスワード確認
         age: 年齢
         gender: 性別
-        street_address: 住所
+        postcode: 郵便番号
+        prefecture_code: 都道府県
+        address_city: 市区町村
+        address_street: 番地
+        address_building: 建物
         tel: 電話番号
         pets_allowed: "[犬・猫可住宅にお住まいですか？]確認事項"
         living: "[生計を立てる収入はございますか？]確認事項"
@@ -28,7 +32,11 @@ ja:
         password_confirmation: パスワード確認
         age: 年齢
         gender: 性別
-        street_address: 住所
+        postcode: 郵便番号
+        prefecture_code: 都道府県
+        address_city: 市区町村
+        address_street: 番地
+        address_building: 建物
         tel: 電話番号
         animal_type: 犬種・猫種
         animal_gender: 性別（犬・猫）
@@ -43,7 +51,11 @@ ja:
         password_confirmation: パスワード確認
         director_name: 院長名
         staff_name: 担当者名
-        street_address: 住所
+        postcode: 郵便番号
+        prefecture_code: 都道府県
+        address_city: 市区町村
+        address_street: 番地
+        address_building: 建物
         tel: 電話番号
         approval: "[この企画に賛同していただけますか？]確認事項"
         release: "[病院の情報をホームページに公開してよろしいですか？]確認事項"

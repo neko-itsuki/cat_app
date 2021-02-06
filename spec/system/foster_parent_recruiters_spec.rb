@@ -37,7 +37,11 @@ RSpec.describe "FosterParentRecruiters", type: :system do
         fill_in 'foster_parent_recruiter[name]', with: "佐藤希望"
         fill_in 'foster_parent_recruiter[furigana_name]', with: Gimei.hiragana
         fill_in 'foster_parent_recruiter[age]', with: Faker::Number.within(range: 18..64)
-        # fill_in 'foster_parent_recruiter[street_address]', 
+        fill_in 'foster_parent_recruiter[postcode]', with: '1001000'
+        select '東京都', from: 'foster_parent_recruiter[prefecture_code]'
+        fill_in 'foster_parent_recruiter[address_city]', with: '市区町村'
+        fill_in 'foster_parent_recruiter[address_street]', with: '番地'
+        fill_in 'foster_parent_recruiter[address_building]', with: '建物' 
         fill_in 'foster_parent_recruiter[tel]', with: "08012345678"
         select '10:00〜12:00' or '12:00〜14:00' or '14:00〜16:00' or '16:00〜18:00' or '18:00〜20:00'
         # 犬・猫について
@@ -57,7 +61,11 @@ RSpec.describe "FosterParentRecruiters", type: :system do
         fill_in 'foster_parent_recruiter[name]', with: Gimei.kanji
         fill_in 'foster_parent_recruiter[furigana_name]', with: Gimei.hiragana
         fill_in 'foster_parent_recruiter[age]', with: Faker::Number.within(range: 18..64)
-        # fill_in 'foster_parent_recruiter[street_address]', 
+        fill_in 'foster_parent_recruiter[postcode]', with: '1001000'
+        select '東京都', from: 'foster_parent_recruiter[prefecture_code]'
+        fill_in 'foster_parent_recruiter[address_city]', with: '市区町村'
+        fill_in 'foster_parent_recruiter[address_street]', with: '番地'
+        fill_in 'foster_parent_recruiter[address_building]', with: '建物'
         fill_in 'foster_parent_recruiter[tel]', with: "08012345678"
         select '10:00〜12:00' or '12:00〜14:00' or '14:00〜16:00' or '16:00〜18:00' or '18:00〜20:00'
         # 犬・猫について

@@ -48,7 +48,11 @@ RSpec.describe "Centers", type: :system do
         fill_in 'center[furigana_name]', with: 'どうぶつほごせんたー'
         fill_in 'center[director_name]', with: Gimei.kanji
         fill_in 'center[staff_name]', with: Gimei.kanji
-        # fill_in 'center[street_address]', 
+        fill_in 'center[postcode]', with: '1001000'
+        select '東京都', from: 'center[prefecture_code]'
+        fill_in 'center[address_city]', with: '市区町村'
+        fill_in 'center[address_street]', with: '番地'
+        fill_in 'center[address_building]', with: '建物'
         fill_in 'center[tel]', with: "08012345678"
         fill_in 'center[care_time]', with: '午前9：00〜12：00、午後14：00〜17：00'
         fill_in 'center[close_date]', with: '水、日、祝日'
@@ -67,7 +71,11 @@ RSpec.describe "Centers", type: :system do
         fill_in 'center[furigana_name]', with: 'どうぶつほごせんたー'
         fill_in 'center[director_name]', with: Gimei.kanji
         fill_in 'center[staff_name]', with: Gimei.kanji
-        # fill_in 'center[street_address]', 
+        fill_in 'center[postcode]', with: '1001000'
+        select '東京都', from: 'center[prefecture_code]'
+        fill_in 'center[address_city]', with: '市区町村'
+        fill_in 'center[address_street]', with: '番地'
+        fill_in 'center[address_building]', with: '建物'
         fill_in 'center[tel]', with: "08012345678"
         fill_in 'center[care_time]', with: '午前9：00〜12：00、午後14：00〜17：00'
         fill_in 'center[close_date]', with: '水、日、祝日'
