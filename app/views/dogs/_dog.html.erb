@@ -1,3 +1,4 @@
 <li><%= link_to dog.dog_name, dog %></li>
+<%= attachment_image_tag dog, :dog_image, format: 'jpeg', size: "100x100" %>
 <li><%= link_to 'Edit', edit_dog_path(dog) %></li>
 <li><%= link_to 'Destroy', dog_path(dog), method: :delete, data: { confirm: 'Are you sure?' } %></li>

@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h2><%= @dog.dog_name %></h2>
+<%= attachment_image_tag @dog, :dog_image, format: 'jpg', size: "100x100" %>
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
 <%= link_to 'Back', dogs_path %>

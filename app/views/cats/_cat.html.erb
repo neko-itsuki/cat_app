@@ -1,3 +1,4 @@
 <li><%= link_to cat.cat_name, cat %></li>
+<%= attachment_image_tag cat, :cat_image, format: 'jpeg', size: "100x100" %>
 <li><%= link_to 'Edit', edit_cat_path(cat) %></li>
 <li><%= link_to 'Destroy', cat_path(cat), method: :delete, data: { confirm: 'Are you sure?' } %></li>

@@ -1,6 +1,8 @@
 class Cat < ApplicationRecord
   belongs_to :center
   
+  attachment :cat_image
+  
   validates :cat_name, presence: true,
                    length: { maximum: 10 }
   validates :cat_type, presence: true

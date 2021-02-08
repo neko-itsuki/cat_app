@@ -1,6 +1,8 @@
 class Dog < ApplicationRecord
   belongs_to :center
   
+  attachment :dog_image
+  
   validates :dog_name, presence: true,
                    length: { maximum: 10 }
   validates :dog_type, presence: true

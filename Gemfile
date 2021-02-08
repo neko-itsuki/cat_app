@@ -54,3 +54,5 @@ gem 'kaminari'
 gem 'rails-i18n'
 gem 'jquery-rails'
 gem 'jp_prefecture'
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"

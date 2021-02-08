@@ -41,6 +41,11 @@
     <%= f.text_field :cat_coat_color %>
   </div>
   
+  <div class="field">
+    <%= f.label :cat_image, "お写真" %><br />
+    <%= f.attachment_field :cat_image %>
+  </div>
+  
   <div class="field cat_contraceptive_castrated">
     避妊・去勢
     <%= f.label :cat_contraceptive_castrated, "済", value: 1 %><br />

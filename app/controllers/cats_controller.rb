@@ -52,7 +52,7 @@ class CatsController < ApplicationController
     
     def cat_params
       params.require(:cat).permit(:cat_name, :cat_type, :cat_gender, :cat_age, :cat_weight,
-                        :cat_coat_color, :cat_contraceptive_castrated, :cat_microchip,
+                        :cat_coat_color, :cat_image, :cat_contraceptive_castrated, :cat_microchip,
                         :cat_vaccination, :cat_one_thing, :cat_health, :cat_personality,
                         :cat_history_of_protection, :cat_remarks, :cat_center_information)
     end
