@@ -7,6 +7,7 @@ FactoryBot.define do
     cat_age { Faker::Number.within(range: 1..18) }
     cat_weight { "#{rand(2..5)}kg" }
     cat_coat_color { 'キジ' }
+    cat_image_id { Faker::Lorem.characters(number: 10) }
     cat_contraceptive_castrated { '済' or '無' }
     cat_microchip { '済' or '無' }
     cat_vaccination { '済' or '無' }

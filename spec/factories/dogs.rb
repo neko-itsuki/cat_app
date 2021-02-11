@@ -7,6 +7,7 @@ FactoryBot.define do
     dog_age { Faker::Number.within(range: 1..18) }
     dog_weight {"#{rand(2..7)}kg"  }
     dog_coat_color { 'ホワイト&ゴールド' }
+    dog_image_id { Faker::Lorem.characters(number: 10) }
     dog_contraceptive_castrated { '済' or '無' }
     dog_microchip { '済' or '無' }
     dog_vaccination { '済' or '無' }

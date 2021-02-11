@@ -18,6 +18,7 @@ RSpec.describe "CenterDog", type: :system do
         fill_in 'dog[dog_age]', with: Faker::Number.within(range: 1..18)
         fill_in 'dog[dog_weight]', with: "#{rand(2..5)}kg"
         fill_in 'dog[dog_coat_color]', with: 'キジ'
+        attach_file 'dog[dog_image]', "app/assets/images/pickup_logo.gif"
         within '.dog_contraceptive_castrated' do choose '済' end
         within '.dog_microchip' do choose '済' end
         within '.dog_vaccination' do choose '済' end

@@ -18,6 +18,7 @@ RSpec.describe "CenterCat", type: :system do
         fill_in 'cat[cat_age]', with: Faker::Number.within(range: 1..18)
         fill_in 'cat[cat_weight]', with: "#{rand(2..5)}kg"
         fill_in 'cat[cat_coat_color]', with: 'キジ'
+        attach_file 'cat[cat_image]', "app/assets/images/pickup_logo.gif"
         within '.cat_contraceptive_castrated' do choose '済' end
         within '.cat_microchip' do choose '済' end
         within '.cat_vaccination' do choose '済' end

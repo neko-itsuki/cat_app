@@ -161,6 +161,7 @@ RSpec.describe 'Devise', type: :system do
         # 犬・猫について
         fill_in 'foster_parent_recruiter[animal_type]', with: ""
         fill_in 'foster_parent_recruiter[animal_age]', with: ''
+        attach_file 'foster_parent_recruiter[animal_image]', "app/assets/images/pickup_logo.gif"
         fill_in 'foster_parent_recruiter[reason]', with: ""
         click_on "新規登録"
         expect(page).to have_content '件のエラーが発生したため 里親募集者 は保存されませんでした:'

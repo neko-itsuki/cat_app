@@ -15,7 +15,11 @@
   password_confirmation = 'password' 
   age = Faker::Number.within(range: 18..64)
   gender = "男"
-  street_address = Gimei.address
+  postcode = "1001000"
+  prefecture_code = '東京都'
+  address_city = '市区町村'
+  address_street = '番地'
+  address_building = '建物'
   tel = "09012345678"
   User.create!(
     name: name,
@@ -25,7 +29,11 @@
     password_confirmation: password_confirmation,
     age: age,
     gender: gender,
-    street_address: street_address,
+    postcode: postcode,
+    prefecture_code: prefecture_code,
+    address_city: address_city,
+    address_street: address_street,
+    address_building: address_building,
     tel: tel,
     pets_allowed: true,
     living: true,
@@ -42,7 +50,11 @@ end
   password_confirmation = 'password' 
   director_name = '動物保護センター'
   staff_name = Gimei.kanji
-  street_address = Gimei.address
+  postcode = "1001000"
+  prefecture_code = '東京都'
+  address_city = '市区町村'
+  address_street = '番地'
+  address_building = '建物'
   tel = "09012345678"
   Center.create!(
     name: name,
@@ -52,7 +64,11 @@ end
     password_confirmation: password_confirmation,
     director_name: director_name,
     staff_name: staff_name,
-    street_address: street_address,
+    postcode: postcode,
+    prefecture_code: prefecture_code,
+    address_city: address_city,
+    address_street: address_street,
+    address_building: address_building,
     tel: tel,
     approval: true,
     release: true,
@@ -69,7 +85,11 @@ end
   password_confirmation = 'password' 
   age = Faker::Number.within(range: 18..68)
   gender = "男" 
-  street_address = Gimei.address
+  postcode = "1001000"
+  prefecture_code = '東京都'
+  address_city = '市区町村'
+  address_street = '番地'
+  address_building = '建物'
   tel = "09012345678"
   tel_time = rand(1..5)
   animal_type = '雑種'
@@ -85,7 +105,11 @@ end
     password_confirmation: password_confirmation,
     age: age,
     gender: gender,
-    street_address: street_address,
+    postcode: postcode,
+    prefecture_code: prefecture_code,
+    address_city: address_city,
+    address_street: address_street,
+    address_building: address_building,
     tel: tel,
     tel_time: tel_time,
     animal_type: animal_type,
@@ -96,48 +120,50 @@ end
     )
 end
 
-center = Center.first
-10.times do
-  center.cats.create!(
-    cat_name: Faker::Creature::Cat.name,
-    cat_type: '雑種',
-    cat_gender: 'オス',
-    cat_age: Faker::Number.within(range: 1..18) ,
-    cat_weight: "#{rand(2..5)}kg" ,
-    cat_coat_color: 'キジ' ,
-    cat_contraceptive_castrated: '済',
-    cat_microchip: '済' ,
-    cat_vaccination: '済',
-    cat_one_thing: 'とても人懐こくていい子です。トイレもばっちりできます!' ,
-    cat_health: '良好' ,
-    cat_personality: '人懐こい' ,
-    cat_history_of_protection: '飼い主の引っ越しにより飼えなくなった' ,
-    cat_remarks: '可能であれば2匹一緒に引き取りをご検討ください。' ,
-    cat_center_information: 'のび動物病院
-                〒100-1000 東京都
-                http://www.center.jp/' 
-  )
-end
+# center = Center.first
+# 10.times do
+#   center.cats.create!(
+#     cat_name: Faker::Creature::Cat.name,
+#     cat_type: '雑種',
+#     cat_gender: 'オス',
+#     cat_age: Faker::Number.within(range: 1..18) ,
+#     cat_weight: "#{rand(2..5)}kg" ,
+#     cat_coat_color: 'キジ' ,
+#     cat_image_id: "app/assets/images/cat.jpeg",
+#     cat_contraceptive_castrated: '済',
+#     cat_microchip: '済' ,
+#     cat_vaccination: '済',
+#     cat_one_thing: 'とても人懐こくていい子です。トイレもばっちりできます!' ,
+#     cat_health: '良好' ,
+#     cat_personality: '人懐こい' ,
+#     cat_history_of_protection: '飼い主の引っ越しにより飼えなくなった' ,
+#     cat_remarks: '可能であれば2匹一緒に引き取りをご検討ください。' ,
+#     cat_center_information: 'のび動物病院
+#                 〒100-1000 東京都
+#                 http://www.center.jp/' 
+#   )
+# end
 
-center = Center.second
-10.times do
-  center.dogs.create!(
-    dog_name: Faker::Creature::Dog.name,
-    dog_type: '柴犬',
-    dog_gender: 'オス',
-    dog_age: Faker::Number.within(range: 1..18) ,
-    dog_weight: "#{rand(2..7)}kg" ,
-    dog_coat_color: '茶白' ,
-    dog_contraceptive_castrated: '済',
-    dog_microchip: '済' ,
-    dog_vaccination: '済',
-    dog_one_thing: 'とても人懐こくていい子です。トイレもばっちりできます!' ,
-    dog_health: '良好' ,
-    dog_personality: '人懐こい' ,
-    dog_history_of_protection: '飼い主の引っ越しにより飼えなくなった' ,
-    dog_remarks: '可能であれば2匹一緒に引き取りをご検討ください。' ,
-    dog_center_information: 'のび動物病院
-                〒100-1000 東京都
-                http://www.center.jp/' 
-  )
-end
+# center = Center.second
+# 10.times do
+#   center.dogs.create!(
+#     dog_name: Faker::Creature::Dog.name,
+#     dog_type: '柴犬',
+#     dog_gender: 'オス',
+#     dog_age: Faker::Number.within(range: 1..18) ,
+#     dog_weight: "#{rand(2..7)}kg" ,
+#     dog_coat_color: '茶白' ,
+#     dog_image_id: "app/assets/images/cat.jpeg",
+#     dog_contraceptive_castrated: '済',
+#     dog_microchip: '済' ,
+#     dog_vaccination: '済',
+#     dog_one_thing: 'とても人懐こくていい子です。トイレもばっちりできます!' ,
+#     dog_health: '良好' ,
+#     dog_personality: '人懐こい' ,
+#     dog_history_of_protection: '飼い主の引っ越しにより飼えなくなった' ,
+#     dog_remarks: '可能であれば2匹一緒に引き取りをご検討ください。' ,
+#     dog_center_information: 'のび動物病院
+#                 〒100-1000 東京都
+#                 http://www.center.jp/' 
+#   )
+# end
