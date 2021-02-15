@@ -6,7 +6,8 @@ class Center < ApplicationRecord
   
   has_many :cats, dependent: :destroy
   has_many :dogs, dependent: :destroy
-  
+  has_many :user_messages, dependent: :destroy
+    
   validates :name, presence: true,
                    length: { maximum: 25 }
   validates :furigana_name, presence: true,

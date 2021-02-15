@@ -1,0 +1,12 @@
+<div>Centerチャットルームの一覧</div>
+<% @center_rooms.each do |center_room| %>
+  <div>
+     <%= center_room.user.name %>
+    <% if center_room.cat %>
+      <%= center_room.cat.cat_name %>
+    <% else center_room.dog %>
+      <%= center_room.dog.dog_name %>
+    <% end %>
+    <%= link_to "DM", center_room_path(center_room) %>
+  </div>
+<% end %>

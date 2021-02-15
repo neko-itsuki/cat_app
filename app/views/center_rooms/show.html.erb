@@ -1,0 +1,28 @@
+<div>Centerチャットルームの詳細</div>
+<%= @center_room.center.name %>
+<% if @center_room.cat %>
+  <%= @center_room.cat.cat_name %>
+<% else @center_room.dog %>
+  <%= @center_room.dog.dog_name %>
+<% end %>
+<% if @center_messages.blank? %>
+  <p>メッセージはありません</p>
+<% else%>
+  <p>メッセージがあります</p>
+  <% @center_messages.each do |message| %>
+    <div>
+      <% if message.center %>
+        <span><%= message.center.name %>:</span>
+      <% else %>
+        <span><%= message.user.name %>:</span>
+      <% end %>
+      <span><%= message.user_message %></span>
+    </div>
+  <% end %>
+<% end %>
+<%= form_with model: [:centers, @center_message], url: center_message_path, local: true do |f| %>
+  <%= f.text_field :user_message, class:"address-new-form" %>
+  <%= f.hidden_field :user_room_id, value: @center_room.id %>
+
+  <%= f.submit "送信", class:"register-green-btn" %>
+<% end %>

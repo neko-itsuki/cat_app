@@ -1,5 +1,6 @@
 class Cat < ApplicationRecord
   belongs_to :center
+  has_one :user_room, dependent: :destroy
   
   attachment :cat_image
   

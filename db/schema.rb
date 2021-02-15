@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_08_073540) do
+ActiveRecord::Schema.define(version: 2021_02_14_151955) do
 
   create_table "cats", force: :cascade do |t|
     t.integer "center_id", null: false
@@ -115,6 +115,31 @@ ActiveRecord::Schema.define(version: 2021_02_08_073540) do
     t.index ["reset_password_token"], name: "index_foster_parent_recruiters_on_reset_password_token", unique: true
   end
 
+  create_table "user_messages", force: :cascade do |t|
+    t.integer "user_room_id", null: false
+    t.integer "user_id"
+    t.integer "center_id"
+    t.text "user_message", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["center_id"], name: "index_user_messages_on_center_id"
+    t.index ["user_id"], name: "index_user_messages_on_user_id"
+    t.index ["user_room_id"], name: "index_user_messages_on_user_room_id"
+  end
+
+  create_table "user_rooms", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "center_id"
+    t.integer "cat_id"
+    t.integer "dog_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cat_id"], name: "index_user_rooms_on_cat_id"
+    t.index ["center_id"], name: "index_user_rooms_on_center_id"
+    t.index ["dog_id"], name: "index_user_rooms_on_dog_id"
+    t.index ["user_id"], name: "index_user_rooms_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -140,4 +165,9 @@ ActiveRecord::Schema.define(version: 2021_02_08_073540) do
 
   add_foreign_key "cats", "centers"
   add_foreign_key "dogs", "centers"
+  add_foreign_key "user_messages", "centers"
+  add_foreign_key "user_messages", "user_rooms"
+  add_foreign_key "user_messages", "users"
+  add_foreign_key "user_rooms", "centers"
+  add_foreign_key "user_rooms", "users"
 end

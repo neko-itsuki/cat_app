@@ -1,0 +1,16 @@
+<div>Userチャットルームの一覧</div>
+<% if @user_rooms.blank? %>
+  <p>チャットルームはありません</p>
+<% else %>
+  <% @user_rooms.each do |user_room| %>
+    <div>
+      <%= user_room.center.name %>
+      <% if user_room.cat %>
+        <%= user_room.cat.cat_name %>
+      <% else user_room.dog %>
+        <%= user_room.dog.dog_name %>
+      <% end %>
+      <%= link_to "DM", user_room_path(user_room) %>
+    </div>
+  <% end %>
+<% end %>

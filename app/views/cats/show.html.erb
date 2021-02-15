@@ -1,7 +1,10 @@
+<script>
+$("a.post").toPostLink();
+</script>
 <p id="notice"><%= notice %></p>
 
 <h2><%= @cat.cat_name %></h2>
 <%= attachment_image_tag @cat, :cat_image, format: 'jpeg', size: "100x100" %>
-
+<%= link_to "相談する", user_rooms_path(center_id: @cat.center_id, cat_id: @cat.id), method: :post, class: "post" %>
 <%= link_to 'Edit', edit_cat_path(@cat) %> |
 <%= link_to 'Back', cats_path %>

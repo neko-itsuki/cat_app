@@ -34,4 +34,13 @@ Rails.application.routes.draw do
   get '/rule', to: 'static_pages#rule'
   get '/sitemap', to: 'static_pages#sitemap'
   
+  resources :user_rooms, only: [:index, :show, :create]
+  resource :user_message, only: :create
+  
+  # resources :foster_parent_recruiter_rooms, only: [:index, :show]
+  # resource :foster_parent_recruiter_message, only: :create
+  
+  resources :center_rooms, only: [:index, :show]
+  resource :center_message, only: :create
+  
 end
