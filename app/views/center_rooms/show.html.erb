@@ -12,11 +12,10 @@
   <% @center_messages.each do |message| %>
     <div>
       <% if message.center %>
-        <span><%= message.center.name %>:</span>
+        <p style="text-align: right;"><%= message.center.name %>:<%= message.user_message %></p>
       <% else %>
-        <span><%= message.user.name %>:</span>
+        <p style="text-align: left;"><%= message.user_message %>:<%= message.user.name %></p>
       <% end %>
-      <span><%= message.user_message %></span>
     </div>
   <% end %>
 <% end %>

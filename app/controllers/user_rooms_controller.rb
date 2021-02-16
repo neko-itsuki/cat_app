@@ -1,7 +1,7 @@
 class UserRoomsController < ApplicationController
     
   before_action :authenticate_user!
-  # before_action :set_room_or_move, only: :show
+  before_action :user_room_already, only: :create
 
   def index
     @user_rooms = UserRoom.where(user_id: current_user.id)
@@ -21,6 +21,7 @@ class UserRoomsController < ApplicationController
       flash[:success] = "#{@cat.cat_name}のチャットルームを作成しました"
       redirect_to action: :show
     else
+      flash[:danger] = "チャットルームを作成できませんでした"
       redirect_to root_url 
     end
   end
@@ -30,5 +31,12 @@ class UserRoomsController < ApplicationController
     def user_room_params
       params.permit(:center_id, :cat_id)
     end
-  
+    
+    def user_room_already
+      @user_room = UserRoom.find_by(params[:user_id], params[:center_id], params[:cat_id], params[:dog_id])
+      if !@user_room.nil?
+        render action: :show
+      end
+    end
+    
 end
