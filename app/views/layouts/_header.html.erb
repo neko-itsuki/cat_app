@@ -1,26 +1,48 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "cat app", root_path, id: "logo" %>
+    <%= link_to "里親マッチングサイト", root_path, id: "logo", class: "navbar-brand" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <!--<li><%= link_to "Home", root_path %></li>-->
-        <!--<li><%= link_to "About", about_path %></li>-->
-        <!--<li><%= link_to "Description", description_path %></li>-->
-        <!--<li><%= link_to "Flow", flow_path %></li>-->
-        <!--<li><%= link_to "Action", action_path %></li>-->
-        <li><%= link_to "Centers", centers_path %></li>
-        <li><%= link_to "Cats", cats_path %></li>
-        <li><%= link_to "Dogs", dogs_path %></li>
-        <% if current_delete_session %>
-          <li><%= link_to "Profile", current_profile_path %></li>
-          <li><%= link_to 'ログアウト', current_delete_session, method: :delete %></li>
-        <% else %>
+      <button class="menu-trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav navbar-nav navbar-right menus">
+        <li><%= link_to "このサイトのついて", about_path %></li>
+        <li><%= link_to "譲渡までの流れ", flow_path %></li>
+        <li><%= link_to "保護猫を探す", cats_path %></li>
+        <li><%= link_to "保護犬を探す", dogs_path %></li>
+        <% if !current_delete_session %>
           <li><%= link_to '里親希望者ログイン', new_user_session_path %></li>
           <li><%= link_to '里親募集者ログイン', new_foster_parent_recruiter_session_path %></li>
           <li><%= link_to '保護施設ログイン', new_center_session_path %></li>
         <% end %>
       </ul>
+      <% if current_delete_session %>
+        <button class="menu-trigger">
+          <%= image_tag 'user.png', class: "user-img" %>
+        </button>
+        <ul class="nav navbar-nav navbar-right menus">
+          <li><%= link_to "プロフィール", current_profile_path %></li>
+          <li><%= link_to 'ログアウト', current_delete_session, method: :delete %></li>
+          <% if center_signed_in? %>
+            <li><%= link_to "保護猫を投稿", new_cat_path %></li>
+            <li><%= link_to '保護犬を投稿', new_dog_path %></li>
+          <% end %>
+          <% if current_destroy %>
+            <li><%= link_to "退会する", current_destroy, data: { confirm: "本当に退会してよろしいですか？" }, method: :delete %></li>
+          <% end %>
+        </ul>
+      <% end %>
     </nav>
   </div>
- </header>
- 
+  <div class="header-menu">
+    <ul class="menu">
+      <li><%= link_to "サイトのついて", about_path %></li>
+      <li><%= link_to "譲渡までの流れ", flow_path %></li>
+      <li><%= link_to "🐱保護猫を探す", cats_path %></li>
+      <li><%= link_to "🐶保護犬を探す", dogs_path %></li>
+      <li><%= link_to "🏥施設から探す", centers_path %></li>
+    </ul>
+  </div>
+</header>

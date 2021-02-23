@@ -1,10 +1,23 @@
 <% provide(:title, "Home") %>
-<div class="center jumbotron">
-  
-  <%= link_to "里親希望者 新規登録", new_user_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg btn-primary" %>
-  <%= link_to "里親募集者 新規登録", new_foster_parent_recruiter_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg btn-primary" %>
-  <%= link_to "動物保護施設 新規登録", new_center_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg btn-primary" %>
+<div class="home-img">
+  <p>動物保護施設による保護犬、猫の譲渡活動をサポートする里親マッチングサイトです</p>
+  <%= image_tag 'home.jpeg', class: "home-img" %>
 </div>
-  
-<%= link_to image_tag("logo_d.jpg", alt: "cat_app logo", width: "500px"),
-                      "#" %>
+<div class="center jumbotron">
+  <h3>里親希望者</h3>
+  <P></P>
+  <%= link_to "ログイン", new_user_session_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "新規登録", new_user_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg btn-primary" %>
+</div>
+
+<div class="center jumbotron">
+  <h3>動物保護施設</h3>
+  <%= link_to "ログイン", new_center_session_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "新規登録", new_center_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg btn-primary" %>
+</div>
+
+<div class="center jumbotron">
+  <h3>里親募集者</h3>
+  <%= link_to "ログイン", new_foster_parent_recruiter_session_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "新規登録", new_foster_parent_recruiter_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg btn-primary" %>
+</div>
