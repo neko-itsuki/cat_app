@@ -1,17 +1,78 @@
 <% provide(:title, "Show") %>
 <p id="notice"><%= notice %></p>
 
-<h1><%= @center.email %></h1>
+<p><%= @center.furigana_name %></p>
+<h1><%= @center.name %></h1>
+
+<table class="table">
+  <tr>
+    <th>施設長名</th>
+    <td><%= @center.director_name %></td>
+  </tr>
+  <tr>
+    <th>担当者名</th>
+    <td><%= @center.staff_name %></td>
+  </tr>
+  <tr>
+    <th>メール</th>
+    <td><%= @center.email %></td>
+  </tr>
+  <tr>
+    <th>電話</th>
+    <td><%= @center.tel %></td>
+  </tr>
+  <tr>
+    <th>時間</th>
+    <td><%= @center.care_time %></td>
+  </tr>
+  <tr>
+    <th>定休日</th>
+    <td><%= @center.close_date %></td>
+  </tr>
+  <tr>
+    <th>アクセス</th>
+    <td><%= @center.acces %></td>
+  </tr>
+  <tr>
+    <th>URL</th>
+    <td><%= @center.url %></td>
+  </tr>
+  <tr>
+    <th>一言</th>
+    <td><%= @center.director_word %></td>
+  </tr>
+  <tr>
+    <th>住所</th>
+    <td>
+      <%= @center.postcode %>&nbsp;
+      <%= t('address.state')[@center.prefecture_code - 1] %>&nbsp;
+      <%= @center.address_city %>&nbsp;
+      <%= @center.address_street %>&nbsp;
+      <%= @center.address_building %>
+    </td>
+  </tr>
+</table>
+
+<% if current_center == @center %>
+  <%= link_to '編集', edit_center_registration_path(@center) %>
+<% end %>
+
+<%= link_to '🐶保護犬 投稿', new_dog_path, class: "btn btn-lg btn-primary" %>
+<%= link_to '🐱保護猫 投稿', new_cat_path, class: "btn btn-lg btn-primary" %>
 
 <div class="col-md-8">
   <% if @center.cats.any? %>
-    <h3>Cats (<%= @center.cats.count %>)</h3>
-    <ol class="cats">
-      <%= render @cats %>
+    <h3>保護猫 (<%= @center.cats.count %>)</h3>
+    <ol class="animals">
+      <%= render @center.cats %>
+    </ol>
+    <%= paginate @cats %>
+  <% end %>
+  <% if @center.dogs.any? %>
+    <h3>保護犬 (<%= @center.dogs.count %>)</h3>
+    <ol class="animals">
+      <%= render @center.dogs %>
     </ol>
     <%= paginate @cats %>
   <% end %>
 </div>
-  
-<%= link_to 'Edit', edit_center_registration_path(@center) %> |
-<%= link_to 'Back', centers_path %>

@@ -1,15 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* mixins, variables, etc. */
-
-// $gray-medium-light: #eaeaea;
-
-// @mixin box_sizing {
-//   -moz-box-sizing:    border-box;
-//   -webkit-box-sizing: border-box;
-//   box-sizing:         border-box;
-// }
+* {
+  list-style: none;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  color: black;
+  letter-spacing: 0.1em;
+}
 
 .home-img {
   width: 100%;
@@ -19,9 +18,9 @@
 
 // header
 
-// header .container {
-//   background-color: white;
-// }
+header .container {
+  padding: 0 10px;
+}
 
 #logo {
   color: white;

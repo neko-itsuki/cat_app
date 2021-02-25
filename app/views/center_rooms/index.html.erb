@@ -1,12 +1,44 @@
-<div>Centerチャットルームの一覧</div>
-<% @center_rooms.each do |center_room| %>
-  <div>
-     <%= center_room.user.name %>
-    <% if center_room.cat %>
-      <%= center_room.cat.cat_name %>
-    <% else center_room.dog %>
-      <%= center_room.dog.dog_name %>
-    <% end %>
-    <%= link_to "DM", center_room_path(center_room) %>
-  </div>
+<h3>チャットルーム一覧</h3>
+<% if @center_rooms.blank? %>
+  <p>チャットルームはありません</p>
+<% else %>
+  <% @center_rooms.each do |center_room| %>
+    <div class="chat_rooms">
+      <% if center_room.cat %>
+        <%= link_to(center_room_path(center_room), class: "link") do %>
+          <div class="animal">
+            <h4><%= center_room.user.name %>さん</h4>
+            <p>
+              <%= attachment_image_tag center_room.cat, :cat_image, format: 'jpeg', size: "150x150" %><br>
+              <%= center_room.cat.cat_name %><br>
+              <%= center_room.cat.cat_age %>/
+              <% if center_room.cat.cat_gender %>
+                オス/
+              <% else %>
+                メス/
+              <% end %>
+              <%= center_room.cat.cat_type %>
+            </p>
+          </div>
+        <% end %>
+      <% else center_room.dog %>
+        <%= link_to(center_room_path(center_room), class: "link") do %>
+          <div class="animal">
+            <h4><%= center_room.user.name %>さん</h4>
+            <p>
+              <%= attachment_image_tag center_room.dog, :dog_image, format: 'jpeg', size: "150x150" %><br>
+              <%= center_room.dog.dog_name %><br>
+              <%= center_room.dog.dog_age %>/
+              <% if center_room.dog.dog_gender %>
+                オス/
+              <% else %>
+                メス/
+              <% end %>
+              <%= center_room.dog.dog_type %><br>
+            </p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>

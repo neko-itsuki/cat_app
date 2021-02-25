@@ -18,7 +18,6 @@ class CatsController < ApplicationController
   
   def create
     @cat = current_center.cats.build(cat_params)
-    # @cat.image.attach(params[:cat][:image])
     if @cat.save
       flash[:success] = "#{@cat.cat_name}の投稿を作成しました"
       redirect_to @cat

@@ -18,7 +18,6 @@ class DogsController < ApplicationController
   
   def create
     @dog = current_center.dogs.build(dog_params)
-    # @dog.image.attach(params[:dog][:image])
     if @dog.save
       flash[:success] = "#{@dog.dog_name}の投稿を作成しました"
       redirect_to @dog

@@ -3,8 +3,99 @@ $("a.post").toPostLink();
 </script>
 <p id="notice"><%= notice %></p>
 
-<h2><%= @cat.cat_name %></h2>
-<%= attachment_image_tag @cat, :cat_image, format: 'jpeg', size: "100x100" %>
-<%= link_to "相談する", user_rooms_path(center_id: @cat.center_id, cat_id: @cat.id), method: :post, class: "post" %>
-<%= link_to 'Edit', edit_cat_path(@cat) %> |
-<%= link_to 'Back', cats_path %>
+<h1><%= @cat.cat_name %></h1>
+<%= attachment_image_tag @cat, :cat_image, format: 'jpeg', size: "300x300" %>
+<%= link_to "相談する", user_rooms_path(center_id: @cat.center_id, cat_id: @cat.id), method: :post, class: "btn btn-lg btn-primary post" %>
+
+<table class="table">
+  <tr>
+    <th>種類</th>
+    <td><%= @cat.cat_type %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td>
+      <% if @cat.cat_gender %>
+        オス
+      <% else %>
+        メス
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>年齢</th>
+    <td><%= @cat.cat_age %></td>
+  </tr>
+  <tr>
+    <th>体重</th>
+    <td><%= @cat.cat_weight %></td>
+  </tr>
+  <tr>
+    <th>毛色</th>
+    <td><%= @cat.cat_coat_color %></td>
+  </tr>
+  <tr>
+    <th>避妊・去勢</th>
+    <td>
+      <% if @cat.cat_contraceptive_castrated %>
+        済
+      <% else %>
+        無
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>マイクロチップ</th>
+    <td>
+      <% if @cat.cat_microchip %>
+        済
+      <% else %>
+        無
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>ワクチン接種</th>
+    <td>
+      <% if @cat.cat_vaccination %>
+        済
+      <% else %>
+        無
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>一言</th>
+    <td><%= @cat.cat_one_thing %></td>
+  </tr>
+  <tr>
+    <th>健康状態</th>
+    <td><%= @cat.cat_health %></td>
+  </tr>
+  <tr>
+    <th>性格</th>
+    <td><%= @cat.cat_personality %></td>
+  </tr>
+  <tr>
+    <th>保護された経緯</th>
+    <td><%= @cat.cat_history_of_protection %></td>
+  </tr>
+  <tr>
+    <th>備考</th>
+    <td><%= @cat.cat_remarks %></td>
+  </tr>
+  <tr>
+    <th>施設情報</th>
+    <td>
+      <%= @cat.center.name %><br>
+      <%= @cat.center.tel %><br>
+      <%= @cat.center.url %><br>
+      <%= @cat.center.postcode %>&nbsp;
+      <%= t('address.state')[@cat.center.prefecture_code - 1] %>&nbsp;
+      <%= @cat.center.address_city %>&nbsp;
+      <%= @cat.center.address_street %>&nbsp;
+      <%= @cat.center.address_building %>
+    </td>
+  </tr>
+</table>
+

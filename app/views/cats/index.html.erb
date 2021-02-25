@@ -2,10 +2,9 @@
 
 <% provide(:title, "Cats") %>
 
-<ul class="cats">
+<ul class="animals">
   <%= render @cats %>
 </ul>
 <%= paginate @cats %>
 <br>
 
-<%= link_to 'New Cat', new_cat_path %>

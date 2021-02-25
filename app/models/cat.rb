@@ -18,5 +18,4 @@ class Cat < ApplicationRecord
   validates :cat_health, presence: true
   validates :cat_personality, presence: true
   validates :cat_history_of_protection, presence: true
-  validates :cat_center_information, presence: true
 end

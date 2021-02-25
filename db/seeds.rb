@@ -51,7 +51,7 @@ end
   director_name = '動物保護センター'
   staff_name = Gimei.kanji
   postcode = "1001000"
-  prefecture_code = '東京都'
+  prefecture_code = rand(1..47)
   address_city = '市区町村'
   address_street = '番地'
   address_building = '建物'

@@ -1,27 +1,36 @@
-<div>Userチャットルームの詳細</div>
-<%= @user_room.center.name %>
-<% if @user_room.cat %>
-  <%= @user_room.cat.cat_name %>
-<% else @user_room.dog %>
-  <%= @user_room.dog.dog_name %>
-<% end %>
-<% if @user_messages.blank? %>
-  <p>メッセージはありません</p>
-<% else%>
-  <p>メッセージがあります</p>
+<div class="chat-person">
+  <p><%= @user_room.center.name %>&emsp;
+    <% if @user_room.cat %>
+      <%= @user_room.cat.cat_name %>
+    <% elsif @user_room.dog %>
+      <%= @user_room.dog.dog_name %>
+    <% end %>
+  </p>
+</div>
+<div id="chat-frame">
   <% @user_messages.each do |message| %>
     <div>
       <% if message.user %>
-        <p style="text-align: right;"><%= message.user.name %>:<%= message.user_message %></p>
+        <p class="chat-talk mytalk">
+          <span class="talk-content"><%= message.user_message %></span>
+        </p>
       <% else %>
-        <p style="text-align: left;"><%= message.user_message %>:<%= message.center.name %></p>
+        <p class="chat-talk">
+          <span class="talk-icon">
+            <%= image_tag 'user.png', class: "user-img" %>
+          </span>
+          <span class="talk-content"><%= message.user_message %></span>
+        </p>
       <% end %>
     </div>
   <% end %>
-<% end %>
-<%= form_with model: @user_message, url: user_message_path, local: true do |f| %>
-  <%= f.text_field :user_message, class:"address-new-form" %>
-  <%= f.hidden_field :user_room_id, value: @user_room.id %>
+</div>
+<div class="bms_send">
+  <%= form_with model: @user_message, url: user_message_path, local: true do |f| %>
+    <%= f.text_field :user_message, class:"bms_send_message" %>
+    <%= f.hidden_field :user_room_id, value: @user_room.id %>
+  
+    <%= f.submit "送信", class:"bms_send_btn" %>
+  <% end %>
+</div>
 
-  <%= f.submit "送信", class:"register-green-btn" %>
-<% end %>

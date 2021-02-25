@@ -1,4 +1,20 @@
-<li><%= link_to cat.cat_name, cat %></li>
-<%= attachment_image_tag cat, :cat_image, format: 'jpeg', size: "100x100" %>
-<li><%= link_to 'Edit', edit_cat_path(cat) %></li>
-<li><%= link_to 'Destroy', cat_path(cat), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+<%= link_to(cat_path(cat), class: "link") do %>
+  <div class="animal">
+    <p>
+      <%= attachment_image_tag cat, :cat_image, format: 'jpeg', size: "150x150" %><br>
+      <%= cat.cat_name %><br>
+      <%= cat.cat_age %>/
+      <% if cat.cat_gender %>
+        オス/
+      <% else %>
+        メス/
+      <% end %>
+      <%= cat.cat_type %><br>
+      <%= t('address.state')[cat.center.prefecture_code - 1] %><br>
+      <% if current_center == cat.center %>
+        <%= link_to '編集', edit_cat_path(cat) %>
+        <%= link_to '削除', cat_path(cat), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </p>
+  </div>
+<% end %>

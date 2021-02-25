@@ -1,7 +1,7 @@
 class CentersController < ApplicationController
   
   def index
-    @centers = Center.page(params[:page]).per(5)
+    @centers = Center.page(params[:page]).per(10)
   end
   
   def show

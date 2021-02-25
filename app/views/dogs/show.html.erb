@@ -4,7 +4,98 @@ $("a.post").toPostLink();
 <p id="notice"><%= notice %></p>
 
 <h2><%= @dog.dog_name %></h2>
-<%= attachment_image_tag @dog, :dog_image, format: 'jpeg', size: "100x100" %>
-<%= link_to "相談する", user_rooms_path(center_id: @dog.center_id, dog_id: @dog.id), method: :post, class: "post" %>
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+<%= attachment_image_tag @dog, :dog_image, format: 'jpeg', size: "300x300" %>
+<%= link_to "相談する", user_rooms_path(center_id: @dog.center_id, dog_id: @dog.id), method: :post, class: "btn btn-lg btn-primary post" %>
+
+<table class="table">
+  <tr>
+    <th>種類</th>
+    <td><%= @dog.dog_type %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td>
+      <% if @dog.dog_gender %>
+        オス
+      <% else %>
+        メス
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>年齢</th>
+    <td><%= @dog.dog_age %></td>
+  </tr>
+  <tr>
+    <th>体重</th>
+    <td><%= @dog.dog_weight %></td>
+  </tr>
+  <tr>
+    <th>毛色</th>
+    <td><%= @dog.dog_coat_color %></td>
+  </tr>
+  <tr>
+    <th>避妊・去勢</th>
+    <td>
+      <% if @dog.dog_contraceptive_castrated %>
+        済
+      <% else %>
+        無
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>マイクロチップ</th>
+    <td>
+      <% if @dog.dog_microchip %>
+        済
+      <% else %>
+        無
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>ワクチン接種</th>
+    <td>
+      <% if @dog.dog_vaccination %>
+        済
+      <% else %>
+        無
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>一言</th>
+    <td><%= @dog.dog_one_thing %></td>
+  </tr>
+  <tr>
+    <th>健康状態</th>
+    <td><%= @dog.dog_health %></td>
+  </tr>
+  <tr>
+    <th>性格</th>
+    <td><%= @dog.dog_personality %></td>
+  </tr>
+  <tr>
+    <th>保護された経緯</th>
+    <td><%= @dog.dog_history_of_protection %></td>
+  </tr>
+  <tr>
+    <th>備考</th>
+    <td><%= @dog.dog_remarks %></td>
+  </tr>
+  <tr>
+    <th>施設情報</th>
+    <td>
+      <%= @dog.center.name %><br>
+      <%= @dog.center.tel %><br>
+      <%= @dog.center.url %><br>
+      <%= @dog.center.postcode %>&nbsp;
+      <%= t('address.state')[@dog.center.prefecture_code - 1] %>&nbsp;
+      <%= @dog.center.address_city %>&nbsp;
+      <%= @dog.center.address_street %>&nbsp;
+      <%= @dog.center.address_building %>
+    </td>
+  </tr>
+</table>
+

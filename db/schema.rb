@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_02_14_151955) do
     t.text "cat_personality", null: false
     t.text "cat_history_of_protection", null: false
     t.text "cat_remarks"
-    t.text "cat_center_information", null: false
+    t.text "cat_center_information"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "cat_image_id", null: false
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2021_02_14_151955) do
     t.text "dog_personality", null: false
     t.text "dog_history_of_protection", null: false
     t.text "dog_remarks"
-    t.text "dog_center_information", null: false
+    t.text "dog_center_information"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "dog_image_id", null: false

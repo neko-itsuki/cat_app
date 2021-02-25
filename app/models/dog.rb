@@ -18,5 +18,4 @@ class Dog < ApplicationRecord
   validates :dog_health, presence: true
   validates :dog_personality, presence: true
   validates :dog_history_of_protection, presence: true
-  validates :dog_center_information, presence: true
 end

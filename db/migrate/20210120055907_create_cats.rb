@@ -17,7 +17,7 @@ class CreateCats < ActiveRecord::Migration[6.0]
       t.text :cat_personality, null: false
       t.text :cat_history_of_protection, null: false
       t.text :cat_remarks
-      t.text :cat_center_information, null: false
+      t.text :cat_center_information
       
       t.timestamps
     end

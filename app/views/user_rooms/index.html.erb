@@ -1,16 +1,46 @@
-<div>Userチャットルームの一覧</div>
+<h3>チャットルーム</h3>
 <% if @user_rooms.blank? %>
   <p>チャットルームはありません</p>
 <% else %>
   <% @user_rooms.each do |user_room| %>
-    <div>
-      <%= user_room.center.name %>
+    <div class="chat_rooms">
       <% if user_room.cat %>
-        <%= user_room.cat.cat_name %>
+        <%= link_to(user_room_path(user_room), class: "link") do %>
+          <div class="animal">
+            <h4><%= user_room.center.name %></h4>
+            <p>
+              <%= attachment_image_tag user_room.cat, :cat_image, format: 'jpeg', size: "150x150" %><br>
+              <%= user_room.cat.cat_name %><br>
+              <%= user_room.cat.cat_age %>/
+              <% if user_room.cat.cat_gender %>
+                オス/
+              <% else %>
+                メス/
+              <% end %>
+              <%= user_room.cat.cat_type %><br>
+              <%= t('address.state')[user_room.cat.center.prefecture_code - 1] %><br>
+            </p>
+          </div>
+        <% end %>
       <% else user_room.dog %>
-        <%= user_room.dog.dog_name %>
+        <%= link_to(user_room_path(user_room), class: "link") do %>
+          <div class="animal">
+            <h4><%= user_room.center.name %></h4>
+            <p>
+              <%= attachment_image_tag user_room.dog, :dog_image, format: 'jpeg', size: "150x150" %><br>
+              <%= user_room.dog.dog_name %><br>
+              <%= user_room.dog.dog_age %>/
+              <% if user_room.dog.dog_gender %>
+                オス/
+              <% else %>
+                メス/
+              <% end %>
+              <%= user_room.dog.dog_type %><br>
+              <%= t('address.state')[user_room.dog.center.prefecture_code - 1] %><br>
+            </p>
+          </div>
+        <% end %>
       <% end %>
-      <%= link_to "DM", user_room_path(user_room) %>
     </div>
   <% end %>
 <% end %>

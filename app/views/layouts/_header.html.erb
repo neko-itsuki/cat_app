@@ -25,6 +25,7 @@
         <ul class="nav navbar-nav navbar-right menus">
           <li><%= link_to "プロフィール", current_profile_path %></li>
           <li><%= link_to 'ログアウト', current_delete_session, method: :delete %></li>
+          <li><%= link_to "チャットルーム", current_rooms_path %></li>
           <% if center_signed_in? %>
             <li><%= link_to "保護猫を投稿", new_cat_path %></li>
             <li><%= link_to '保護犬を投稿', new_dog_path %></li>

@@ -3,6 +3,18 @@
   <p>動物保護施設による保護犬、猫の譲渡活動をサポートする里親マッチングサイトです</p>
   <%= image_tag 'home.jpeg', class: "home-img" %>
 </div>
+<div class="col-md-8">
+  <% if @animals.cats.any? %>
+    <ol class="animals">
+      <%= render @animals.cats %>
+    </ol>
+  <% end %>
+  <% if @animals.dogs.any? %>
+    <ol class="animals">
+      <%= render @animals.dogs %>
+    </ol>
+  <% end %>
+</div>
 <div class="center jumbotron">
   <h3>里親希望者</h3>
   <P></P>

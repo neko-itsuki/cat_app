@@ -1,3 +1,7 @@
-<li><%= link_to center.email, center %></li>
-<li><%= link_to 'Edit', edit_center_registration_path(center) %></li>
-<li><%= link_to 'Destroy', center_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+<table class="table">
+  <tr>
+   <th><%= t('address.state')[center.prefecture_code - 1] %></th>
+   <td><%= link_to center.name, center %></td>
+  </tr>
+</table>
+
