@@ -1,81 +1,81 @@
-※現在も作成中です
+※現在も作成中です<br>
 
 
-サイト概要
+サイト概要<br>
 動物保護施設による保護犬、猫の譲渡活動をサポートする里親マッチングサイトです。
 
 
-リンク
+リンク<br>
 https://immense-cove-67078.herokuapp.com/
 
 
-使用技術
-・HTML / CSS / Bootstrap
-・JavaScript / jQuery 
-・Ruby 2.6.6
-・Rails 6.0.3
-・PostgreSQL 
-・puma
-・RSpec（テストフレームワーク）
-・AWS Cloud9
-・heroku
-・Amazon Linux
+使用技術<br>
+・HTML / CSS / Bootstrap<br>
+・JavaScript / jQuery<br>
+・Ruby 2.6.6<br>
+・Rails 6.0.3<br>
+・PostgreSQL<br>
+・puma<br>
+・RSpec（テストフレームワーク）<br>
+・AWS Cloud9<br>
+・heroku<br>
+・Amazon Linux<br>
 
 
 
-【機能一覧】
+【機能一覧】<br>
 
-◆ユーザー機能3種類（里親希望者・保護施設・里親募集者）
-・新規登録、ログイン、ログアウト、退会機能
-・マイページ、登録情報編集
-・一覧表示(保護施設のみ)
-・deviseを使用
-
-
-◆住所自動入力
-・JpPrefecture / jQuery
+◆ユーザー機能3種類（里親希望者・保護施設・里親募集者）<br>
+・新規登録、ログイン、ログアウト、退会機能<br>
+・マイページ、登録情報編集<br>
+・一覧表示(保護施設のみ)<br>
+・deviseを使用<br>
 
 
-◆投稿機能（保護猫、保護犬）
-・投稿、編集、削除機能(保護施設のみ)
-・一覧表示、記事詳細表示
-・画像のアップロードはrefileを使用
+◆住所自動入力<br>
+・JpPrefecture / jQuery<br>
 
 
-◆ページネーション機能
-・kaminariを使用
+◆投稿機能（保護猫、保護犬）<br>
+・投稿、編集、削除機能(保護施設のみ)<br>
+・一覧表示、記事詳細表示<br>
+・画像のアップロードはrefileを使用<br>
 
 
-◆チャット機能
-・チャットルーム作成・メッセージ送信
+◆ページネーション機能<br>
+・kaminariを使用<br>
 
 
-
-⚪︎テスト
-・Rsepc（テストフレームワーク）
-・ShouldaMatchers / Capybara / FactoryBot / Faker / Gimei
+◆チャット機能<br>
+・チャットルーム作成・メッセージ送信<br>
 
 
 
-【今後実装していく項目】
-
-◆通知機能
-・チャットの通知機能
-
-
-◆お問い合わせ機能
-・管理者への問い合わせ
+⚪︎テスト<br>
+・Rsepc（テストフレームワーク）<br>
+・ShouldaMatchers / Capybara / FactoryBot / Faker / Gimei<br>
 
 
-◆検索機能
-・保護猫、保護犬、保護施設の検索
+
+【今後実装していく項目】<br>
+
+◆通知機能<br>
+・チャットの通知機能<br>
 
 
-◆管理ユーザー機能
-・ユーザーのアカウントや投稿、チャットルーム等を削除可能
+◆お問い合わせ機能<br>
+・管理者への問い合わせ<br>
 
 
-◆UI/UX
-・綺麗に整える
+◆検索機能<br>
+・保護猫、保護犬、保護施設の検索<br>
+
+
+◆管理ユーザー機能<br>
+・ユーザーのアカウントや投稿、チャットルーム等を削除可能<br>
+
+
+◆UI/UX<br>
+・綺麗に整える<br>
 
 
