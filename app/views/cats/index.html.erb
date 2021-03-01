@@ -9,3 +9,7 @@
 <%= paginate @cats %>
 <br>
 
+<% if center_signed_in? %>
+  <%= link_to '🐶保護犬 投稿', new_dog_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to '🐱保護猫 投稿', new_cat_path, class: "btn btn-lg btn-primary" %>
+<% end %>
