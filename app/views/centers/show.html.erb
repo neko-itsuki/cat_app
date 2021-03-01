@@ -55,10 +55,11 @@
 
 <% if current_center == @center %>
   <%= link_to '編集', edit_center_registration_path(@center) %>
+  <%= link_to '🐶保護犬 投稿', new_dog_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to '🐱保護猫 投稿', new_cat_path, class: "btn btn-lg btn-primary" %>
 <% end %>
 
-<%= link_to '🐶保護犬 投稿', new_dog_path, class: "btn btn-lg btn-primary" %>
-<%= link_to '🐱保護猫 投稿', new_cat_path, class: "btn btn-lg btn-primary" %>
+
 
 <div class="col-md-8">
   <% if @center.cats.any? %>

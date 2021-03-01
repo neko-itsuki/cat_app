@@ -14,3 +14,9 @@ document.addEventListener("turbolinks:load", function () {
     );
   });
 });
+
+document.addEventListener("turbolinks:load", function() {
+  var height=$("#header").height();
+  $("body").css("margin-top", height);
+});
+

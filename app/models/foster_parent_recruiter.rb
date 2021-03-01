@@ -1,6 +1,4 @@
 class FosterParentRecruiter < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
@@ -50,4 +48,9 @@ class FosterParentRecruiter < ApplicationRecord
     clean_up_passwords
     result
   end
+  
+  def self.guest
+    find_by!(email: 'guest-foster@example.com')
+  end
+  
 end

@@ -2,7 +2,13 @@
 
 class Devise::FosterParentRecruiters::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-
+  
+  def new_guest_foster
+    guest_foster = FosterParentRecruiter.guest
+    sign_in guest_foster
+    redirect_to root_path, notice: 'ゲストユーザー(里親募集者)としてログインしました。'
+  end
+  
   # GET /resource/sign_in
   # def new
   #   super

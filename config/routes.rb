@@ -6,17 +6,29 @@ Rails.application.routes.draw do
       registrations:  'devise/centers/registrations'
   }
   
+  devise_scope :center do
+    post 'centers/guest_center_sign_in', to: 'devise/centers/sessions#new_guest_center'
+  end
+  
   devise_for :foster_parent_recruiters, controllers: {
       sessions:       'devise/foster_parent_recruiters/sessions',
       passwords:      'devise/foster_parent_recruiters/passwords',
       registrations:  'devise/foster_parent_recruiters/registrations'
   }
   
+  devise_scope :foster_parent_recruiters do
+    post 'foster_parent_recruiters/guest_foster_parent_recruiter_sign_in', to: 'devise/foster_parent_recruiters/sessions#new_guest_foster'
+  end
+  
   devise_for :users, controllers: {
     sessions:       'devise/users/sessions',
     passwords:      'devise/users/passwords',
     registrations:  'devise/users/registrations'
   }
+  
+  devise_scope :user do
+    post 'users/guest_user_sign_in', to: 'devise/users/sessions#new_guest_user'
+  end
   
   resources :centers, only: [:index,:show]
   resources :foster_parent_recruiters, only: [:show]

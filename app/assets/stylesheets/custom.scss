@@ -106,16 +106,77 @@ header .container {
 }
 
 body {
-  padding-top: 150px;
   position: relative;
-  padding-bottom: 30px;
+  margin-top: 150px;
+  margin-bottom: 30px;
 }
 
 .main {
   min-height: calc(100vh - 100px);
-  padding-bottom: 30px;
+  padding-bottom: 80px;
 }
 
+.main h4 {
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.main {
+  .img img {
+    width: 30%;
+    border: 1px solid blue;
+  }
+  .chat-img{
+    display: flex;
+    .chat_header {
+      padding-right: 30px;
+      img {
+        width: 100%;
+      }
+    }
+    .chat img {
+      width: 60%;
+    }
+  }
+}
+
+.login {
+  margin-top: 50px;
+  form {
+    h2 {
+      text-align: center;
+    }
+    .field {
+      padding-top: 20px;
+      label {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      input {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .actions {
+      padding-top: 20px;
+    }
+  }
+}
+
+.guest {
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.new {
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
 
 // footer
 

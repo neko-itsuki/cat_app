@@ -7,118 +7,118 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Users
-10.times do |n|
-  name = Gimei.kanji 
-  furigana_name = Gimei.hiragana
-  email = Faker::Internet.email 
-  password = 'password' 
-  password_confirmation = 'password' 
-  age = Faker::Number.within(range: 18..64)
-  gender = "男"
-  postcode = "1001000"
-  prefecture_code = '東京都'
-  address_city = '市区町村'
-  address_street = '番地'
-  address_building = '建物'
-  tel = "09012345678"
-  User.create!(
-    name: name,
-    furigana_name: furigana_name,
-    email: email,
-    password: password,
-    password_confirmation: password_confirmation,
-    age: age,
-    gender: gender,
-    postcode: postcode,
-    prefecture_code: prefecture_code,
-    address_city: address_city,
-    address_street: address_street,
-    address_building: address_building,
-    tel: tel,
-    pets_allowed: true,
-    living: true,
-    vaccination: true
-    )
-end
+# 10.times do |n|
+#   name = Gimei.kanji 
+#   furigana_name = Gimei.hiragana
+#   email = Faker::Internet.email 
+#   password = 'password' 
+#   password_confirmation = 'password' 
+#   age = Faker::Number.within(range: 18..64)
+#   gender = "男"
+#   postcode = "1001000"
+#   prefecture_code = '東京都'
+#   address_city = '市区町村'
+#   address_street = '番地'
+#   address_building = '建物'
+#   tel = "09012345678"
+#   User.create!(
+#     name: name,
+#     furigana_name: furigana_name,
+#     email: email,
+#     password: password,
+#     password_confirmation: password_confirmation,
+#     age: age,
+#     gender: gender,
+#     postcode: postcode,
+#     prefecture_code: prefecture_code,
+#     address_city: address_city,
+#     address_street: address_street,
+#     address_building: address_building,
+#     tel: tel,
+#     pets_allowed: true,
+#     living: true,
+#     vaccination: true
+#     )
+# end
 
 # Centers
-10.times do |n|
-  name = Gimei.kanji 
-  furigana_name = Gimei.hiragana
-  email = Faker::Internet.email 
-  password = 'password' 
-  password_confirmation = 'password' 
-  director_name = '動物保護センター'
-  staff_name = Gimei.kanji
-  postcode = "1001000"
-  prefecture_code = rand(1..47)
-  address_city = '市区町村'
-  address_street = '番地'
-  address_building = '建物'
-  tel = "09012345678"
-  Center.create!(
-    name: name,
-    furigana_name: furigana_name,
-    email: email,
-    password: password,
-    password_confirmation: password_confirmation,
-    director_name: director_name,
-    staff_name: staff_name,
-    postcode: postcode,
-    prefecture_code: prefecture_code,
-    address_city: address_city,
-    address_street: address_street,
-    address_building: address_building,
-    tel: tel,
-    approval: true,
-    release: true,
-    listok: true
-    )
-end
+# 10.times do |n|
+#   name = "保護センター#{rand(1..47)}" 
+#   furigana_name = "ほごせんたー"
+#   email = Faker::Internet.email 
+#   password = 'password' 
+#   password_confirmation = 'password' 
+#   director_name = Gimei.kanji
+#   staff_name = Gimei.kanji
+#   postcode = "1001000"
+#   prefecture_code = rand(1..47)
+#   address_city = '市区町村'
+#   address_street = '番地'
+#   address_building = '建物'
+#   tel = "09012345678"
+#   Center.create!(
+#     name: name,
+#     furigana_name: furigana_name,
+#     email: email,
+#     password: password,
+#     password_confirmation: password_confirmation,
+#     director_name: director_name,
+#     staff_name: staff_name,
+#     postcode: postcode,
+#     prefecture_code: prefecture_code,
+#     address_city: address_city,
+#     address_street: address_street,
+#     address_building: address_building,
+#     tel: tel,
+#     approval: true,
+#     release: true,
+#     listok: true
+#     )
+# end
 
 # Fosters
-10.times do |n|
-  name = Gimei.kanji 
-  furigana_name = Gimei.hiragana
-  email = Faker::Internet.email 
-  password = 'password' 
-  password_confirmation = 'password' 
-  age = Faker::Number.within(range: 18..68)
-  gender = "男" 
-  postcode = "1001000"
-  prefecture_code = '東京都'
-  address_city = '市区町村'
-  address_street = '番地'
-  address_building = '建物'
-  tel = "09012345678"
-  tel_time = rand(1..5)
-  animal_type = '雑種'
-  animal_gender = "不明"
-  animal_age = rand(0..20)
-  animal_image = "app/assets/images/pickup_logo.gif"
-  reason = "子供が産まれた、家族にアレルギーが発症した"
-  FosterParentRecruiter.create!(
-    name: name,
-    furigana_name: furigana_name,
-    email: email,
-    password: password,
-    password_confirmation: password_confirmation,
-    age: age,
-    gender: gender,
-    postcode: postcode,
-    prefecture_code: prefecture_code,
-    address_city: address_city,
-    address_street: address_street,
-    address_building: address_building,
-    tel: tel,
-    tel_time: tel_time,
-    animal_type: animal_type,
-    animal_gender: animal_gender,
-    animal_age: animal_age,
-    animal_image: animal_image,
-    reason: reason
-    )
-end
+# 10.times do |n|
+#   name = Gimei.kanji 
+#   furigana_name = Gimei.hiragana
+#   email = Faker::Internet.email 
+#   password = 'password' 
+#   password_confirmation = 'password' 
+#   age = Faker::Number.within(range: 18..68)
+#   gender = "男" 
+#   postcode = "1001000"
+#   prefecture_code = '東京都'
+#   address_city = '市区町村'
+#   address_street = '番地'
+#   address_building = '建物'
+#   tel = "09012345678"
+#   tel_time = rand(1..5)
+#   animal_type = '雑種'
+#   animal_gender = "不明"
+#   animal_age = rand(0..20)
+#   animal_image = "app/assets/images/pickup_logo.gif"
+#   reason = "子供が産まれた、家族にアレルギーが発症した"
+#   FosterParentRecruiter.create!(
+#     name: name,
+#     furigana_name: furigana_name,
+#     email: email,
+#     password: password,
+#     password_confirmation: password_confirmation,
+#     age: age,
+#     gender: gender,
+#     postcode: postcode,
+#     prefecture_code: prefecture_code,
+#     address_city: address_city,
+#     address_street: address_street,
+#     address_building: address_building,
+#     tel: tel,
+#     tel_time: tel_time,
+#     animal_type: animal_type,
+#     animal_gender: animal_gender,
+#     animal_age: animal_age,
+#     animal_image: animal_image,
+#     reason: reason
+#     )
+# end
 
 # center = Center.first
 # 10.times do
@@ -129,7 +129,7 @@ end
 #     cat_age: Faker::Number.within(range: 1..18) ,
 #     cat_weight: "#{rand(2..5)}kg" ,
 #     cat_coat_color: 'キジ' ,
-#     cat_image_id: "app/assets/images/cat.jpeg",
+#     cat_image_id: "./spec/fixtures/cat.jpeg",
 #     cat_contraceptive_castrated: '済',
 #     cat_microchip: '済' ,
 #     cat_vaccination: '済',
@@ -153,7 +153,7 @@ end
 #     dog_age: Faker::Number.within(range: 1..18) ,
 #     dog_weight: "#{rand(2..7)}kg" ,
 #     dog_coat_color: '茶白' ,
-#     dog_image_id: "app/assets/images/cat.jpeg",
+#     dog_image_id: "./spec/fixtures/cat.jpeg",
 #     dog_contraceptive_castrated: '済',
 #     dog_microchip: '済' ,
 #     dog_vaccination: '済',
@@ -167,3 +167,17 @@ end
 #                 http://www.center.jp/' 
 #   )
 # end
+
+      # email = 'guest-user@example.com'
+      # password = 'guest-user'
+      # password_confirmation = 'guest-user' 
+      # name = "ゲストユーザー"
+      # furigana_name = "げすとゆーざー"
+      # age = 25
+      # gender = "男"
+      # postcode = "1001000"
+      # prefecture_code = '東京都'
+      # address_city = '市区町村'
+      # address_street = '番地'
+      # address_building = '建物'
+      # tel = "09012345678"
