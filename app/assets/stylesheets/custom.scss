@@ -94,11 +94,17 @@ header .container {
       vertical-align: middle;
       line-height: 50px;
       border: 1px solid gray;
+      :hover {
+        background-color: #3366FF;
+      }
     } a {
         display: block;
-        text-decoration: none;
         text-align: center;
-      }
+        color: black;
+      } :hover {
+          text-decoration: none;
+          color: white;
+        }
 }
 
 .user-img {
