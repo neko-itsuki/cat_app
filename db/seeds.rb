@@ -56,11 +56,11 @@
 30.times do |n|
   name = "保護センター#{rand(1..47)}" 
   furigana_name = "ほごせんたー"
-  email = "center@example.com"
+  email = Faker::Internet.email 
   password = 'password' 
   password_confirmation = 'password' 
-  director_name = "斎藤"
-  staff_name = "山田"
+  director_name = Gimei.kanji
+  staff_name = Gimei.kanji
   postcode = "1001000"
   prefecture_code = rand(1..47)
   address_city = '市区町村'

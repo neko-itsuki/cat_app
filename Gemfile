@@ -19,8 +19,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'gimei'
 end
 
 group :development do
@@ -57,3 +55,5 @@ gem 'jquery-rails'
 gem 'jp_prefecture'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+gem 'faker'
+gem 'gimei'
