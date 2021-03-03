@@ -14,5 +14,5 @@ class UserMessagesController < ApplicationController
     def user_message_params
       params.require(:user_message).permit(:user_message, :user_room_id).merge(user_id: current_user.id)
     end
-  
+    
 end

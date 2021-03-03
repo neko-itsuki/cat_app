@@ -54,5 +54,6 @@ Rails.application.routes.draw do
   
   resources :center_rooms, only: [:index, :show]
   resource :center_message, only: :create
+  resources :notifications, only: :index
   
 end

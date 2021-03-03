@@ -3,6 +3,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :user_messages, dependent: :destroy
+  has_many :user_active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :user_passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
   
   validates :name, presence: true,
                    length: { maximum: 25 }

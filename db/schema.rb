@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_151955) do
+ActiveRecord::Schema.define(version: 2021_03_03_101713) do
 
   create_table "cats", force: :cascade do |t|
     t.integer "center_id", null: false
@@ -113,6 +113,15 @@ ActiveRecord::Schema.define(version: 2021_02_14_151955) do
     t.string "address_building"
     t.index ["email"], name: "index_foster_parent_recruiters_on_email", unique: true
     t.index ["reset_password_token"], name: "index_foster_parent_recruiters_on_reset_password_token", unique: true
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "visitor_id", null: false
+    t.integer "visited_id", null: false
+    t.boolean "checked", default: false, null: false
+    t.integer "message_id", null: false
   end
 
   create_table "user_messages", force: :cascade do |t|
