@@ -6,7 +6,7 @@
 
 
 リンク<br>
-・https://immense-cove-67078.herokuapp.com/<br>
+・https://stormy-springs-30384.herokuapp.com/<br>
 里親希望者と動物保護施設、両方にかんたんログイン機能がありますので、ホーム画面等の「ゲストログイン」ボタンからログインできます。
 
 
