@@ -47,27 +47,18 @@
   </div>
   
   <div class="field cat_contraceptive_castrated">
-    避妊・去勢
-    <%= f.label :cat_contraceptive_castrated, "済", value: 1 %><br />
-    <%= f.radio_button :cat_contraceptive_castrated, "1" %>
-    <%= f.label :cat_contraceptive_castrated, "無", value: 0 %><br />
-    <%= f.radio_button :cat_contraceptive_castrated, "0" %>
+    <%= f.label :cat_contraceptive_castrated %><br />
+    <%= f.check_box :cat_contraceptive_castrated, {}, true, false %>
   </div>
   
   <div class="field cat_microchip">
-    マイクロチップ
-    <%= f.label :cat_microchip, "済", value: 1 %><br />
-    <%= f.radio_button :cat_microchip, "1" %>
-    <%= f.label :cat_microchip, "無", value: 0 %><br />
-    <%= f.radio_button :cat_microchip, "0" %>
+    <%= f.label :cat_microchip %><br />
+    <%= f.check_box :cat_microchip, {}, true, false %>
   </div>
   
   <div class="field cat_vaccination">
-    ワクチン接種
-    <%= f.label :cat_vaccination, "済", value: 1 %><br />
-    <%= f.radio_button :cat_vaccination, "1" %>
-    <%= f.label :cat_vaccination, "無", value: 0 %><br />
-    <%= f.radio_button :cat_vaccination, "0" %>
+    <%= f.label :cat_vaccination %><br />
+    <%= f.check_box :cat_vaccination, {}, true, false %>
   </div>
   
   <div class="field">
@@ -93,11 +84,6 @@
   <div class="field">
     <%= f.label :cat_remarks, "備考" %><br />
     <%= f.text_field :cat_remarks %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :cat_center_information, "動物病院情報" %><br />
-    <%= f.text_field :cat_center_information %>
   </div>
 
   <div class="actions">

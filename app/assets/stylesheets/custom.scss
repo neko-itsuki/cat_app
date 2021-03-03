@@ -146,6 +146,15 @@ body {
   }
 }
 
+body .main .about, .flow {
+  padding-top: 30px;
+  .about-h1, .flow-h1 {
+    padding-left: 30px;
+    padding-bottom: 10px;
+    
+  }
+}
+
 .login {
   margin-top: 50px;
   form {

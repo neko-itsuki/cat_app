@@ -47,27 +47,18 @@
   </div>
   
   <div class="field dog_contraceptive_castrated">
-    避妊・去勢
-    <%= f.label :dog_contraceptive_castrated, "済", value: 1 %><br />
-    <%= f.radio_button :dog_contraceptive_castrated, "1" %>
-    <%= f.label :dog_contraceptive_castrated, "無", value: 0 %><br />
-    <%= f.radio_button :dog_contraceptive_castrated, "0" %>
+    <%= f.label :dog_contraceptive_castrated %><br />
+    <%= f.check_box :dog_contraceptive_castrated, {}, true, false %>
   </div>
   
   <div class="field dog_microchip">
-    マイクロチップ
-    <%= f.label :dog_microchip, "済", value: 1 %><br />
-    <%= f.radio_button :dog_microchip, "1" %>
-    <%= f.label :dog_microchip, "無", value: 0 %><br />
-    <%= f.radio_button :dog_microchip, "0" %>
+    <%= f.label :dog_microchip %><br />
+    <%= f.check_box :dog_microchip, {}, true, false %>
   </div>
   
   <div class="field dog_vaccination">
-    ワクチン接種
-    <%= f.label :dog_vaccination, "済", value: 1 %><br />
-    <%= f.radio_button :dog_vaccination, "1" %>
-    <%= f.label :dog_vaccination, "無", value: 0 %><br />
-    <%= f.radio_button :dog_vaccination, "0" %>
+    <%= f.label :dog_vaccination %><br />
+    <%= f.check_box :dog_vaccination, {}, true, false %>
   </div>
   
   <div class="field">
@@ -95,11 +86,6 @@
     <%= f.text_field :dog_remarks %>
   </div>
   
-  <div class="field">
-    <%= f.label :dog_center_information, "動物病院情報" %><br />
-    <%= f.text_field :dog_center_information %>
-  </div>
-
   <div class="actions">
     <%= f.submit animal_request %>
   </div>
