@@ -2,7 +2,7 @@ class Dog < ApplicationRecord
   belongs_to :center
   has_one :user_room, dependent: :destroy
   
-  attachment :dog_image
+  mount_uploader :dog_image, DogImageUploader
   
   validates :dog_name, presence: true,
                    length: { maximum: 10 }

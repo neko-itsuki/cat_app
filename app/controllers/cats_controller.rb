@@ -5,7 +5,7 @@ class CatsController < ApplicationController
   before_action :correct_center, only: [:edit, :update, :destroy]
   
   def index
-    @cats = Cat.page(params[:page]).per(5)
+    @cats = Cat.page(params[:page]).per(15)
   end
   
   def show

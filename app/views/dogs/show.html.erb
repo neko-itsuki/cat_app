@@ -4,7 +4,7 @@ $("a.post").toPostLink();
 <p id="notice"><%= notice %></p>
 
 <h2><%= @dog.dog_name %></h2>
-<%= attachment_image_tag @dog, :dog_image, format: 'jpeg', size: "300x300" %>
+<%= image_tag @dog.dog_image.to_s, size: "300x300" %>
 <%= link_to "相談する", user_rooms_path(center_id: @dog.center_id, dog_id: @dog.id), method: :post, class: "btn btn-lg btn-primary post" %>
 
 <table class="table">

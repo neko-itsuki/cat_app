@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_101713) do
     t.text "cat_center_information"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "cat_image_id", null: false
+    t.string "cat_image", null: false
     t.index ["center_id", "created_at"], name: "index_cats_on_center_id_and_created_at"
     t.index ["center_id"], name: "index_cats_on_center_id"
   end
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_101713) do
     t.text "dog_center_information"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "dog_image_id", null: false
+    t.string "dog_image", null: false
     t.index ["center_id", "created_at"], name: "index_dogs_on_center_id_and_created_at"
     t.index ["center_id"], name: "index_dogs_on_center_id"
   end

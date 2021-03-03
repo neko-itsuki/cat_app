@@ -1,6 +1,6 @@
 <%= link_to(dog_path(dog), class: "link") do %>
   <div class="animal">
-    <%= attachment_image_tag dog, :dog_image, format: 'jpeg', size: "150x150" %><br>
+    <%= image_tag dog.dog_image.to_s, size: "150x150" %><br>
     <%= dog.dog_name %><br>
     <%= dog.dog_age %>/
     <% if dog.dog_gender %>

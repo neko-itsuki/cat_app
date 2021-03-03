@@ -5,7 +5,7 @@ class DogsController < ApplicationController
   before_action :correct_center, only: [:edit, :update, :destroy]
   
   def index
-    @dogs = Dog.page(params[:page]).per(5)
+    @dogs = Dog.page(params[:page]).per(15)
   end
   
   def show

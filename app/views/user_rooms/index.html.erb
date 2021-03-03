@@ -9,7 +9,7 @@
           <div class="animal">
             <h4><%= user_room.center.name %></h4>
             <p>
-              <%= attachment_image_tag user_room.cat, :cat_image, format: 'jpeg', size: "150x150" %><br>
+              <%= image_tag user_room.cat_image.to_s, size: "150x150" %><br>
               <%= user_room.cat.cat_name %><br>
               <%= user_room.cat.cat_age %>/
               <% if user_room.cat.cat_gender %>

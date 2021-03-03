@@ -2,7 +2,7 @@ class Cat < ApplicationRecord
   belongs_to :center
   has_one :user_room, dependent: :destroy
   
-  attachment :cat_image
+  mount_uploader :cat_image, CatImageUploader
   
   validates :cat_name, presence: true,
                    length: { maximum: 10 }
