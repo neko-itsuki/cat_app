@@ -57,5 +57,4 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'faker'
 gem 'gimei'
-gem "refile-s3"
-gem 'dotenv-rails'
+gem 'aws-sdk-s3', require: false
