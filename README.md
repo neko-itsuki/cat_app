@@ -6,7 +6,7 @@
 
 
 リンク<br>
-・https://stormy-springs-30384.herokuapp.com/<br>
+・https://glacial-fjord-79735.herokuapp.com/<br>
 里親希望者と動物保護施設、両方にかんたんログイン機能がありますので、ホーム画面等の「ゲストログイン」ボタンからログインできます。
 
 
