@@ -155,6 +155,14 @@ center = Center.first
 s3 = Aws::S3::Resource.new(region: 'ap-northeast-1')
 20.times do |i|
   # center = Center.find(Center.pluck(:id).sample)
+  # Create the object to retrieve
+    obj = s3.bucket('cat-app-refile').object("#{i}.jpeg")    # change this to your bucket name
+
+    # Get the item's content and save it to local
+    obj.get(response_target: "./spec/fixtures/cats/#{i}.jpeg")
+
+    # center.cats.cat_image.attach(io: File.open("./spec/fixtures/cats/#{i}.jpeg"), filename: "#{i}.jpg")
+
     center.cats.create!(
       cat_name: Faker::Creature::Cat.name,
       cat_type: '雑種',
@@ -162,6 +170,7 @@ s3 = Aws::S3::Resource.new(region: 'ap-northeast-1')
       cat_age: Faker::Number.within(range: 1..18) ,
       cat_weight: "#{rand(2..5)}kg" ,
       cat_coat_color: 'キジ' ,
+      cat_image: File.open("./spec/fixtures/cats/#{i}.jpeg"),
       cat_contraceptive_castrated: '済',
       cat_microchip: '済' ,
       cat_vaccination: '済',
@@ -173,21 +182,21 @@ s3 = Aws::S3::Resource.new(region: 'ap-northeast-1')
       cat_center_information: 'のび動物病院
                   〒100-1000 東京都
                   http://www.center.jp/')
-
-    # Create the object to retrieve
-    obj = s3.bucket('cat-app-refile').object("#{i}.jpeg")    # change this to your bucket name
-
-    # Get the item's content and save it to local
-    obj.get(response_target: "./spec/fixtures/cats/#{i}.jpeg")
-
-    center.cats.cat_image.attach(io: File.open("./spec/fixtures/cats/#{i}.jpeg"), filename: "#{i}.jpg")
-
+  
 end
 
 center = Center.first
 s3 = Aws::S3::Resource.new(region: 'ap-northeast-1')
 20.times do |i|
   # center = Center.find(Center.pluck(:id).sample)
+  # Create the object to retrieve
+    obj = s3.bucket('cat-app-refile').object("#{i}.jpeg")    # change this to your bucket name
+
+    # Get the item's content and save it to local
+    obj.get(response_target: "./spec/fixtures/dogs/#{i}.jpeg")
+
+    # center.dogs.dog_image.attach(io: File.open("./spec/fixtures/dogs/#{i}.jpeg"), filename: "#{i}.jpg")
+    
     center.cats.create!(
       dog_name: Faker::Creature::Dog.name,
       dog_type: '柴犬',
@@ -195,6 +204,7 @@ s3 = Aws::S3::Resource.new(region: 'ap-northeast-1')
       dog_age: Faker::Number.within(range: 1..18) ,
       dog_weight: "#{rand(2..7)}kg" ,
       dog_coat_color: '茶白' ,
+      dog_image: File.open("./spec/fixtures/dogs/#{i}.jpeg"),
       dog_contraceptive_castrated: '済',
       dog_microchip: '済' ,
       dog_vaccination: '済',
@@ -206,15 +216,7 @@ s3 = Aws::S3::Resource.new(region: 'ap-northeast-1')
       dog_center_information: 'のび動物病院
                   〒100-1000 東京都
                   http://www.center.jp/')
-
-    # Create the object to retrieve
-    obj = s3.bucket('cat-app-refile').object("#{i}.jpeg")    # change this to your bucket name
-
-    # Get the item's content and save it to local
-    obj.get(response_target: "./spec/fixtures/dogs/#{i}.jpeg")
-
-    center.dogs.dog_image.attach(io: File.open("./spec/fixtures/dogs/#{i}.jpeg"), filename: "#{i}.jpg")
-    
+  
 end
 
 # center = Center.first

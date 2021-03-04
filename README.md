@@ -18,7 +18,7 @@
 ・PostgreSQL<br>
 ・puma<br>
 ・RSpec（テストフレームワーク）<br>
-・AWS Cloud9<br>
+・AWS Cloud9, S3<br>
 ・heroku<br>
 ・Amazon Linux<br>
 
@@ -41,7 +41,8 @@
 ◆投稿機能（保護猫、保護犬）<br>
 ・投稿、編集、削除機能(保護施設のみ)<br>
 ・一覧表示、記事詳細表示<br>
-・画像のアップロードはrefileを使用<br>
+・画像のアップロードはCarrierwaveを使用<br>
+・本番環境（heroku）への画像のアップロードはAWS S3を使用<br>
 
 
 ◆ページネーション機能<br>

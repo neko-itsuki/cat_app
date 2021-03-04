@@ -1,4 +1,6 @@
 class Dog < ApplicationRecord
+  
+  default_scope -> { order(created_at: :desc) }
   belongs_to :center
   has_one :user_room, dependent: :destroy
   
