@@ -1,6 +1,10 @@
-<h3>チャットルーム</h3>
+<h2>チャットルーム一覧</h2>
 <% if @user_rooms.blank? %>
   <p>チャットルームはありません</p>
+  <p>
+    ご希望の保護犬・猫の詳細ページのから<br>
+    「相談する」ボタンをクリックしてください。
+  </p>
 <% else %>
   <% @user_rooms.each do |user_room| %>
     <div class="chat_rooms">

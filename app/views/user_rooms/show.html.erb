@@ -11,16 +11,18 @@
   <% @user_messages.each do |message| %>
     <div>
       <% if message.user %>
-        <p class="chat-talk mytalk">
+        <p class="chat-talk mytalk chat-talk-right">
           <span class="talk-content"><%= message.user_message %></span>
         </p>
+        <div class="bms_clear"></div>
       <% else %>
-        <p class="chat-talk">
+        <p class="chat-talk chat-talk-left">
           <span class="talk-icon">
             <%= image_tag 'user.png', class: "user-img" %>
           </span>
           <span class="talk-content"><%= message.user_message %></span>
         </p>
+        <div class="bms_clear"></div>
       <% end %>
     </div>
   <% end %>

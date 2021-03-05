@@ -4,19 +4,30 @@
   <%= image_tag 'home.jpeg', class: "home-img" %>
 </div>
 
-<div class="center jumbotron">
-  <h3>里親希望者</h3>
-  <%= link_to "ログイン", new_user_session_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "新規登録", new_user_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg btn-primary" %>
-  <%= link_to 'ゲストログイン', users_guest_user_sign_in_path, class: "btn btn-lg btn-success", method: :post %>
-</div>
-
-<div class="center jumbotron">
-  <h3>動物保護施設</h3>
-  <%= link_to "ログイン", new_center_session_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "新規登録", new_center_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg btn-primary" %>
-  <%= link_to 'ゲストログイン', centers_guest_center_sign_in_path, class: "btn btn-lg btn-success", method: :post %>
-</div>
+<% if !current_delete_session %>
+  <div class="jumbotron">
+    <h3>里親希望者</h3>
+    <%= link_to "ログイン", new_user_session_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "新規登録", new_user_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg btn-primary" %>
+    <%= link_to 'ゲストログイン', users_guest_user_sign_in_path, class: "btn btn-lg btn-success", method: :post %>
+  </div>
+  
+  <div class="jumbotron">
+    <h3>動物保護施設</h3>
+    <%= link_to "ログイン", new_center_session_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "新規登録", new_center_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg btn-primary" %>
+    <%= link_to 'ゲストログイン', centers_guest_center_sign_in_path, class: "btn btn-lg btn-success", method: :post %>
+  </div>
+<% else %>
+  <div class="jumbotron">
+    <%= link_to "プロフィール", current_profile_path, class: "btn btn-lg btn-success" %>
+    <% if center_signed_in? %>
+      <%= link_to "🐱保護猫を投稿", new_cat_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to '🐶保護犬を投稿', new_dog_path, class: "btn btn-lg btn-primary" %>
+    <% end %>
+    <%= link_to 'ログアウト', current_delete_session, class: "btn btn-lg", method: :delete %>
+  </div>
+<% end %>
 
 <div class="about">
   <h1 class="about-h1">このサイトについて</h1>

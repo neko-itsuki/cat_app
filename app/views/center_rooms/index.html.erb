@@ -1,6 +1,7 @@
-<h3>チャットルーム一覧</h3>
+<h2>チャットルーム一覧</h2>
 <% if @center_rooms.blank? %>
   <p>チャットルームはありません</p>
+  <p>里親希望者からのメッセージを待ちましょう。</p>
 <% else %>
   <% @center_rooms.each do |center_room| %>
     <div class="chat_rooms">
