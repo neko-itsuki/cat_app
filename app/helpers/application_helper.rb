@@ -21,7 +21,7 @@ module ApplicationHelper
   
   def current_delete_session
     if user_signed_in?
-      destroy_foster_parent_recruiter_session_path
+      destroy_user_session_path
     elsif center_signed_in?
       destroy_center_session_path
     else

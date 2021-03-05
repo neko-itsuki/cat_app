@@ -73,48 +73,6 @@ require 'aws-sdk-s3'
     release: true,
     listok: true
     )
-    
-# Foster
-  email = 'guest-center@example.com'
-  password = 'guest-center'
-  password_confirmation = 'guest-center' 
-  name = "ゲストセンター"
-  furigana_name = "げすとせんたー"
-  age = 25
-  gender = "男"
-  postcode = "1001000"
-  prefecture_code = '東京都'
-  address_city = '市区町村'
-  address_street = '番地'
-  address_building = '建物'
-  tel = "09012345678"
-  tel_time = rand(1..5)
-  animal_type = '雑種'
-  animal_gender = "不明"
-  animal_age = rand(0..20)
-  animal_image = "app/assets/images/pickup_logo.gif"
-  reason = "子供が産まれた、家族にアレルギーが発症した"
-  FosterParentRecruiter.create!(
-    name: name,
-    furigana_name: furigana_name,
-    email: email,
-    password: password,
-    password_confirmation: password_confirmation,
-    age: age,
-    gender: gender,
-    postcode: postcode,
-    prefecture_code: prefecture_code,
-    address_city: address_city,
-    address_street: address_street,
-    address_building: address_building,
-    tel: tel,
-    tel_time: tel_time,
-    animal_type: animal_type,
-    animal_gender: animal_gender,
-    animal_age: animal_age,
-    animal_image: animal_image,
-    reason: reason
-    )
 
 # Centers
 30.times do |n|

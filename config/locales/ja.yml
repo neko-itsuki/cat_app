@@ -4,7 +4,6 @@ ja:
   activerecord:
     models:
       user: 里親希望者
-      foster_parent_recruiter: 里親募集者
       center: 動物保護施設
       cat: 保護猫
       dog: 保護犬
@@ -26,25 +25,6 @@ ja:
         pets_allowed: "[犬・猫可住宅にお住まいですか？]確認事項"
         living: "[生計を立てる収入はございますか？]確認事項"
         vaccination: "[譲渡後、狂犬病予防注射・ワクチン接種をお約束いただけますか？]確認事項"
-      foster_parent_recruiter:
-        name: 名前
-        furigana_name: ふりがな
-        email: メールアドレス
-        password: パスワード
-        password_confirmation: パスワード確認
-        age: 年齢
-        gender: 性別
-        postcode: 郵便番号
-        prefecture_code: 都道府県
-        address_city: 市区町村
-        address_street: 番地
-        address_building: 建物
-        tel: 電話番号
-        animal_type: 犬種・猫種
-        animal_gender: 性別（犬・猫）
-        animal_age: 年齢
-        animal_image: お写真
-        reason: 飼えなくなった理由
       center:
         name: 病院名
         furigana_name: 病院名（ふりがな）

@@ -5,10 +5,8 @@ ruby '2.6.6'
 
 gem 'rails',      '6.0.3'
 gem 'bootstrap-sass', '3.4.1'
-# gem 'bootstrap', '~> 4.1.1'
 gem 'puma',       '4.3.6'
 gem 'sass-rails', '5.1.0'
-# gem 'webpacker',  '4.0.7'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.5', require: false
