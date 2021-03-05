@@ -67,13 +67,11 @@
     <ol class="animals">
       <%= render @center.cats %>
     </ol>
-    <%= paginate @cats %>
   <% end %>
   <% if @center.dogs.any? %>
     <h3>保護犬 (<%= @center.dogs.count %>)</h3>
     <ol class="animals">
       <%= render @center.dogs %>
     </ol>
-    <%= paginate @cats %>
   <% end %>
 </div>

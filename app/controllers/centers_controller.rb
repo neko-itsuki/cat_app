@@ -6,7 +6,6 @@ class CentersController < ApplicationController
   
   def show
     @center = Center.find(params[:id])
-    @cats = Cat.page(params[:page]).per(5)
   end
   
 end
