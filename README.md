@@ -1,16 +1,16 @@
 ※現在も作成中です<br>
 
 
-<h4 style="margin: 0px;">サイト概要</h4><br>
+<h4>サイト概要</h4>
 ・動物保護施設による保護犬、猫の譲渡活動をサポートする里親マッチングサイトです。
 
 
-<h4 style="margin: 0px;">リンク</h4><br>
+<h4>リンク</h4>
 ・https://glacial-fjord-79735.herokuapp.com/<br>
 里親希望者と動物保護施設、両方にかんたんログイン機能がありますので、ホーム画面等の「ゲストログイン」ボタンからログインできます。
 
 
-<h4 style="margin: 0px;">使用技術</h4><br>
+<h4>使用技術</h4>
 ・HTML / CSS / Bootstrap<br>
 ・JavaScript / jQuery<br>
 ・Ruby 2.6.6<br>
@@ -24,8 +24,7 @@
 
 
 
-<h4 style="margin: 0px;">機能一覧</h4><br>
-
+<h4>機能一覧</h4>
 ◆ユーザー機能（里親希望者・保護施設）<br>
 ・新規登録、ログイン、ログアウト、退会機能<br>
 ・かんたんログイン機能<br>
