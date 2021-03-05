@@ -87,34 +87,6 @@ ActiveRecord::Schema.define(version: 2021_03_03_101713) do
     t.index ["center_id"], name: "index_dogs_on_center_id"
   end
 
-  create_table "foster_parent_recruiters", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "name", null: false
-    t.string "furigana_name", null: false
-    t.integer "age", null: false
-    t.boolean "gender", null: false
-    t.string "tel", null: false
-    t.string "tel_time"
-    t.string "animal_type", null: false
-    t.string "animal_gender", null: false
-    t.string "animal_age", null: false
-    t.string "animal_image", null: false
-    t.string "reason", null: false
-    t.integer "postcode", null: false
-    t.integer "prefecture_code", null: false
-    t.string "address_city", null: false
-    t.string "address_street", null: false
-    t.string "address_building"
-    t.index ["email"], name: "index_foster_parent_recruiters_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_foster_parent_recruiters_on_reset_password_token", unique: true
-  end
-
   create_table "notifications", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
