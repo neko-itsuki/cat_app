@@ -2,18 +2,20 @@
 @import "bootstrap";
 
 .chat_rooms {
-  display: flex;
+  justify-content: center;
+  display: inline-block;
+  :hover {
+    opacity: 0.8;
+  }
   .animal {
     border: 1px solid #ddd;
     padding: 20px;
+    display: inline-block;
     h4 {
       font-weight: bold;
     }
     p {
       padding: 10px 0 0 0;
-    }
-    :hover {
-      opacity: 0.7;
     }
   }
 }

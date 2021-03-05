@@ -4,6 +4,7 @@ class Center < ApplicationRecord
   
   has_many :cats, dependent: :destroy
   has_many :dogs, dependent: :destroy
+  has_many :user_rooms, dependent: :destroy
   has_many :user_messages, dependent: :destroy
   has_many :center_active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :center_passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy

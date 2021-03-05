@@ -6,9 +6,7 @@ class UserRoom < ApplicationRecord
   belongs_to :dog, optional: true
   has_many :user_messages, dependent: :destroy
   
-  validates :user_id, uniqueness: true, allow_nil: true
-  validates :center_id, uniqueness: true, allow_nil: true
-  validates :cat_id, uniqueness: true, allow_nil: true
-  validates :dog_id, uniqueness: true, allow_nil: true
+  validates :user_id, presence: true
+  validates :center_id, presence: true
   
 end

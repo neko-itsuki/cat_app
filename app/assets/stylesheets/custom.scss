@@ -111,6 +111,13 @@ header .container {
   width: 30px;
 }
 
+.chat-logo {
+  float: right;
+  .chat-logo-img {
+    width: 80%;
+  }
+}
+
 body {
   position: relative;
   margin-top: 150px;

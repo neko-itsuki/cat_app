@@ -12,8 +12,6 @@ module ApplicationHelper
   def current_destroy
     if user_signed_in?
       user_registration_path
-    elsif foster_parent_recruiter_signed_in?
-      foster_parent_recruiter_registration_path
     elsif center_signed_in?
       center_registration_path
     else
@@ -23,8 +21,6 @@ module ApplicationHelper
   
   def current_delete_session
     if user_signed_in?
-      destroy_foster_parent_recruiter_session_path
-    elsif foster_parent_recruiter_signed_in?
       destroy_foster_parent_recruiter_session_path
     elsif center_signed_in?
       destroy_center_session_path
@@ -36,8 +32,6 @@ module ApplicationHelper
   def current_profile_path
     if user_signed_in?
       user_path(current_user)
-    elsif foster_parent_recruiter_signed_in?
-      foster_parent_recruiter_path(current_foster_parent_recruiter)
     elsif center_signed_in?
       center_path(current_center)
     else
@@ -56,12 +50,18 @@ module ApplicationHelper
   def current_rooms_path
     if user_signed_in?
       user_rooms_path(current_user)
-    elsif foster_parent_recruiter_signed_in?
-      foster_parent_recruiter_rooms_path(current_foster_parent_recruiter)
     elsif center_signed_in?
       center_rooms_path(current_center)
     else
       false
+    end
+  end
+  
+  def unchecked_notifications
+    if user_signed_in?
+      @notifications = current_user.user_passive_notifications.where(checked: false)
+    elsif center_signed_in?
+      @notifications = current_center.center_passive_notifications.where(checked: false)
     end
   end
   

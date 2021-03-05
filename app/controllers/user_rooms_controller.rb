@@ -32,17 +32,10 @@ class UserRoomsController < ApplicationController
     end
     
     def user_room_already
-      @user_room = UserRoom.find_by(params[:user_id], params[:center_id], params[:cat_id], params[:dog_id])
+      @user_room = UserRoom.find_by(params[:user_id], params[:cat_id], params[:dog_id])
       if !@user_room.nil?
-        render action: :show
+        redirect_to user_room_path(@user_room)
       end
     end
-    
-    # def user_room_already
-      # @user_room = UserRoom.where(params[:user_id])
-      # if @user_room.cat_id == params[:cat_id] || @user_room.cat_id == params[:dog_id]
-      #   render action: :show
-      # end
-    # end
     
 end

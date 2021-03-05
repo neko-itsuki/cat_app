@@ -2,11 +2,13 @@
   <div class="container">
     <%= link_to "里親マッチングサイト", root_path, id: "logo", class: "navbar-brand" %>
     <nav>
+      
       <button class="menu-trigger">
         <span></span>
         <span></span>
         <span></span>
       </button>
+      
       <ul class="nav navbar-nav navbar-right menus">
         <li><%= link_to "このサイトのついて", about_path %></li>
         <li><%= link_to "譲渡までの流れ", flow_path %></li>
@@ -17,9 +19,9 @@
           <li><%= link_to "里親希望者 新規登録", new_user_registration_path, data: {"turbolinks" => false} %></li>
           <li><%= link_to '保護施設 ログイン', new_center_session_path %></li>
           <li><%= link_to "保護施設 新規登録", new_center_registration_path, data: {"turbolinks" => false} %></li>
-          <!--<li><%= link_to '里親募集者 ログイン', new_foster_parent_recruiter_session_path %></li>-->
         <% end %>
       </ul>
+      
       <% if current_delete_session %>
         <button class="menu-trigger">
           <%= image_tag 'user.png', class: "user-img" %>
@@ -27,7 +29,6 @@
         <ul class="nav navbar-nav navbar-right menus">
           <li><%= link_to "プロフィール", current_profile_path %></li>
           <li><%= link_to 'ログアウト', current_delete_session, method: :delete %></li>
-          <li><%= link_to "チャットルーム", current_rooms_path %></li>
           <% if center_signed_in? %>
             <li><%= link_to "保護猫を投稿", new_cat_path %></li>
             <li><%= link_to '保護犬を投稿', new_dog_path %></li>
@@ -37,6 +38,18 @@
           <% end %>
         </ul>
       <% end %>
+      
+      <% if current_delete_session %>
+        <button class="menu-trigger">
+          <% if unchecked_notifications.any? %>
+            <i class="fa fa-circle" style="color: gold;"></i>
+          <% end %>
+          <%= link_to(current_rooms_path, class: "chat-logo") do %>
+            <%= image_tag 'chat_logo.png', class: "chat-logo-img" %>
+          <% end %>
+        </button>
+      <% end %>
+      
     </nav>
   </div>
   <div class="header-menu">
