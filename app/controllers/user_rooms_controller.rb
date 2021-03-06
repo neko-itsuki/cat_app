@@ -11,6 +11,9 @@ class UserRoomsController < ApplicationController
     @user_room = UserRoom.find(params[:id])
     @user_message = UserMessage.new
     @user_messages = UserMessage.where(user_room_id: @user_room.id)
+    @notifications = current_user.user_passive_notifications.where(is_user: false, checked: false).each do |notification|
+      notification.update_attributes(checked: true)
+    end
   end
   
   def create
@@ -32,7 +35,7 @@ class UserRoomsController < ApplicationController
     end
     
     def user_room_already
-      @user_room = UserRoom.find_by(params[:user_id], params[:cat_id], params[:dog_id])
+      @user_room = UserRoom.find_by(user_room_params)
       if !@user_room.nil?
         redirect_to user_room_path(@user_room)
       end

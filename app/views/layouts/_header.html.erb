@@ -40,16 +40,15 @@
       <% end %>
       
       <% if current_delete_session %>
-        <button class="menu-trigger">
-          <% if unchecked_notifications.any? %>
-            <i class="fa fa-circle" style="color: gold;"></i>
-          <% end %>
+        <button class="menu-trigger chat-logo">
           <%= link_to(current_rooms_path, class: "chat-logo") do %>
             <%= image_tag 'chat_logo.png', class: "chat-logo-img" %>
           <% end %>
+          <% if unchecked_notifications.any? %>
+            <span class="badge">&nbsp;</span>
+          <% end %>
         </button>
       <% end %>
-      
     </nav>
   </div>
   <div class="header-menu">

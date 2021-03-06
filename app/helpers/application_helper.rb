@@ -59,9 +59,9 @@ module ApplicationHelper
   
   def unchecked_notifications
     if user_signed_in?
-      @notifications = current_user.user_passive_notifications.where(checked: false)
+      @notifications = current_user.user_passive_notifications.where(is_user: false, checked: false)
     elsif center_signed_in?
-      @notifications = current_center.center_passive_notifications.where(checked: false)
+      @notifications = current_center.center_passive_notifications.where(is_user: true, checked: false)
     end
   end
   

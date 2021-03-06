@@ -118,6 +118,20 @@ header .container {
   }
 }
 
+.chat-logo .badge {
+  padding: 0px;
+  margin-top: 2px;
+  left: 60%;
+  font-size: 10px;
+  line-height: 15px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: #ff0000; 
+  color: #ffffff;
+}
+
+// body
 body {
   position: relative;
   margin-top: 150px;

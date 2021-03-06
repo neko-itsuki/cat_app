@@ -1,4 +1,4 @@
-<h2>チャットルーム一覧</h2>
+<h2 style="padding-bottom:30px;">チャットルーム一覧</h2>
 <% if @user_rooms.blank? %>
   <p>チャットルームはありません</p>
   <p>
@@ -8,6 +8,9 @@
 <% else %>
   <% @user_rooms.each do |user_room| %>
     <div class="chat_rooms">
+      <% if unchecked_notifications.any? %>
+        <span class="badge">&nbsp;</span>
+      <% end %>
       <% if user_room.cat %>
         <%= link_to(user_room_path(user_room), class: "link") do %>
           <div class="animal">

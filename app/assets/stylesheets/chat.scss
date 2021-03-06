@@ -4,6 +4,19 @@
 .chat_rooms {
   justify-content: center;
   display: inline-block;
+  .badge {
+    position: relative;
+    padding: 0px;
+    top: -270px;
+    left: 96%;
+    font-size: 10px;
+    line-height: 15px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #ff0000; 
+    color: #ffffff;
+  }
   :hover {
     opacity: 0.8;
   }
@@ -13,6 +26,8 @@
     display: inline-block;
     h4 {
       font-weight: bold;
+      padding: 0px;
+      width: 150px;
     }
     p {
       padding: 10px 0 0 0;
@@ -21,10 +36,8 @@
 }
 
 .chat-person {
-  border-radius: 12px;
   padding: 20px;
   background-color: #C0C0C0;
-  position: fixed;
   z-index: 2;
   p {
     margin: 0px;

@@ -92,8 +92,9 @@ ActiveRecord::Schema.define(version: 2021_03_03_101713) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "visitor_id", null: false
     t.integer "visited_id", null: false
-    t.boolean "checked", default: false, null: false
+    t.boolean "is_user", null: false
     t.integer "message_id", null: false
+    t.boolean "checked", default: false, null: false
   end
 
   create_table "user_messages", force: :cascade do |t|

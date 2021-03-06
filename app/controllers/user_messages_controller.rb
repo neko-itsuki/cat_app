@@ -21,7 +21,8 @@ class UserMessagesController < ApplicationController
       message_notice = current_user.user_active_notifications.new(
         visitor_id: current_user.id,
         visited_id: center_id,
-        message_id: message_id
+        message_id: message_id,
+        is_user: true
       )
       message_notice.save if message_notice.valid?
     end

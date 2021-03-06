@@ -21,7 +21,8 @@ class CenterMessagesController < ApplicationController
       message_notice = current_center.center_active_notifications.new(
         visitor_id: current_center.id,
         visited_id: user_id,
-        message_id: message_id
+        message_id: message_id,
+        is_user: false
       )
       message_notice.save if message_notice.valid?
     end
