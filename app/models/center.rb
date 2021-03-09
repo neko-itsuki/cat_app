@@ -2,6 +2,7 @@ class Center < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  default_scope -> { order(created_at: :desc) }
   has_many :cats, dependent: :destroy
   has_many :dogs, dependent: :destroy
   has_many :user_rooms, dependent: :destroy

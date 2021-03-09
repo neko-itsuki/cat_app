@@ -5,7 +5,7 @@ class CatsController < ApplicationController
   before_action :correct_center, only: [:edit, :update, :destroy]
   
   def index
-    @cats = Cat.page(params[:page]).per(15)
+    @cats = Cat.page(params[:page]).per(15).includes(:center)
   end
   
   def show
@@ -43,7 +43,6 @@ class CatsController < ApplicationController
   def destroy
     @cat.destroy
     flash[:success] = "#{@cat.cat_name}の投稿を削除しました"
-    # redirect_to request.referrer || root_url
     redirect_back(fallback_location: root_url)
   end
   

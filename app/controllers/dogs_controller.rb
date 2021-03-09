@@ -5,7 +5,7 @@ class DogsController < ApplicationController
   before_action :correct_center, only: [:edit, :update, :destroy]
   
   def index
-    @dogs = Dog.page(params[:page]).per(15)
+    @dogs = Dog.page(params[:page]).per(15).includes(:center)
   end
   
   def show
@@ -42,7 +42,6 @@ class DogsController < ApplicationController
   def destroy
     @dog.destroy
     flash[:success] = "#{@dog.dog_name}の投稿を削除しました"
-    # redirect_to request.referrer || root_url
     redirect_back(fallback_location: root_url)
   end
   
