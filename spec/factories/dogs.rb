@@ -16,8 +16,5 @@ FactoryBot.define do
     dog_personality { '人懐こい' }
     dog_history_of_protection { '飼い主の引っ越しにより飼えなくなった' }
     dog_remarks { '可能であれば2匹一緒に引き取りをご検討ください' }
-    dog_center_information { 'のび動物病院
-                〒100-1000 東京都
-                http://www.center.jp/' }
   end
 end
