@@ -17,7 +17,6 @@ class CreateDogs < ActiveRecord::Migration[6.0]
       t.text :dog_personality, null: false
       t.text :dog_history_of_protection, null: false
       t.text :dog_remarks
-      t.text :dog_center_information
 
       t.timestamps
     end

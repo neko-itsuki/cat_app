@@ -13,6 +13,7 @@ class Cat < ApplicationRecord
   validates :cat_age, presence: true
   validates :cat_weight, presence: true
   validates :cat_coat_color, presence: true
+  validates :cat_image, presence: true
   validates :cat_contraceptive_castrated, presence: true
   validates :cat_microchip, presence: true
   validates :cat_vaccination, presence: true

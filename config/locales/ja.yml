@@ -52,7 +52,8 @@ ja:
         cat_gender: 性別
         cat_age: 年齢 
         cat_weight: 体重 
-        cat_coat_color: 毛色 
+        cat_coat_color: 毛色
+        cat_image: 写真
         cat_contraceptive_castrated: 避妊・去勢
         cat_microchip: マイクロチップ 
         cat_vaccination: ワクチン接種
@@ -68,7 +69,8 @@ ja:
         dog_gender: 性別
         dog_age: 年齢 
         dog_weight: 体重 
-        dog_coat_color: 毛色 
+        dog_coat_color: 毛色
+        dog_image: 写真
         dog_contraceptive_castrated: 避妊・去勢
         dog_microchip: マイクロチップ 
         dog_vaccination: ワクチン接種

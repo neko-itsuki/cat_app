@@ -20,6 +20,7 @@ RSpec.describe Dog, type: :model do
   it { is_expected.to validate_presence_of :dog_age }
   it { is_expected.to validate_presence_of :dog_weight }
   it { is_expected.to validate_presence_of :dog_coat_color }
+  it { is_expected.to validate_presence_of :dog_image }
   it { is_expected.to validate_presence_of :dog_contraceptive_castrated }
   it { is_expected.to validate_presence_of :dog_microchip }
   it { is_expected.to validate_presence_of :dog_vaccination }
@@ -27,8 +28,7 @@ RSpec.describe Dog, type: :model do
   it { is_expected.to validate_presence_of :dog_health }
   it { is_expected.to validate_presence_of :dog_personality }
   it { is_expected.to validate_presence_of :dog_history_of_protection }
-  it { is_expected.to validate_presence_of :dog_center_information }
-  
+
   it { is_expected.to belong_to(:center) }
   end
 end

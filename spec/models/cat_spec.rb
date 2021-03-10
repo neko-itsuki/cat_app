@@ -20,6 +20,7 @@ RSpec.describe Cat, type: :model do
     it { is_expected.to validate_presence_of :cat_age }
     it { is_expected.to validate_presence_of :cat_weight }
     it { is_expected.to validate_presence_of :cat_coat_color }
+    it { is_expected.to validate_presence_of :cat_image }
     it { is_expected.to validate_presence_of :cat_contraceptive_castrated }
     it { is_expected.to validate_presence_of :cat_microchip }
     it { is_expected.to validate_presence_of :cat_vaccination }
@@ -27,8 +28,7 @@ RSpec.describe Cat, type: :model do
     it { is_expected.to validate_presence_of :cat_health }
     it { is_expected.to validate_presence_of :cat_personality }
     it { is_expected.to validate_presence_of :cat_history_of_protection }
-    it { is_expected.to validate_presence_of :cat_center_information }
-    
+
     it { is_expected.to belong_to(:center) }
   end
 end

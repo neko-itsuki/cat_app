@@ -13,6 +13,7 @@ class Dog < ApplicationRecord
   validates :dog_age, presence: true
   validates :dog_weight, presence: true
   validates :dog_coat_color, presence: true
+  validates :dog_image, presence: true
   validates :dog_contraceptive_castrated, presence: true
   validates :dog_microchip, presence: true
   validates :dog_vaccination, presence: true

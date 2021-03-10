@@ -95,9 +95,9 @@ RSpec.describe 'Devise', type: :system do
       # end
 
       # it 'かんたんログイン' do
-      #   visit new_guide_session_path
-      #   click_on 'ゲストログイン（閲覧用）'
-      #   expect(current_path).to eq(guest_guide_path)
+      #   visit new_user_session_path
+      #   click_on 'ゲストログイン'
+      #   expect(page).to have_content 'ゲストユーザー(里親希望者)としてログインしました。'
       # end
 
     end
@@ -206,9 +206,9 @@ RSpec.describe 'Devise', type: :system do
       # end
 
       # it 'かんたんログイン' do
-      #   visit new_guide_session_path
-      #   click_on 'ゲストログイン（閲覧用）'
-      #   expect(current_path).to eq(guest_guide_path)
+      #   visit new_center_session_path
+      #   click_on 'ゲストログイン'
+      #   expect(page).to have_content 'ゲストユーザー(保護施設)としてログインしました。'
       # end
 
     end

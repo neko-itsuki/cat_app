@@ -109,7 +109,7 @@ require 'aws-sdk-s3'
     )
 end
 
-center = Center.first
+center = Center.find_by(name: "ゲストセンター")
 9.times do |n|
   center.cats.create!(
     cat_name: Faker::Creature::Cat.name,
@@ -133,7 +133,7 @@ center = Center.first
   )
 end
 
-center = Center.second
+center = Center.find_by(name: "ゲストセンター")
 9.times do |n|
   center.dogs.create!(
     dog_name: Faker::Creature::Dog.name,

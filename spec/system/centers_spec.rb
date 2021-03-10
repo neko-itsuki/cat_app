@@ -8,11 +8,11 @@ RSpec.describe "Centers", type: :system do
   describe 'Centers関連ページ' do
     
     context 'Center一覧ページ' do
-      # it 'Center一覧ページへ遷移する' do
-      #   login(center)
-      #   visit centers_path
-      #   expect(current_path).to eq(centers_path)
-      # end
+      it 'Center一覧ページへ遷移する' do
+        login(center)
+        visit centers_path
+        expect(current_path).to eq(centers_path)
+      end
       
       it 'ログインなしでも一覧ページに遷移' do
         visit centers_path
@@ -21,11 +21,11 @@ RSpec.describe "Centers", type: :system do
     end
     
     context 'Center詳細ページ' do
-      # it 'Center詳細ページへ遷移する' do
-      #   login(center)
-      #   visit center_path(center)
-      #   expect(current_path).to eq(center_path(center))
-      # end
+      it 'Center詳細ページへ遷移する' do
+        login(center)
+        visit center_path(center)
+        expect(current_path).to eq(center_path(center))
+      end
       
       it 'ログインなしでも詳細ページに遷移' do
         visit center_path(center)
