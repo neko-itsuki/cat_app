@@ -3,7 +3,7 @@ class CenterRoomsController < ApplicationController
   before_action :authenticate_center!
 
   def index
-    @center_rooms = UserRoom.where(center_id: current_center.id)
+    @center_rooms = UserRoom.where(center_id: current_center.id).preload(:cat, :dog, :center)
   end
 
   def show

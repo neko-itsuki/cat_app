@@ -25,7 +25,7 @@
                 メス/
               <% end %>
               <%= user_room.cat.cat_type %><br>
-              <%= t('address.state')[user_room.cat.center.prefecture_code - 1] %><br>
+              <%= t('address.state')[user_room.center.prefecture_code - 1] %><br>
             </p>
           </div>
         <% end %>
@@ -43,7 +43,7 @@
                 メス/
               <% end %>
               <%= user_room.dog.dog_type %><br>
-              <%= t('address.state')[user_room.dog.center.prefecture_code - 1] %><br>
+              <%= t('address.state')[user_room.center.prefecture_code - 1] %><br>
             </p>
           </div>
         <% end %>

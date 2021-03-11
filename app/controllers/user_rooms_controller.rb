@@ -4,7 +4,7 @@ class UserRoomsController < ApplicationController
   before_action :user_room_already, only: :create
 
   def index
-    @user_rooms = UserRoom.where(user_id: current_user.id)
+    @user_rooms = UserRoom.where(user_id: current_user.id).preload(:cat, :dog, :center)
   end
 
   def show
