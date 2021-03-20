@@ -2,8 +2,8 @@
 
 
 <h2>サイト概要</h2><br>
-<div width="100%" height="100%">
-    <%= image_tag 'portfolio.png' %>
+<div>
+    <img src=".app/images/portfolio.png" width="100%" height="100%">
 </div><br>
 ・動物保護施設による保護犬、猫の譲渡活動をサポートする里親マッチングサイトです。
 
