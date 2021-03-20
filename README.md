@@ -1,7 +1,10 @@
 ※現在も作成中です<br>
 
 
-<h2>サイト概要</h2>
+<h2>サイト概要</h2><br>
+<div class="portfolio_video">
+  <%= video_tag 'portfolio.mp4', autoplay: true, loop: true, muted: true %>
+</div><br>
 ・動物保護施設による保護犬、猫の譲渡活動をサポートする里親マッチングサイトです。
 
 
