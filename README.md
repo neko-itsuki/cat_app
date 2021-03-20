@@ -3,7 +3,7 @@
 
 <h2>サイト概要</h2><br>
 <div class="portfolio_video">
-  <%= video_tag 'portfolio.mp4', autoplay: true, loop: true, muted: true %>
+  <video autoplay="autoplay" loop="loop" muted="muted" src="app/assets/videos/portfolio.mp4" width="100%" height="100%"></video>
 </div><br>
 ・動物保護施設による保護犬、猫の譲渡活動をサポートする里親マッチングサイトです。
 
