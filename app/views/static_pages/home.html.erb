@@ -1,7 +1,10 @@
 <% provide(:title, "Home") %>
-
-<div class="home-img">
-  <%= image_tag 'home.jpeg', class: "home-img" %>
+<div class="masthead">
+  <div class="container">
+    <div class="masthead-heading text-uppercase">動物病院による保護犬猫の譲渡活動をサポートします</div>
+    <%= link_to "猫から探す", cats_path, class: "btn btn-primary btn-xl text-uppercase js-scroll-trigger" %>
+    <%= link_to "犬から探す", dogs_path, class: "btn btn-primary btn-xl text-uppercase js-scroll-trigger" %>
+  </div>
 </div>
 
 <% if !current_delete_session %>
@@ -29,80 +32,109 @@
   </div>
 <% end %>
 
-<div class="about">
-  <h1 class="about-h1">このサイトについて</h1>
-  
-  <h2>⚪︎里親マッチングサイトとは？</h2>
-  <h3>動物病院による保護犬猫の譲渡活動をサポートする</h3>
-    
-  <p>
-    この理念に賛同していただいた日本全国の動物保護施設に保護されている、もしくは動物保護施設が里親探しをしている犬猫たちを動物保護施設が実際の出会いの場となり、新しい家族へ譲渡されるという今まで存在していなかった新しい形のマッチングサイトです。
-    
-    動物病院にて簡易的な健康診断、ワクチン接種等を行ってからの譲渡になる為、健康面や衛生面でも安心して家族に迎え入れることが出来ます。
-    
-    本サイトが１頭でも多くの保護犬猫たちに新しい家族が見つかる手助けになればと願っております。
-  </p>
-  
-  <h2>⚪︎理念</h2>
-  <h3>殺処分ゼロを目指す</h3>
-  
-  <p>
-  常に人類の友であり続ける犬猫。犬猫は今も我々に幸せを与え続けてくれています。
-  しかしながら飼い主と別れ人間社会に居場所を失った保護犬・猫たちが存在します。
-  そしてその保護犬・猫たちの80％が殺処分されているという現実があります。
-  
-  そうした社会問題の解決へ、殺処分ゼロを目的とした『里親マッチングサイト』です。
-  </p>
-</div>
+<section class="page-section" id="services">
+  <div class="container">
+      <div class="text-center">
+          <h2 class="section-heading text-uppercase">このサイトについて</h2>
+      </div>
+      <div class="row text-center">
+          <div class="col-md-4">
+              <h4 class="my-3">理念</h4>
+              <h3 class="section-subheading text-muted">殺処分ゼロを目指す</h3>
+              <p class="text-muted">常に人類の友であり続ける犬猫。犬猫は今も我々に幸せを与え続けてくれています。
+              しかしながら飼い主と別れ人間社会に居場所を失った保護犬・猫たちが存在します。
+              そしてその保護犬・猫たちの80％が殺処分されているという現実があります。
+              そうした社会問題の解決へ、殺処分ゼロを目的とした『里親マッチングサイト』です。</p><br>
+          </div>
+          <div class="col-md-4">
+              <h4 class="my-3">里親マッチングサイトとは？</h4>
+              <h3 class="section-subheading text-muted">動物病院の保護犬猫の譲渡活動をサポートする</h3>
+              <p class="text-muted">当サイトの理念に賛同していただいた日本全国の動物保護施設に保護されている、もしくは動物保護施設が里親探しをしている犬猫たちを動物保護施設が実際の出会いの場となり、新しい家族へ譲渡されるという今まで存在していなかった新しい形のマッチングサイトです。
+              動物病院にて簡易的な健康診断、ワクチン接種等を行ってからの譲渡になる為、健康面や衛生面でも安心して家族に迎え入れることが出来ます。
+              本サイトが１頭でも多くの保護犬猫たちに新しい家族が見つかる手助けになればと願っております。</p>
+          </div>
+      </div>
+  </div>
+</section>
 
-<div class="flow">
-  <h1 class="flow-h1">譲渡までの流れ</h1>
-  
-  <h4>①はじめに</h4>
-  <p>
-  サイト内の、「このサイトについて」をご一読ください。
-  </p>
-  
-  <h4>②探す</h4>
-  <p>
-  「保護犬を探す」「保護猫を探す」からご自身に合う保護犬・猫を検索してください。
-  </p>
-  <div class="cat_index img">
-    <%= image_tag 'cat_index.png' %>
+<section class="page-section" id="about">
+  <div class="container">
+      <div class="text-center">
+          <h2 class="section-heading text-uppercase">譲渡までの流れ</h2><br>
+      </div>
+      <ul class="timeline">
+          <li class="timeline-inverted">
+              <div class="timeline-image"><%= image_tag '1.jpeg', class: "rounded-circle img-fluid" %></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>はじめに</h4>
+                </div>
+                <div class="timeline-body">サイト内の、「このサイトについて」をご一読ください。</div>
+              </div>
+          </li>
+          <li>
+              <div class="timeline-image"><%= image_tag '2.jpeg', class: "rounded-circle img-fluid" %></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>探す</h4>
+                </div>
+                <div class="timeline-body">「保護犬を探す」「保護猫を探す」からご自身に合う保護犬・猫を検索してください。</div><br>
+                <div class="cat_index img">
+                  <%= image_tag 'cat_index.png' %>
+                </div>
+              </div>
+          </li>
+          <li class="timeline-inverted">
+              <div class="timeline-image"><%= image_tag '3.jpeg', class: "rounded-circle img-fluid" %></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>新規会員登録</h4>
+                </div>
+                <div class="timeline-body">  写真ご希望の保護犬・猫が見つかりましたら、「里親希望者 新規登録」をお願いいたします。</div><br>
+                <div class="new_user img">
+                  <%= image_tag 'new_user.png' %>
+                </div>
+              </div>
+          </li>
+          <li>
+              <div class="timeline-image"><%= image_tag '4.jpeg', class: "rounded-circle img-fluid" %></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>動物病院へ相談/申し込み</h4>
+                </div>
+                <div class="timeline-body">写真ユーザー登録完了後、ご希望の保護犬・猫の詳細ページの「相談する」ボタンをクリックしてください。</div><br>
+                <div class="consult img">
+                  <%= image_tag 'consult.png' %>
+                </div>
+              </div>
+          </li>
+          <li class="timeline-inverted">
+              <div class="timeline-image"><%= image_tag '5.jpeg', class: "rounded-circle img-fluid" %></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>動物保護施設とのやりとり</h4>
+                </div>
+                <div class="timeline-body">保護犬・猫の保護施設とやりとりができますので、保護施設と直接やり取りを行ってください。</div><br>
+                  <div class="chat-img">
+                    <div class="chat_header img">
+                      <%= image_tag 'chat_header.png' %>
+                    </div><br>
+                    <div class="chat img">
+                      <%= image_tag 'chat.png' %>
+                    </div>
+                  </div>
+              </div>
+          </li>
+          <li>
+              <div class="timeline-image"><%= image_tag '6.jpeg', class: "rounded-circle img-fluid" %></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>面談⇒譲渡・受け入れ</h4>
+                </div>
+                <div class="timeline-body">その後、面談→譲渡となります。
+                受入れの際には健康管理に必要な各種ワクチン、マイクロチップ、健康診断等に関する実費が必要となります。</div>
+              </div>
+          </li>
+      </ul>
   </div>
-  
-  <h4>③新規会員登録</h4>
-  <p>
-  写真ご希望の保護犬・猫が見つかりましたら、「里親希望者 新規登録」をお願いいたします。
-  </p>
-  <div class="new_user img">
-    <%= image_tag 'new_user.png' %>
-  </div>
-  
-  <h4>④動物病院へ相談/申し込み</h4>
-  <p>
-  写真ユーザー登録完了後、ご希望の保護犬・猫の詳細ページの「相談する」ボタンをクリックしてください。
-  </p>
-  <div class="consult img">
-    <%= image_tag 'consult.png' %>
-  </div>
-  
-  <h4>⑤動物保護施設とのやりとり</h4>
-  <p>
-  保護犬・猫の保護施設とやりとりができますので、保護施設と直接やり取りを行ってください。
-  </p>
-  <div class="chat-img">
-    <div class="chat_header img">
-      <%= image_tag 'chat_header.png' %>
-    </div>
-    <div class="chat img">
-      <%= image_tag 'chat.png' %>
-    </div>
-  </div>
-  
-  <h4>⑥面談⇒譲渡・受け入れ</h4>
-  <p>
-  その後、面談→譲渡となります。
-  受入れの際には健康管理に必要な各種ワクチン、マイクロチップ、健康診断等に関する実費が必要となります。
-  </p>
-</div>
+</section>

@@ -1,53 +1,83 @@
 <% provide(:title, "Flow") %>
 
-<div class"flow">
-  <h1 class="flow-h1">譲渡までの流れ</h1>
-  
-  <h4>①はじめに</h4>
-  <p>
-  サイト内の、「このサイトについて」をご一読ください。
-  </p>
-  
-  <h4>②探す</h4>
-  <p>
-  「保護犬を探す」「保護猫を探す」からご自身に合う保護犬・猫を検索してください。
-  </p>
-  <div class="cat_index img">
-    <%= image_tag 'cat_index.png' %>
+<section class="page-section" id="about">
+  <div class="container">
+      <div class="text-center">
+          <h2 class="section-heading text-uppercase">譲渡までの流れ</h2><br>
+      </div>
+      <ul class="timeline">
+          <li class="timeline-inverted">
+              <div class="timeline-image"><%= image_tag '1.jpeg', class: "rounded-circle img-fluid" %></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>はじめに</h4>
+                </div>
+                <div class="timeline-body">サイト内の、「このサイトについて」をご一読ください。</div>
+              </div>
+          </li>
+          <li>
+              <div class="timeline-image"><%= image_tag '2.jpeg', class: "rounded-circle img-fluid" %></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>探す</h4>
+                </div>
+                <div class="timeline-body">「保護犬を探す」「保護猫を探す」からご自身に合う保護犬・猫を検索してください。</div><br>
+                <div class="cat_index img">
+                  <%= image_tag 'cat_index.png' %>
+                </div>
+              </div>
+          </li>
+          <li class="timeline-inverted">
+              <div class="timeline-image"><%= image_tag '3.jpeg', class: "rounded-circle img-fluid" %></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>新規会員登録</h4>
+                </div>
+                <div class="timeline-body">  写真ご希望の保護犬・猫が見つかりましたら、「里親希望者 新規登録」をお願いいたします。</div><br>
+                <div class="new_user img">
+                  <%= image_tag 'new_user.png' %>
+                </div>
+              </div>
+          </li>
+          <li>
+              <div class="timeline-image"><%= image_tag '4.jpeg', class: "rounded-circle img-fluid" %></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>動物病院へ相談/申し込み</h4>
+                </div>
+                <div class="timeline-body">写真ユーザー登録完了後、ご希望の保護犬・猫の詳細ページの「相談する」ボタンをクリックしてください。</div><br>
+                <div class="consult img">
+                  <%= image_tag 'consult.png' %>
+                </div>
+              </div>
+          </li>
+          <li class="timeline-inverted">
+              <div class="timeline-image"><%= image_tag '5.jpeg', class: "rounded-circle img-fluid" %></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>動物保護施設とのやりとり</h4>
+                </div>
+                <div class="timeline-body">保護犬・猫の保護施設とやりとりができますので、保護施設と直接やり取りを行ってください。</div><br>
+                  <div class="chat-img">
+                    <div class="chat_header img">
+                      <%= image_tag 'chat_header.png' %>
+                    </div><br>
+                    <div class="chat img">
+                      <%= image_tag 'chat.png' %>
+                    </div>
+                  </div>
+              </div>
+          </li>
+          <li>
+              <div class="timeline-image"><%= image_tag '6.jpeg', class: "rounded-circle img-fluid" %></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>面談⇒譲渡・受け入れ</h4>
+                </div>
+                <div class="timeline-body">その後、面談→譲渡となります。
+                受入れの際には健康管理に必要な各種ワクチン、マイクロチップ、健康診断等に関する実費が必要となります。</div>
+              </div>
+          </li>
+      </ul>
   </div>
-  
-  <h4>③新規会員登録</h4>
-  <p>
-  写真ご希望の保護犬・猫が見つかりましたら、「里親希望者 新規登録」をお願いいたします。
-  </p>
-  <div class="new_user img">
-    <%= image_tag 'new_user.png' %>
-  </div>
-  
-  <h4>④動物病院へ相談/申し込み</h4>
-  <p>
-  写真ユーザー登録完了後、ご希望の保護犬・猫の詳細ページの「相談する」ボタンをクリックしてください。
-  </p>
-  <div class="consult img">
-    <%= image_tag 'consult.png' %>
-  </div>
-  
-  <h4>⑤動物保護施設とのやりとり</h4>
-  <p>
-  保護犬・猫の保護施設とやりとりができますので、保護施設と直接やり取りを行ってください。
-  </p>
-  <div class="chat-img">
-    <div class="chat_header img">
-      <%= image_tag 'chat_header.png' %>
-    </div>
-    <div class="chat img">
-      <%= image_tag 'chat.png' %>
-    </div>
-  </div>
-  
-  <h4>⑥面談⇒譲渡・受け入れ</h4>
-  <p>
-  その後、面談→譲渡となります。
-  受入れの際には健康管理に必要な各種ワクチン、マイクロチップ、健康診断等に関する実費が必要となります。
-  </p>
-</div>
+</section>

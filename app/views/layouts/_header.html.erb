@@ -1,63 +1,37 @@
-<header class="navbar navbar-fixed-top navbar-inverse" id="header">
-  <div class="container">
-    <%= link_to "里親マッチングサイト", root_path, id: "logo", class: "navbar-brand" %>
-    <nav>
-      
-      <button class="menu-trigger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <ul class="nav navbar-nav navbar-right menus">
-        <li><%= link_to "このサイトのついて", about_path %></li>
-        <li><%= link_to "譲渡までの流れ", flow_path %></li>
-        <li><%= link_to "保護猫を探す", cats_path %></li>
-        <li><%= link_to "保護犬を探す", dogs_path %></li>
-        <% if !current_delete_session %>
-          <li><%= link_to '里親希望者 ログイン', new_user_session_path %></li>
-          <li><%= link_to "里親希望者 新規登録", new_user_registration_path, data: {"turbolinks" => false} %></li>
-          <li><%= link_to '保護施設 ログイン', new_center_session_path %></li>
-          <li><%= link_to "保護施設 新規登録", new_center_registration_path, data: {"turbolinks" => false} %></li>
-        <% end %>
-      </ul>
-      
-      <% if current_delete_session %>
-        <button class="menu-trigger">
-          <%= image_tag 'user.png', class: "user-img" %>
-        </button>
-        <ul class="nav navbar-nav navbar-right menus">
-          <li><%= link_to "プロフィール", current_profile_path %></li>
-          <li><%= link_to 'ログアウト', current_delete_session, method: :delete %></li>
-          <% if center_signed_in? %>
-            <li><%= link_to "保護猫を投稿", new_cat_path %></li>
-            <li><%= link_to '保護犬を投稿', new_dog_path %></li>
-          <% end %>
-          <% if current_destroy %>
-            <li><%= link_to "退会する", current_destroy, data: { confirm: "本当に退会してよろしいですか？" }, method: :delete %></li>
-          <% end %>
-        </ul>
-      <% end %>
-      
+<header id="header">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <%= link_to "里親マッチングサイト", home_path, class: "navbar-brand js-scroll-trigger" %>
       <% if current_delete_session %>
         <button class="menu-trigger chat-logo">
           <%= link_to(current_rooms_path, class: "chat-logo") do %>
             <%= image_tag 'chat_logo.png', class: "chat-logo-img" %>
-          <% end %>
-          <% if unchecked_notifications.any? %>
-            <span class="badge">&nbsp;</span>
+            <% if unchecked_notifications.any? %>
+              <span class="badge">&nbsp;</span>
+            <% end %>
           <% end %>
         </button>
       <% end %>
-    </nav>
-  </div>
-  <div class="header-menu">
-    <ul class="menu">
-      <li><%= link_to "サイトのついて", about_path %></li>
-      <li><%= link_to "譲渡までの流れ", flow_path %></li>
-      <li><%= link_to "🐱保護猫を探す", cats_path %></li>
-      <li><%= link_to "🐶保護犬を探す", dogs_path %></li>
-      <li><%= link_to "🏥施設から探す", centers_path %></li>
-    </ul>
-  </div>
+      <button class="navbar-toggler navbar-toggler-right menu" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          MENU
+          <i class="fas fa-bars ml-1"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item"><%= link_to "このサイトのついて", about_path, class: "nav-link js-scroll-trigger" %></li>
+          <li class="nav-item"><%= link_to "譲渡までの流れ", flow_path, class: "nav-link js-scroll-trigger" %></li>
+          <li class="nav-item"><%= link_to "保護猫を探す", cats_path, class: "nav-link js-scroll-trigger" %></li>
+          <li class="nav-item"><%= link_to "保護犬を探す", dogs_path, class: "nav-link js-scroll-trigger" %></li>
+          <% if !current_delete_session %>
+            <li class="nav-item"><%= link_to '里親希望者 ログイン', new_user_session_path, class: "nav-link js-scroll-trigger" %></li>
+            <li class="nav-item"><%= link_to '保護施設 ログイン', new_center_session_path, class: "nav-link js-scroll-trigger" %></li>
+          <% else %>
+            <li class="nav-item"><%= link_to "プロフィール", current_profile_path, class: "nav-link js-scroll-trigger" %></li>
+            <li class="nav-item"><%= link_to 'ログアウト', current_delete_session, class: "nav-link js-scroll-trigger", method: :delete %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </header>
+
