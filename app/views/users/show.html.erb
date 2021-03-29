@@ -1,21 +1,40 @@
 <% provide(:title, "Show") %>
 <p id="notice"><%= notice %></p>
 
-<h2><%= @user.furigana_name %></h2>
+<p><%= @user.furigana_name %></p>
 <h1><%= @user.name %></h1>
-<h2><%= @user.email %></h2>
-<ul>
-  <li><%= @user.age %></li>
-  <% if @user.gender == 1 %>
-    <li>男</li>
-  <% else %>
-    <li>女</li>
-  <% end %>
-  <li><%= @user.postcode %><%= @user.prefecture_code %>
-      <%= @user.address_city %><%= @user.address_street %>
-      <%= @user.address_building %></li>
-  <li><%= @user.tel %></li>
-</ul>
 
-<%= link_to 'Edit', edit_user_registration_path(@user) %> |
-<%= link_to 'Back', root_path %>
+<table class="table">
+  <tr>
+    <th>年齢</th>
+    <td><%= @user.age %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <% if @user.gender == 1 %>
+      <td>男</td>
+    <% else %>
+      <td>女</td>
+    <% end %>
+  </tr>
+  <tr>
+    <th>メール</th>
+    <td><%= @user.email %></td>
+  </tr>
+  <tr>
+    <th>電話</th>
+    <td><%= @user.tel %></td>
+  </tr>
+  <tr>
+    <th>住所</th>
+    <td>
+      <%= @user.postcode %>&nbsp;
+      <%= t('address.state')[@user.prefecture_code - 1] %>&nbsp;
+      <%= @user.address_city %>&nbsp;
+      <%= @user.address_street %>&nbsp;
+      <%= @user.address_building %>
+    </td>
+  </tr>
+</table>
+
+<%= link_to '編集', edit_user_registration_path(@user), class: "btn btn-lg btn-primary" %>
