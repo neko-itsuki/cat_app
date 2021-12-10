@@ -2,8 +2,8 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# This file is the source Rails uses to define your schema when running `rails
-# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
 # be faster and is potentially less error prone than running all of your
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
@@ -96,9 +96,9 @@ ActiveRecord::Schema.define(version: 2021_03_03_101713) do
   end
 
   create_table "user_messages", force: :cascade do |t|
-    t.integer "user_room_id", null: false
-    t.integer "user_id"
-    t.integer "center_id"
+    t.bigint "user_room_id", null: false
+    t.bigint "user_id"
+    t.bigint "center_id"
     t.text "user_message", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -108,10 +108,10 @@ ActiveRecord::Schema.define(version: 2021_03_03_101713) do
   end
 
   create_table "user_rooms", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "center_id"
-    t.integer "cat_id"
-    t.integer "dog_id"
+    t.bigint "user_id"
+    t.bigint "center_id"
+    t.bigint "cat_id"
+    t.bigint "dog_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cat_id"], name: "index_user_rooms_on_cat_id"
