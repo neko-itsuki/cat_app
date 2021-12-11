@@ -8,7 +8,7 @@
 
 
 <h2>リンク</h2>
-・https://glacial-fjord-79735.herokuapp.com/<br>
+・https://immense-sea-82014.herokuapp.com/<br>
 里親希望者と動物保護施設、両方にかんたんログイン機能がありますので、ホーム画面等の「ゲストログイン」ボタンからログインできます。
 
 
